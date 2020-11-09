@@ -4,4 +4,11 @@
 
 @import 'typography/typography';
 
+// extends
+@import 'partials/extends';
+
+// mixins
+@import 'partials/mixins/header';
+@import 'partials/mixins/content';
+
 @import 'parts/shared/header-templates/header-style-1';

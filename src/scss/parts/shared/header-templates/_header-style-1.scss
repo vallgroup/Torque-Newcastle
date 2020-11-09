@@ -1,19 +1,122 @@
-header#header-style-1 {
-  .torque-header-content-wrapper {
+$zIndexMenuContainer: 998;
+$zIndexMenuOverlay: 997;
 
-    .torque-header-burger-menu-wrapper {
-      @include respond-to(desktop) {
-        display: none;
+header#header-style-1 {
+  z-index: $zIndexMenuContainer;
+  height: auto;
+  background-color: $twilightBlue18pc;
+
+  .header-top-border {
+    display: block;
+    width: 100%;
+    height: 26px;
+    background-color: $twilightBlue;
+  }
+
+  .torque-header-content-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    @include useHeaderHeight(height, true);
+    @include useHeaderPadding();
+    @extend %limitWidth;
+
+    .torque-header-left-area-wrapper {
+      flex: 1;
+      height: 100%;
+
+      a {
+        div {
+          width: auto;
+          text-align: center;
+        }
       }
+      
+      @include respond-to(desktop) {
+        justify-self: flex-start;
+      }
+
+      // img.torque-header-logo {}
     }
 
-    .torque-header-menu-items-inline-wrapper {
-      @include respond-to-max(desktop) {
-        display: none;
+    .torque-header-right-area-wrapper {
+      flex: 3;
+
+      @include respond-to(desktop) {
+        justify-self: flex-end;
+      }
+
+      .torque-header-burger-menu-wrapper {
+        @include respond-to(desktop) {
+          display: none;
+        }
+      }
+
+      .torque-header-menu-items-inline-wrapper {
+        @include respond-to-max(desktop) {
+          display: none;
+        }
       }
     }
   }
 
+  // notification bar
+  &.include-notification-bar {
+
+    .notification-bar-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      padding: $bodyPadding2 $bodyPadding4 $bodyPadding2 $bodyPadding1;
+      box-sizing: border-box;
+      width: 100%;
+  
+      background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+
+      @include respond-to(desktop) {
+        padding: $bodyPadding2;
+      }
+  
+      .notification-bar-content-wrapper {
+        padding: $bodyPadding2 $bodyPadding1;
+  
+        .notification-bar-content {
+          color: $white;
+          padding-right: $bodyPadding1;
+        }
+    
+        .notification-bar-cta {
+          @extend %useCtaButtonWhite;
+        }
+      }
+  
+      .notification-bar-close-btn {
+        // hidden for now
+        display: none;
+
+        position: absolute;
+        right: $bodyPadding1;
+        
+        transform: rotate(45deg);
+        transform-origin: center;
+        
+        font-size: 2.8em;
+        font-weight: 300;
+        cursor: pointer;
+
+        @include respond-to(tablet) {
+          font-size: 2em;
+        }
+
+        @include respond-to(desktop) {
+          right: $bodyPadding2;
+        }
+      }
+    }
+  }
+
+  // mobile hamburger menu items
   .torque-header-menu-items-mobile {
     @include respond-to(desktop) {
       display: none;

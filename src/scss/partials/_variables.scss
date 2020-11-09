@@ -1,5 +1,73 @@
 // colours
+$transparent: transparent;
+$white: #FFF;
+$black: #000;
+$lightTeal:#b0dcee;
+$softBlue:#78b6d8;
+$twilightBlue:#0f206c;
+$twilightBlue18pc:rgba(15,32,108,0.18);
+$twilightBlue40pc:rgba(15,32,108,0.4);
 
 // breakpoints
 $MobileMaxWidth: 767px;
 $TabletMaxWidth: 1023px;
+
+// content widths
+$contentWidthLimit: 1282px;
+
+// padding
+$bodyPadding1: 0em;
+$bodyPadding2: 0.5em;
+$bodyPadding3: 1em;
+$bodyPadding4: 1.5em;
+$bodyPadding5: 2em;
+$bodyPadding6: 2.5em;
+$bodyPadding7: 3em;
+$bodyPadding8: 3.5em;
+$bodyPadding9: 4em;
+$bodyPadding10: 4.5em;
+$bodyPadding11: 5em;
+$bodyPadding12: 5.5em;
+$bodyPadding13: 6em;
+$bodyPadding14: 6.5em;
+$bodyPadding15: 7em;
+$bodyPadding16: 7.5em;
+$bodyPadding17: 8em;
+$bodyPadding18: 8.5em;
+$bodyPadding19: 9em;
+$bodyPadding20: 9.5em;
+$bodyPadding21: 10em;
+
+// font families
+$fontFamilyBody: 'Akkurat', sans-serif;
+$fontFamilyHeading1: 'TradeGothicLTStd-BoldExt', sans-serif;
+$fontFamilyHeading2: 'Cochin-Bold', sans-serif;
+$fontFamilyForms: 'HelveticaNeue', sans-serif;  
+
+// font sizes
+$fontBodyMobile: 14px;
+$fontBodyTablet: 16px;
+$fontBodyDesktop: 16px;
+
+// letter spacing
+$letterSpacing1: 1px;
+$letterSpacing2: 1.1px;
+$letterSpacing3: 1.4px;
+$letterSpacing4: 1.6px;
+$letterSpacing5: 16px;
+$letterSpacing6: 2px;
+
+// line height
+$lineHeight1: 1em;
+$lineHeight2: 20px;
+$lineHeight3: 21px;
+$lineHeight4: 24px;
+$lineHeight5: 61px;
+$lineHeight6: 34px;
+$lineHeight7: 36px;
+$lineHeight8: 28px;
+
+// borders
+$borderThin: 1px;
+$borderThick: 2px;
+

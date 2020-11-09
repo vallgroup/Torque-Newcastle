@@ -1,0 +1,303 @@
+%hideOnDesktop {
+  @include respond-to(desktop) {
+    display: none !important;
+  }
+} 
+%hideOnTablet {
+  @media only screen and (max-width: $TabletMaxWidth) and (min-width: $MobileMaxWidth + 1px) {
+    display: none !important;
+  }
+}
+%hideOnMobile {
+  @include respond-to-max(tablet) {
+    display: none !important;
+  }
+}
+
+%limitWidth_Setup {
+  width: calc(100% - #{$bodyPadding7});
+  max-width: $contentWidthLimit;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-to(tablet) {
+    width: calc(100% - #{$bodyPadding10});
+  }
+    
+  @include respond-to(desktop) {
+    width: calc(100% - #{$bodyPadding13});
+  }
+  
+}
+%limitWidth {
+  @extend %limitWidth_Setup;
+}
+%limitWidthNarrow {
+  @extend %limitWidth_Setup;
+  width: calc(100% - (#{$bodyPadding13} + #{$bodyPadding13}));
+}
+
+%imageSize {
+  position: relative;
+  padding-bottom: 80%;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  @include respond-to(tablet) {
+    padding-bottom: 56%;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 44%;
+  }
+}
+
+%imageSizeHalf {
+  position: relative;
+  padding-bottom: 65%;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  @include respond-to(tablet) {
+    padding-bottom: 45%;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 35%;
+  }
+}
+
+%imageSizeDouble {
+  position: relative;
+  padding-bottom: 95%;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  @include respond-to(tablet) {
+    padding-bottom: 80%;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 70%;
+  }
+}
+
+%imageInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+%videoInner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+%contentWithAdjacentImageMargins {
+  margin-left: 15%;
+  margin-right: 12%;
+}
+
+%titleAndContentMargins {
+  margin-left: 12%;
+  margin-right: 10%;
+}
+
+%titleAndContentPaddings {
+  box-sizing: border-box;
+  padding-left: 12%;
+  padding-right: 10%;
+}
+
+%contentBody {
+  width: 100%;
+  margin-bottom: 15px;
+
+  @include respond-to(tablet) {
+    // width: calc(100vw - #{$bodyPadding1} - #{$bodyPadding1});
+    margin-bottom: 20px;
+  }
+  @include respond-to(desktop) {
+    // width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+// regular btn setup
+%useButton_Setup {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  border: $borderThick solid $twilightBlue;
+  border-radius: 0;
+  background-color: $white;
+  font-family: $fontFamilyHeading1;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $twilightBlue;
+  cursor: pointer;
+  letter-spacing: 1.3px;
+  line-height: 19px;
+  transition: 0.2s;
+
+  -webkit-appearance: none;
+  outline: none;
+
+  &:hover {
+    background-color: $twilightBlue;
+    color: $white;
+  }
+    
+  // @include respond-to(tablet) {}
+  
+  @include respond-to(desktop) {
+    padding: 20px 30px;
+  }
+}
+// regular btn
+%useButton {
+  @extend %useButton_Setup;
+}
+// slim btn
+%useButtonSlim {
+  @extend %useButton_Setup;
+
+  letter-spacing: 1.1px;
+  line-height: 15px;
+  padding: 10px 15px;
+    
+  // @include respond-to(tablet) {}
+  
+  @include respond-to(desktop) {
+    padding: 20px 30px;
+  }
+}
+// wide btn
+%useButtonWide {
+  @extend %useButton_Setup;
+  padding: 10px 40px;
+    
+  // @include respond-to(tablet) {}
+  
+  @include respond-to(desktop) {
+    padding: 22px 81px;
+  }
+}
+
+// CTA button
+
+%useCtaButton_Setup {
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 71px;
+  margin-left: $bodyPadding2;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 71px;
+    height: 9px;
+    margin-left: -71px;
+    background-image: url();
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: red;
+  }
+}
+%useCtaButtonWhite {
+  @extend %useCtaButton_Setup;
+  color: $white;
+
+}
+%useCtaButtonBlue {
+  @extend %useCtaButton_Setup;
+  color: $white;
+}
+
+
+// regular btn setup
+%filteredLoopFilters {
+  @extend %titleAndContentPaddings;
+  padding-top: 23px;
+  padding-bottom: 20px;
+  border-top: $borderThick solid $twilightBlue;
+  border-bottom: $borderThick solid $twilightBlue;
+
+  button {
+    font-family: $fontFamilyHeading2;
+    font-size: 1.25em; // 20px
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    color: $twilightBlue;
+    padding: 8px 40px 8px 0;
+
+    &.active {
+      background: $twilightBlue;
+      color: $white;
+    }
+  }
+}
+
+%useFormInput {
+  background-color: $transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  font-family: $fontFamilyForms;
+  font-size: 1.25em; // 20px
+  color: $softBlue;
+  
+  width: 100%;
+  box-sizing: border-box;
+  // padding: $bodyPadding3 $bodyPadding4;
+  padding: 0.8em 1.2em;
+  margin-bottom: $bodyPadding3;
+
+  -webkit-appearance: none;
+  outline: none;
+
+  &::placeholder {
+    color: $softBlue;
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid $twilightBlue;
+  }
+}
+
+/* %useBackgroundGraphicContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  // hack to workaround overflow flaws
+  padding-bottom: 25%;
+  margin-bottom: -25%;
+  // end hack...
+} */
