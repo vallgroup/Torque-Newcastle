@@ -41,6 +41,9 @@ header#header-style-1 {
 
     .torque-header-right-area-wrapper {
       flex: 3;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       @include respond-to(desktop) {
         justify-self: flex-end;
@@ -53,8 +56,50 @@ header#header-style-1 {
       }
 
       .torque-header-menu-items-inline-wrapper {
+        flex: 1;
+
         @include respond-to-max(desktop) {
           display: none;
+        }
+
+        .torque-menu-items-inline {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          & > * {
+            margin: 0 $bodyPadding2;
+          }
+
+          .torque-menu-item-wrapper:not(.torque-menu-item-children-wrapper) {
+            position: relative;
+            box-sizing: border-box;
+            padding: $bodyPadding2;
+            width: 100%;
+
+            &.parent:hover {
+              .torque-menu-item-children-wrapper {
+                top: 100%;
+                height: auto;
+                width: auto;
+                opacity: 1;
+              }
+            }
+
+            .torque-menu-item-children-wrapper {
+              position: absolute;
+              top: 0%;
+              left: 0;
+              height: 0;
+              opacity: 0;
+              transition: 0.2s ease-in-out;
+            }
+
+            .torque-menu-item  {
+              color: $white;
+              text-transform: uppercase;
+            }
+          }
         }
       }
     }

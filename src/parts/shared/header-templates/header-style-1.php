@@ -4,7 +4,7 @@
  * Header Template 1:
  *
  * Logo - Burger menu with mobile opening from right of screen (mobile & tablet)
- * Logo - Menu items inline (desktop)
+ * Logo - Menu items inline, tree (desktop)
  *
  *
  * Note: styles for this which require a media query
