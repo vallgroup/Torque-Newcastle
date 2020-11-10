@@ -27,8 +27,9 @@ header#header-style-1 {
 
       a {
         div {
-          width: auto;
           text-align: center;
+          max-width: 214px;
+          width: auto;
         }
       }
       
@@ -67,38 +68,57 @@ header#header-style-1 {
           align-items: center;
           justify-content: flex-end;
 
-          & > * {
-            margin: 0 $bodyPadding2;
-          }
-
-          .torque-menu-item-wrapper:not(.torque-menu-item-children-wrapper) {
+          // general menu item styles
+          .torque-menu-item-wrapper {
             position: relative;
             box-sizing: border-box;
-            padding: $bodyPadding2;
+            padding: $bodyPadding2 0;
             width: 100%;
 
-            &.parent:hover {
-              .torque-menu-item-children-wrapper {
-                top: 100%;
-                height: auto;
-                width: auto;
-                opacity: 1;
-              }
-            }
-
-            .torque-menu-item-children-wrapper {
-              position: absolute;
-              top: 0%;
-              left: 0;
-              height: 0;
-              opacity: 0;
-              transition: 0.2s ease-in-out;
-            }
-
             .torque-menu-item  {
-              color: $white;
+              // color: $white;
               text-transform: uppercase;
             }
+          }
+
+          // parent menu items
+          & > .torque-menu-item-wrapper {
+
+            // all but first parent menu item
+            &:not(:first-child) {
+              margin: 0 0 0 $bodyPadding2;
+            }
+
+            // with sub-menu items
+            &.parent {
+              &:hover {
+                .torque-menu-item-children-wrapper {
+                  top: 100%;
+                  height: auto;
+                  width: auto;
+                  opacity: 1;
+                }
+              }
+
+              & > a > .torque-menu-item:after {
+                content: "\f347";
+                font-family: "dashicons";
+                font-size: 0.8em;
+                // color: $white;
+                display: inline-block;
+              }
+            }
+          }
+
+          // sub-menu items
+          .torque-menu-item-children-wrapper {
+            position: absolute;
+            top: 0%;
+            left: 0;
+            height: 0;
+            opacity: 0;
+            min-width: 150px;
+            transition: 0.2s ease-in-out;
           }
         }
       }

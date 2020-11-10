@@ -86,6 +86,9 @@ function torque_enqueue_child_styles() {
         array( $parent_style, $parent_main_style ),
         wp_get_theme()->get('Version')
     );
+    
+    // enqueue dashicons for frontend
+    wp_enqueue_style( 'dashicons' );
 }
 
 // enqueue child scripts after parent script
@@ -96,7 +99,7 @@ function torque_enqueue_child_scripts() {
         get_stylesheet_directory_uri() . '/bundles/bundle.js',
         array( 'torque-theme-scripts' ), // depends on parent script
         wp_get_theme()->get('Version'),
-        true       // put it in the footer
+        true // put it in the footer
     );
 }
 
