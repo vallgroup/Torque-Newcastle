@@ -38,6 +38,7 @@
 
     // Function to open/close the menu
     function openCloseMenu() {
+      headerContainer.toggleClass("active");
       headerContent.toggleClass("active");
       headerBurgerMenu.toggleClass("active");
       headerMenuItemsContainer.toggleClass("active");

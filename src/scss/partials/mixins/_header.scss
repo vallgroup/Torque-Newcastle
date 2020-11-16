@@ -1,16 +1,77 @@
 // Pass true or false for $removeHeaderHeight to remove or add height
-@mixin useHeaderHeight($property, $isFixed: false) {
+@mixin useHeaderHeight($property) {
 
+  // header/logo/menu area
+  $mobileHeaderHeight: 75px;
+  $tabletHeaderHeight: 100px;
+  $desktopHeaderHeight: 150px;
+
+  // return property
+  #{$property}: $mobileHeaderHeight;
+
+  @include respond-to(tablet) {
+    #{$property}: $tabletHeaderHeight;
+  }
+
+  @include respond-to(desktop) {
+    #{$property}: $desktopHeaderHeight;
+  }
+}
+
+// Pass true or false for $removeHeaderHeight to remove or add height
+@mixin useHeaderSpacer(
+  $property,
+  $isFixed: true,
+  $hasNotificationBar: false,
+) {
+
+  // default
   $mobileHeight: 0;
   $tabletHeight: 0;
   $desktopHeight: 0;
 
-  @if $isFixed == true {
-    $mobileHeight: 75px;
-    $tabletHeight: 100px;
-    $desktopHeight: 150px;
+  // notification bar
+  $mobileNotificationHeight: 68px;
+  $tabletNotificationHeight: 50px;
+  $desktopNotificationHeight: 50px;
+
+  // top border
+  $mobileBorderHeight: 14px;
+  $tabletBorderHeight: 26px;
+  $desktopBorderHeight: 26px;
+
+  // header/logo/menu area
+  $mobileHeaderHeight: 75px;
+  $tabletHeaderHeight: 100px;
+  $desktopHeaderHeight: 150px;
+
+  // without notification bar
+  @if $hasNotificationBar != true and $isFixed == true {
+    // top border
+    $mobileHeight: #{$mobileBorderHeight};
+    $tabletHeight: #{$tabletBorderHeight};
+    $desktopHeight: #{$desktopBorderHeight};
+  } @else if $hasNotificationBar != true and $isFixed != true {
+    // top border + header height
+    $mobileHeight: calc(#{$mobileBorderHeight} + #{$mobileHeaderHeight});
+    $tabletHeight: calc(#{$tabletBorderHeight} + #{$tabletHeaderHeight});
+    $desktopHeight: calc(#{$desktopBorderHeight} + #{$desktopHeaderHeight});
+  }
+  
+  // with notification bar
+  @if $hasNotificationBar == true and $isFixed == true {
+    // notification bar + top border
+    $mobileHeight: calc(#{$mobileNotificationHeight} + #{$mobileBorderHeight});
+    $tabletHeight: calc(#{$tabletNotificationHeight} + #{$tabletBorderHeight});
+    $desktopHeight: calc(#{$desktopNotificationHeight} + #{$desktopBorderHeight});
+  } @else if $hasNotificationBar == true and $isFixed != true {
+    // notification bar + top border + header height
+    $mobileHeight: calc(#{$mobileNotificationHeight} + #{$mobileBorderHeight} + #{$mobileHeaderHeight});
+    $tabletHeight: calc(#{$tabletNotificationHeight} + #{$tabletBorderHeight} + #{$tabletHeaderHeight});
+    $desktopHeight: calc(#{$desktopNotificationHeight} + #{$desktopBorderHeight} + #{$desktopHeaderHeight});
   }
 
+  // return property
   #{$property}: $mobileHeight;
 
   @include respond-to(tablet) {
