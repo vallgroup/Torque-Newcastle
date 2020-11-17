@@ -52,29 +52,37 @@ $call_to_action = get_field( 'drawer_menu_cta', 'options' );
     </div>
 
     <div class="torque-header-right-area-wrapper">
-      <?php // CTA Menu 
-        get_template_part( 'parts/shared/header-parts/header-cta-menu' );
-      ?>
       
       <div class="torque-header-burger-menu-wrapper">
         <?php // Burger Nav Toggle
           get_template_part( 'parts/elements/element', 'burger-menu-squeeze' );
         ?>
       </div>
+
+      <?php // CTA Menu 
+        get_template_part( 'parts/shared/header-parts/header-cta-menu' );
+      ?>
       
       <div class="torque-header-menu-items-inline-wrapper">
         <?php // Inline Tree Menu
           get_template_part( 'parts/shared/header-parts/menu-items/menu-tree', 'inline');
         ?>
       </div>
+
     </div>
 
   </div>
 
   <div class="col1 torque-navigation-toggle torque-header-menu-items-mobile">
-    <?php // Burger Nav Items 
-      get_template_part( 'parts/shared/header-parts/menu-items/menu-items', 'stacked' ); 
+
+    <?php // CTA Menu 
+      get_template_part( 'parts/shared/header-parts/header-cta-menu' );
     ?>
+
+    <?php // Burger Nav Items 
+      get_template_part( 'parts/shared/header-parts/menu-items/menu-tree', 'stacked' ); 
+    ?>
+
   </div>
 
 </header>

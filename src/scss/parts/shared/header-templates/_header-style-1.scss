@@ -4,6 +4,7 @@ $zIndexMenuOverlay: 997;
 header#header-style-1 {
   z-index: $zIndexMenuContainer;
   height: auto;
+  transition: 0.2s ease-in-out 0s;
   background-color: $twilightBlue18pc;
 
   .header-top-border {
@@ -18,6 +19,7 @@ header#header-style-1 {
   }
 
   .torque-header-content-wrapper {
+    position: relative;
     display: flex;
     flex-direction: row;
 
@@ -49,14 +51,39 @@ header#header-style-1 {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      flex-wrap: wrap;
 
       @include respond-to(desktop) {
         justify-self: flex-end;
       }
 
+      .cta-menu-container {
+        position: absolute;
+        right: 0;
+        top: 1.8em;
+        text-align: right;
+
+        @include respond-to-max(desktop) {
+          display: none;
+        }
+
+        .cta-menu-item > a {
+          color: $white;
+          font-size: 0.75em;
+          text-transform: uppercase;
+        }
+      }
+
       .torque-header-burger-menu-wrapper {
+        
         @include respond-to(desktop) {
           display: none;
+        }
+
+        .torque-burger-menu {
+          .torque-burger-menu-line {
+            background-color: $white;
+          }
         }
       }
 
@@ -77,10 +104,10 @@ header#header-style-1 {
             position: relative;
             box-sizing: border-box;
             padding: $bodyPadding2 0;
-            width: 100%;
 
             .torque-menu-item  {
-              // color: $white;
+              color: $white;
+              font-size: 1.375em;
               text-transform: uppercase;
             }
           }
@@ -90,7 +117,7 @@ header#header-style-1 {
 
             // all but first parent menu item
             &:not(:first-child) {
-              margin: 0 0 0 $bodyPadding2;
+              margin: 0 0 0 $bodyPadding5;
             }
 
             // with sub-menu items
@@ -105,11 +132,14 @@ header#header-style-1 {
               }
 
               & > a > .torque-menu-item:after {
+                position: absolute;
+                right: -1.2em;
+                top: 50%;
+                transform: translateY(-50%);
                 content: "\f347";
+                color: $white;
                 font-family: "dashicons";
                 font-size: 0.8em;
-                // color: $white;
-                display: inline-block;
               }
             }
           }
@@ -131,11 +161,82 @@ header#header-style-1 {
 
   // mobile hamburger menu items
   .torque-header-menu-items-mobile {
+    background-color: $twilightBlue;
+    padding: $bodyPadding1 $bodyPadding1 $bodyPadding5;
+
     @include useHeaderSpacer(top, false, false);
     
     @include respond-to(desktop) {
       display: none;
     }
+
+    .cta-menu-container {
+      @extend %limitWidth;
+      margin-bottom: $bodyPadding4;
+
+      .cta-menu-item > a {
+        color: $white;
+        font-size: 0.75em;
+        text-transform: uppercase;
+      }
+    }
+
+    .torque-menu-items-stacked {
+      @extend %limitWidth;
+
+      // parent menu items
+      & > .torque-menu-item-wrapper {
+
+        .torque-menu-item  {
+          color: $white;
+          font-size: 1.375em;
+          text-align: left;
+          text-transform: uppercase;
+          padding-top: $bodyPadding2;
+          padding-bottom: $bodyPadding2;
+        }
+
+        // with sub-menu items
+        &.parent {
+          &:hover {
+            .torque-menu-item-children-wrapper {
+              top: 100%;
+              height: auto;
+              width: auto;
+              opacity: 1;
+            }
+          }
+
+          & > a > .torque-menu-item:after {
+            display: inline-block;
+            content: "\f347";
+            color: $white;
+            font-family: "dashicons";
+            font-size: 0.8em;
+            vertical-align: middle;
+            margin-left: 0.2em;
+          }
+        }
+      }
+
+      // sub-menu items
+      .torque-menu-item-children-wrapper {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: 0.2s ease-in-out;
+        margin-left: $bodyPadding3;
+
+        .torque-menu-item {
+          font-size: 1.125em;
+          color: $lightGreyBlue;
+        }
+      }
+    }
+  }
+
+  &.active {
+    background-color: $twilightBlue;
   }
 
   // notification bar

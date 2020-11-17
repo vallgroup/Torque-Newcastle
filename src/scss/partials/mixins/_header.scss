@@ -84,31 +84,35 @@
 }
 
 @mixin useHeaderPadding($isFixed: false) {
-  $mobilePadding: 5px;
-  // $tabletPadding: 10px;
-  $desktopPadding: 30px;
+  $mobilePaddingTop: 0px;
+  $mobilePaddingBottom: 5px;
+  // $tabletPaddingTop: 10px;
+  // $tabletPaddingBottom: 10px;
+  $desktopPaddingTop: 5px;
+  $desktopPaddingBottom: 5px;
 
   @if $isFixed == true {
-    $desktopPadding: 15px;
+    $desktopPaddingTop: 2.5px;
+    $desktopPaddingBottom: 2.5px;
   }
 
   box-sizing: border-box;
   padding: {
-    top: $mobilePadding;
-    bottom: $mobilePadding;
+    top: $mobilePaddingTop;
+    bottom: $mobilePaddingBottom;
   }
 
   // @include respond-to(tablet) {
   //   padding: {
-  //     top: $tabletPadding;
-  //     bottom: $tabletPadding;
+  //     top: $tabletPaddingTop;
+  //     bottom: $tabletPaddingBottom;
   //   }
   // }
 
   @include respond-to(desktop) {
     padding: {
-      top: $desktopPadding;
-      bottom: $desktopPadding;
+      top: $desktopPaddingTop;
+      bottom: $desktopPaddingBottom;
     }
   }
 }

@@ -7,25 +7,33 @@
     const outsideHeaderBar = $(".torque-header-logo-wrapper, main, footer");
     const headerBurgerMenu = $("header .torque-burger-menu");
     const headerMenuItemsContainer = $("header .torque-header-menu-items-mobile");
+    const mobileMenuParentItems = $("header .torque-header-menu-items-mobile .torque-menu-item-wrapper.parent");
+
+    const desktopWidthMin = 1024;
 
     const bodyScrolledClass = "is-scrolled";
     const headerFixedClass = "is-fixed";
-
-    const menuOverlayHTML = '<div class="menu-overlay"></div>';
-    const menuOverlayClass = ".menu-overlay";
+    const activeClass = "active";
+    const clickableClass = "clickable";
 
     // add overlay when user clicks on burger menu
-    headerBurgerMenu.click(function() {
-      // open/close of menu is already handled by the parent theme...
-      // this is additional functionality in the child theme...
-      addRemoveOverlay();
+    headerBurgerMenu.click(function(e) {
+      // open/close of menu
+      openCloseMenu();
+      // reset all items status'
+      $(mobileMenuParentItems).removeClass(clickableClass);
     });
 
-    // When user clicks outside of menu container
-    outsideHeaderBar.click(function() {
-      // ONLY If the meun is open, close it...
-      if (headerContent.hasClass("active")) {
-        openCloseMenu();
+    // mobile menu parent item click
+    mobileMenuParentItems.click(function(e) {
+      // get status
+      const isClickable = $(this).hasClass(clickableClass);
+      // reset all items status'
+      $(mobileMenuParentItems).removeClass(clickableClass);
+      // if smaller than desktop & the 'clickable' class not found, don't click it!
+      if ($(window).width() <= desktopWidthMin && !isClickable) {
+        e.preventDefault();
+        $(this).addClass(clickableClass)
       }
     });
 
@@ -38,32 +46,7 @@
 
     // Function to open/close the menu
     function openCloseMenu() {
-      headerContainer.toggleClass("active");
-      headerContent.toggleClass("active");
-      headerBurgerMenu.toggleClass("active");
-      headerMenuItemsContainer.toggleClass("active");
-    }
-
-    // Function to add/remove the menu overlay
-    function addRemoveOverlay() {
-      if (headerContent.hasClass("active")) {
-        // Create and show the menu overlay
-        headerMenuItemsContainer.append(menuOverlayHTML);
-        $(menuOverlayClass).animate(
-          { opacity: 0.67 },
-          150
-        );
-        // Add event handler for newly created menu overlay element
-        $(menuOverlayClass).click(function() {
-          openCloseMenu();
-          addRemoveOverlay();
-        });
-      } else {
-        // Remove the menu overlay
-        $(menuOverlayClass).fadeOut(250, function() {
-          $(this).remove();
-        });
-      }
+      headerContainer.toggleClass(activeClass);
     }
 
     function checkUserScroll() {
