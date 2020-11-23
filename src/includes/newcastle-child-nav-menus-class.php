@@ -22,7 +22,8 @@ class Newcastle_Nav_Menus {
 
   public function register_additional_menus() {
     register_nav_menus( array(
-      'cta_menu' => 'Call-to-Action Menu'
+      'cta_menu' => 'Call-to-Action Menu',
+      'footer_menu' => 'Footer Menu',
     ) );
   }
 }

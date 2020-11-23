@@ -15,7 +15,7 @@
 }
 
 %limitWidth_Setup {
-  width: calc(100% - #{$bodyPadding7});
+  width: calc(100% - #{$bodyPadding9});
   max-width: $contentWidthLimit;
   margin-left: auto;
   margin-right: auto;
@@ -31,10 +31,6 @@
 }
 %limitWidth {
   @extend %limitWidth_Setup;
-}
-%limitWidthNarrow {
-  @extend %limitWidth_Setup;
-  width: calc(100% - (#{$bodyPadding13} + #{$bodyPadding13}));
 }
 
 %imageSize {
