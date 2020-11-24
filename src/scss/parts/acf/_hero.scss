@@ -13,15 +13,62 @@
   }
 
   .text-container {
-    
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: $bodyPadding4;
+    padding-bottom: $bodyPadding7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: $white;
+
     @extend %limitWidth;
 
+    @include respond-to(tablet) {
+      padding-bottom: $bodyPadding10;
+    }
+
+    @include respond-to(desktop) {
+      padding-bottom: $bodyPadding10;
+    }
+
     .text-top {
-      color: blue;
+      font-size: 0.9375em;
+      width: 100%;
+      max-width: 273px;
+      margin-left: 0;
+      margin-right: auto;
+
+      @include respond-to(tablet) {
+        font-size: 1.3125em;
+        max-width: 375px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 2.25em;
+        max-width: 574px;
+      }
     }
     
     .text-bottom {
-      color: red;
+      font-size: 0.8125em;
+      width: 100%;
+      max-width: 273px;
+      margin-left: 0;
+      margin-right: auto;
+      margin-top: 12px;
+
+      @include respond-to(tablet) {
+        font-size: 1em;
+        max-width: 375px;
+        margin-top: 25px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 1.5625em;
+        max-width: 574px;
+      }
     }
   }
 }

@@ -9,7 +9,6 @@
   <?php if ( $image_url ) { ?>
 
     <div class="type-image">
-
       <div class="hero-image" style="background-image: url(<?php echo $image_url; ?>);" >
         <div class="text-container">
           
@@ -27,10 +26,7 @@
 
         </div>
       </div>
-
     </div>
-
-   
 
   <?php } ?>
 
