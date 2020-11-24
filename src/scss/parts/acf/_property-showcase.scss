@@ -1,0 +1,11 @@
+.content-module-property-showcase {
+  @extend %limitWidth;
+
+  padding-top: $bodyPadding7;
+  padding-bottom: $bodyPadding7;
+
+  @include respond-to(tablet) {
+    padding-top: $bodyPadding10;
+    padding-bottom: $bodyPadding10;
+  }
+}

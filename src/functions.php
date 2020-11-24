@@ -4,6 +4,7 @@ require_once( get_stylesheet_directory() . '/includes/newcastle-child-nav-menus-
 require_once( get_stylesheet_directory() . '/includes/widgets/newcastle-child-widgets-class.php');
 require_once( get_stylesheet_directory() . '/includes/customizer/newcastle-child-customizer-class.php');
 require_once( get_stylesheet_directory() . '/includes/acf/newcastle-child-acf-class.php');
+require_once( get_stylesheet_directory() . '/includes/cpts/newcastle-child-property-cpt-class.php');
 
 /**
  * Child Theme Nav Menus
@@ -35,6 +36,14 @@ if ( class_exists( 'Newcastle_Customizer' ) ) {
 
  if ( class_exists( 'Newcastle_ACF' ) ) {
    new Newcastle_ACF();
+ }
+
+/**
+ * Child Theme CPTS
+ */
+
+ if ( class_exists( 'Newcastle_Property_CPT' ) ) {
+   new Newcastle_Property_CPT();
  }
 
 

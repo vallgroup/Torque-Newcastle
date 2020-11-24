@@ -32,6 +32,32 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'property_showcase' :
+
+        // options
+        $alignment = get_sub_field( 'align_properties' )
+            ? get_sub_field( 'align_properties' )
+            : 'right';
+        $title = get_sub_field( 'title' )
+          ? get_sub_field( 'title' )
+          : null;
+        $content = get_sub_field( 'title' )
+          ? get_sub_field( 'title' )
+          : null;
+        $cta = get_sub_field( 'cta' )
+          ? get_sub_field( 'cta' )
+          : null;
+        $property_1 = get_sub_field( 'property_1' )
+          ? get_sub_field( 'property_1' )
+          : null;
+        $property_2 = get_sub_field( 'property_2' )
+          ? get_sub_field( 'property_2' )
+          : null;
+
+        include locate_template( $modules_path . 'property-showcase.php' );
+
+        break;
+
       // case 'horizontal_line' :
 
       //   // options
