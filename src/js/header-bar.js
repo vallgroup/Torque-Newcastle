@@ -2,6 +2,8 @@
   $(document).ready(() => {
     const bodyContainer = $("body");
     const headerContainer = $("header");
+    const notificationBarContainer = $(".notification-bar-container");
+    const headerTopBorder = $(".header-top-border");
     const mainContainer = $("main");
     const headerContent = $("header .torque-header-content-wrapper");
     const outsideHeaderBar = $(".torque-header-logo-wrapper, main, footer");
@@ -56,13 +58,13 @@
       if ($(this).scrollTop() >= headerHeight) {
         // add body classes
         bodyContainer.addClass(bodyScrolledClass);
-        bodyContainer.addClass(headerFixedClass);
+        // bodyContainer.addClass(headerFixedClass);
         // add main padding
         mainContainer.css('margin-top', headerHeight);
       } else {
         // remove body classes
         bodyContainer.removeClass(bodyScrolledClass);
-        bodyContainer.removeClass(headerFixedClass);
+        // bodyContainer.removeClass(headerFixedClass);
         // remove main padding
         mainContainer.css('margin-top', 0);
       }

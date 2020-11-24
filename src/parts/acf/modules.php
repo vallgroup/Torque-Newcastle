@@ -14,6 +14,24 @@ if ( have_rows( $modules ) ) :
 
     switch ( get_row_layout() ) {
 
+      case 'hero' :
+
+        // options
+        $image_url = get_sub_field( 'image' ) 
+          && isset( get_sub_field( 'image' )['url'] )
+            ? get_sub_field( 'image' )['url']
+            : false;
+        $text_top = get_sub_field( 'text_top' )
+          ? strip_tags( get_sub_field( 'text_top' ), $allowable_title_tags )
+          : null;
+        $text_bottom = get_sub_field( 'text_bottom' )
+          ? strip_tags( get_sub_field( 'text_bottom' ), $allowable_title_tags )
+          : null;
+
+        include locate_template( $modules_path . 'hero.php' );
+
+        break;
+
       // case 'horizontal_line' :
 
       //   // options

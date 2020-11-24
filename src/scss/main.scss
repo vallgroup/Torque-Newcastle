@@ -11,5 +11,10 @@
 @import 'partials/mixins/header';
 @import 'partials/mixins/content';
 
+// shared parts
 @import 'parts/shared/header-templates/header-style-1';
+@import 'parts/shared/page-hero';
 @import 'parts/shared/footer';
+
+// content modules
+@import 'parts/acf/hero'

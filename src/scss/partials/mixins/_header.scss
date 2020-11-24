@@ -1,10 +1,24 @@
-// Pass true or false for $removeHeaderHeight to remove or add height
-@mixin useHeaderHeight($property) {
+/**
+ * Returns the height of the header bar.
+ * NB: excludes top border & notifcation bar.
+ * Optionally return a negative value for the property
+ */
+@mixin useHeaderHeight(
+  $property,
+  $negativeProperty: false
+) {
 
   // header/logo/menu area
   $mobileHeaderHeight: 75px;
   $tabletHeaderHeight: 100px;
   $desktopHeaderHeight: 150px;
+
+
+  @if $negativeProperty == true {
+    $mobileHeaderHeight: -75px;
+    $tabletHeaderHeight: -100px;
+    $desktopHeaderHeight: -150px;
+  }
 
   // return property
   #{$property}: $mobileHeaderHeight;
@@ -18,7 +32,10 @@
   }
 }
 
-// Pass true or false for $removeHeaderHeight to remove or add height
+/**
+ * Returns the total height of the header bar, based on 
+ *  whether is fixed and has notification bar.
+ */
 @mixin useHeaderSpacer(
   $property,
   $isFixed: true,
@@ -83,6 +100,9 @@
   }
 }
 
+/**
+ * Defines the header bar padding, top and bottom.
+ */
 @mixin useHeaderPadding($isFixed: false) {
   $mobilePaddingTop: 0px;
   $mobilePaddingBottom: 5px;

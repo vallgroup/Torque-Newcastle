@@ -1,11 +1,30 @@
 $zIndexMenuContainer: 998;
 $zIndexMenuOverlay: 997;
 
+// body.admin-bar {
+//   header#header-style-1 {
+//     margin-top: 46px;
+    
+//     @include respond-to-custom(783px) {
+//       margin-top: 32px;
+//     }
+//   }
+// }
+
+
+body.is-scrolled {
+  header#header-style-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
 header#header-style-1 {
   z-index: $zIndexMenuContainer;
   height: auto;
   transition: 0.2s ease-in-out 0s;
-  background-color: $twilightBlue18pc;
 
   .header-top-border {
     display: block;
@@ -34,8 +53,15 @@ header#header-style-1 {
       a {
         div {
           text-align: center;
-          max-width: 214px;
+          max-width: 102px;
           width: auto;
+
+          @include respond-to(tablet) {
+            max-width: 148px;
+          }
+          @include respond-to(desktop) {
+            max-width: 214px;
+          }
         }
       }
       
@@ -47,13 +73,14 @@ header#header-style-1 {
     }
 
     .torque-header-right-area-wrapper {
-      flex: 3;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       flex-wrap: wrap;
 
       @include respond-to(desktop) {
+        flex: 3;
         justify-self: flex-end;
       }
 
@@ -233,8 +260,13 @@ header#header-style-1 {
         }
       }
     }
+
+    &.active {
+      box-shadow: 0 10px 10px -2px rgba(0,0,0,0.2);
+    }
   }
 
+  // styling for the 'active'/open mobile/tablet menu, to fill the background
   &.active {
     background-color: $twilightBlue;
   }

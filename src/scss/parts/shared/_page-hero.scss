@@ -1,0 +1,21 @@
+.page-hero {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  // if a hero of either feature image or content module exists...
+  .type-image,
+  .type-content-hero
+  {
+    @include useHeaderHeight(margin-top, true);
+  }
+
+  // feature image styling
+  .type-image {
+    @extend %imageSize;
+
+    .hero-image {
+      @extend %imageInner;
+    }
+  }
+}

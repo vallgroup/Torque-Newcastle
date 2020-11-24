@@ -1,0 +1,27 @@
+.content-module-hero {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  // feature image styling
+  .type-image {
+    @extend %imageSize;
+
+    .hero-image {
+      @extend %imageInner;
+    }
+  }
+
+  .text-container {
+    
+    @extend %limitWidth;
+
+    .text-top {
+      color: blue;
+    }
+    
+    .text-bottom {
+      color: red;
+    }
+  }
+}

@@ -18,13 +18,18 @@ $extra_classes = isset($tq_header_style_1_classes) ? $tq_header_style_1_classes 
 // Check if notification bar should be included, and assign class to header if so
 // NB: notification bar vars are also defined within the template part...
 $notification_bar = get_field( 'notification_bar', 'options' );
-$enable_notification_bar = isset( $notification_bar['enable_notification_bar'] )
+// check if enabled overall (NB doesn't mean it should appear on page)
+$notification_bar_enabled = isset( $notification_bar['enable_notification_bar'] )
   ? $notification_bar['enable_notification_bar']
   : null;
+// get list of pages we want to hide the notification bar on
 $notification_bar_hide_on = isset( $notification_bar['hide_on_pages'] ) && $notification_bar['hide_on_pages']
   ? $notification_bar['hide_on_pages']
   : array();
-$extra_classes .= $enable_notification_bar && ! in_array( get_the_ID(), $notification_bar_hide_on )
+// display notification bar on THIS page?
+$show_notification_bar = $notification_bar_enabled && ! in_array( get_the_ID(), $notification_bar_hide_on );
+// add class accordingly
+$extra_classes .= $show_notification_bar
   ? ' include-notification-bar'
   : '';
 
@@ -34,7 +39,7 @@ $call_to_action = get_field( 'drawer_menu_cta', 'options' );
 
 <header
   id="header-style-1"
-  class="torque-header <?php echo $extra_classes; ?>"
+  class="torque-header is-fixed <?php echo $extra_classes; ?>"
 >
 
   <?php // Notification bar
