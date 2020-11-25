@@ -56,7 +56,7 @@ class Newcastle_Property_CPT {
 		add_action( 'restrict_manage_posts', array( $this, 'filter_properies_by_taxonomies' ) , 10, 2);
 	}
 
-	public function add_property_taxonomies() {
+	function add_property_taxonomies() {
 		register_taxonomy(
 			self::$PROPERTY_PROPERTY_TYPE_TAX_SLUG,
 			self::$property_labels['post_type_name'],
@@ -125,7 +125,7 @@ class Newcastle_Property_CPT {
 		}
 	}
 
-	public function add_acf_metaboxes() {
+	function add_acf_metaboxes() {
     
     // ACF defs - START
 
@@ -133,6 +133,63 @@ class Newcastle_Property_CPT {
 
     // ACF defs - END
 
+  }
+
+  public static function build_property_card( $property_id ) {
+    if ( ! $property_id ) return;
+
+    // get data
+    $_featured_img = get_the_post_thumbnail_url( $property_id );
+    $_types = get_the_terms( 
+      $property_id,
+      self::$PROPERTY_PROPERTY_TYPE_TAX_SLUG
+    );
+    $_neighborhoods = get_the_terms( 
+      $property_id,
+      self::$PROPERTY_REGION_TAX_SLUG
+    );
+    $_taxomonies = self::build_taxonomy_display(
+      $_types,
+      $_neighborhoods
+    );
+    $_title = get_the_title( $property_id );
+
+    // build output
+    $_html = '';
+    $_html .= '<div class="property-card style-1" style="background-image: url(' . $_featured_img . ')">';
+      $_html .= '<div class="content-container">';
+        $_html .= '<h6 class="property-taxonomies">' . $_taxomonies . '</h6>';
+        $_html .= '<h5 class="property-title">' . $_title . '</h5>';
+      $_html .= '</div>';
+    $_html .= '</div>';
+
+    // output
+    return $_html;
+  }
+
+  public static function build_taxonomy_display( $types, $neighborhoods ) {
+    if ( ! $types && ! $neighborhoods ) return '';
+    if ( ! $types ) $types = array();
+    if ( ! $neighborhoods ) $neighborhoods = array();
+
+    $_taxonomies = array_merge( $types, $neighborhoods );
+    $_html = '';
+    $_is_first_tax = true;
+
+    foreach( $_taxonomies as $tax ) {
+      // if not the first item add a comma before the tax name
+      if ( ! $_is_first_tax ) {
+        $_html .= ', ';
+      }
+
+      // add the tax name
+      $_html .= $tax->name;
+
+      // update is_first flag
+      $_is_first_tax = false;
+    }
+
+    return $_html;
   }
 }
 

@@ -1,23 +1,25 @@
 $zIndexMenuContainer: 998;
 $zIndexMenuOverlay: 997;
 
-// body.admin-bar {
-//   header#header-style-1 {
-//     margin-top: 46px;
+body {
+  &.is-scrolled {
+    header#header-style-1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &.admin-bar {
+      header#header-style-1 {
+        // top: 46px;
+        background-color: $twilightBlue;
     
-//     @include respond-to-custom(783px) {
-//       margin-top: 32px;
-//     }
-//   }
-// }
-
-
-body.is-scrolled {
-  header#header-style-1 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+        @include respond-to-custom(783px) {
+          top: 32px;
+        }
+      }
+    }
   }
 }
 

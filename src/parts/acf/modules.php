@@ -41,12 +41,17 @@ if ( have_rows( $modules ) ) :
         $title = get_sub_field( 'title' )
           ? get_sub_field( 'title' )
           : null;
-        $content = get_sub_field( 'title' )
-          ? get_sub_field( 'title' )
-          : null;
         $cta = get_sub_field( 'cta' )
           ? get_sub_field( 'cta' )
           : null;
+        $content = get_sub_field( 'title' )
+          ? get_sub_field( 'title' )
+          : null;
+        
+        $background_url = get_sub_field( 'content_background' ) 
+          && isset( get_sub_field( 'content_background' )['url'] )
+            ? get_sub_field( 'content_background' )['url']
+            : false;
         $property_1 = get_sub_field( 'property_1' )
           ? get_sub_field( 'property_1' )
           : null;
