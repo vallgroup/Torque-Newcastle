@@ -9,6 +9,10 @@ body {
       left: 0;
       right: 0;
       background-color: $twilightBlue;
+
+      .torque-menu-item-children-wrapper {
+        background-color: $twilightBlue;
+      }
     }
 
     &.admin-bar {
@@ -174,12 +178,13 @@ header#header-style-1 {
           // sub-menu items
           .torque-menu-item-children-wrapper {
             position: absolute;
-            top: 0%;
-            left: 0;
+            top: 90%;
+            left: -1em;
             height: 0;
             opacity: 0;
             min-width: 150px;
             transition: 0.2s ease-in-out;
+            padding: 0 1em 1em 1em;
           }
         }
       }
