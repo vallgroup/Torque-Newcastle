@@ -106,20 +106,66 @@
   background-position: center;
 }
 
-%contentWithAdjacentImageMargins {
-  margin-left: 15%;
-  margin-right: 12%;
-}
-
-%titleAndContentMargins {
-  margin-left: 12%;
-  margin-right: 10%;
-}
-
-%titleAndContentPaddings {
+%titleAndContentPadding {
   box-sizing: border-box;
-  padding-left: 12%;
-  padding-right: 10%;
+  padding: $bodyPadding8 $bodyPadding4;
+}
+
+%tiledContentPadding {
+  box-sizing: border-box;
+  padding: $bodyPadding11 $bodyPadding4;
+}
+
+%sectionPadding {
+  box-sizing: border-box;
+  padding-top: $bodyPadding7;
+  padding-bottom: $bodyPadding7;
+
+  @include respond-to(tablet) {
+    padding-top: $bodyPadding10;
+    padding-bottom: $bodyPadding10;
+  }
+}
+
+%titleContentCta_Setup {
+  .title {
+    margin-top: 0;
+    margin-bottom: $bodyPadding3;
+    text-transform: uppercase;
+  }
+
+  .content {
+    margin-top: 0;
+    margin-bottom: $bodyPadding3;
+  }
+
+  .cta {
+    @extend %ctaButton_Blue;
+  }
+}
+
+%titleContentCta_Dark {
+  @extend %titleContentCta_Setup;
+
+  .title {
+    color: $white;
+  }
+
+  .content {
+    color: $greyOne;
+  }
+}
+
+%titleContentCta_Light {
+  @extend %titleContentCta_Setup;
+
+  .title {
+    color: $twilightBlue;
+  }
+
+  .content {
+    color: $lightGreyBlue;
+  }
 }
 
 %contentBody {
@@ -136,71 +182,9 @@
   }
 }
 
-// regular btn setup
-%useButton_Setup {
-  position: relative;
-  display: inline-block;
-  padding: 10px 15px;
-  border: $borderThick solid $twilightBlue;
-  border-radius: 0;
-  background-color: $white;
-  font-family: $fontFamilyHeading1;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-align: center;
-  color: $twilightBlue;
-  cursor: pointer;
-  letter-spacing: 1.3px;
-  line-height: 19px;
-  transition: 0.2s;
-
-  -webkit-appearance: none;
-  outline: none;
-
-  &:hover {
-    background-color: $twilightBlue;
-    color: $white;
-  }
-    
-  // @include respond-to(tablet) {}
-  
-  @include respond-to(desktop) {
-    padding: 20px 30px;
-  }
-}
-// regular btn
-%useButton {
-  @extend %useButton_Setup;
-}
-// slim btn
-%useButtonSlim {
-  @extend %useButton_Setup;
-
-  letter-spacing: 1.1px;
-  line-height: 15px;
-  padding: 10px 15px;
-    
-  // @include respond-to(tablet) {}
-  
-  @include respond-to(desktop) {
-    padding: 20px 30px;
-  }
-}
-// wide btn
-%useButtonWide {
-  @extend %useButton_Setup;
-  padding: 10px 40px;
-    
-  // @include respond-to(tablet) {}
-  
-  @include respond-to(desktop) {
-    padding: 22px 81px;
-  }
-}
-
 // CTA button
 
-%useCtaButton_Setup {
+%ctaButton_Setup {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
@@ -221,79 +205,142 @@
     background-color: red;
   }
 }
-%useCtaButtonWhite {
-  @extend %useCtaButton_Setup;
+%ctaButton_White {
+  @extend %ctaButton_Setup;
   color: $white;
 
 }
-%useCtaButtonBlue {
-  @extend %useCtaButton_Setup;
-  color: $white;
-}
-
-
-// regular btn setup
-%filteredLoopFilters {
-  @extend %titleAndContentPaddings;
-  padding-top: 23px;
-  padding-bottom: 20px;
-  border-top: $borderThick solid $twilightBlue;
-  border-bottom: $borderThick solid $twilightBlue;
-
-  button {
-    font-family: $fontFamilyHeading2;
-    font-size: 1.25em; // 20px
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    color: $twilightBlue;
-    padding: 8px 40px 8px 0;
-
-    &.active {
-      background: $twilightBlue;
-      color: $white;
-    }
-  }
-}
-
-%useFormInput {
-  background-color: $transparent;
-  border: 1px solid transparent;
-  border-radius: 0;
-
-  font-family: $fontFamilyForms;
-  font-size: 1.25em; // 20px
+%ctaButton_Blue {
+  @extend %ctaButton_Setup;
   color: $softBlue;
-  
-  width: 100%;
-  box-sizing: border-box;
-  // padding: $bodyPadding3 $bodyPadding4;
-  padding: 0.8em 1.2em;
-  margin-bottom: $bodyPadding3;
-
-  -webkit-appearance: none;
-  outline: none;
-
-  &::placeholder {
-    color: $softBlue;
-  }
-
-  &:focus,
-  &:active {
-    border: 1px solid $twilightBlue;
-  }
 }
 
-/* %useBackgroundGraphicContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-  // hack to workaround overflow flaws
-  padding-bottom: 25%;
-  margin-bottom: -25%;
-  // end hack...
-} */
+// // Regular Button
+// 
+// %button_Setup {
+//   position: relative;
+//   display: inline-block;
+//   padding: 10px 15px;
+//   border: $border1 solid $twilightBlue;
+//   border-radius: 0;
+//   background-color: $white;
+//   font-family: $fontFamilyHeading1;
+//   font-size: 13px;
+//   text-transform: uppercase;
+//   text-align: center;
+//   color: $twilightBlue;
+//   cursor: pointer;
+//   letter-spacing: 1.3px;
+//   line-height: 19px;
+//   transition: 0.2s;
+
+//   -webkit-appearance: none;
+//   outline: none;
+
+//   &:hover {
+//     background-color: $twilightBlue;
+//     color: $white;
+//   }
+    
+//   // @include respond-to(tablet) {}
+  
+//   @include respond-to(desktop) {
+//     padding: 20px 30px;
+//   }
+// }
+// // regular btn
+// %buttonRegular {
+//   @extend %button_Setup;
+// }
+// // slim btn
+// %buttonSlim {
+//   @extend %button_Setup;
+
+//   letter-spacing: 1.1px;
+//   line-height: 15px;
+//   padding: 10px 15px;
+    
+//   // @include respond-to(tablet) {}
+  
+//   @include respond-to(desktop) {
+//     padding: 20px 30px;
+//   }
+// }
+// // wide btn
+// %buttonWide {
+//   @extend %button_Setup;
+//   padding: 10px 40px;
+    
+//   // @include respond-to(tablet) {}
+  
+//   @include respond-to(desktop) {
+//     padding: 22px 81px;
+//   }
+// }
+
+// // Filtered loop button
+// 
+// %filteredLoopFilters {
+//   @extend %titleAndContentPadding;
+//   padding-top: 23px;
+//   padding-bottom: 20px;
+//   border-top: $border3 solid $twilightBlue;
+//   border-bottom: $border3 solid $twilightBlue;
+
+//   button {
+//     font-family: $fontFamilyHeading2;
+//     font-size: 1.25em; // 20px
+//     background-color: transparent;
+//     border: 0;
+//     border-radius: 0;
+//     color: $twilightBlue;
+//     padding: 8px 40px 8px 0;
+
+//     &.active {
+//       background: $twilightBlue;
+//       color: $white;
+//     }
+//   }
+// }
+
+// %formInput {
+//   background-color: $transparent;
+//   border: 1px solid transparent;
+//   border-radius: 0;
+
+//   font-family: $fontFamilyForms;
+//   font-size: 1.25em; // 20px
+//   color: $softBlue;
+  
+//   width: 100%;
+//   box-sizing: border-box;
+//   // padding: $bodyPadding3 $bodyPadding4;
+//   padding: 0.8em 1.2em;
+//   margin-bottom: $bodyPadding3;
+
+//   -webkit-appearance: none;
+//   outline: none;
+
+//   &::placeholder {
+//     color: $softBlue;
+//   }
+
+//   &:focus,
+//   &:active {
+//     border: 1px solid $twilightBlue;
+//   }
+// }
+
+// %useBackgroundGraphicContainer {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   z-index: -1;
+//   // hack to workaround overflow flaws
+//   padding-bottom: 25%;
+//   margin-bottom: -25%;
+//   // end hack...
+// }

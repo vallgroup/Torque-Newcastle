@@ -4,7 +4,7 @@
  */
 ?>
 
-<section class="content-module-hero">
+<section class="tq-hero">
   
   <?php if ( $image_url ) { ?>
 

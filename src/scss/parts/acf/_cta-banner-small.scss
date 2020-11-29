@@ -1,0 +1,44 @@
+.tq-cta-banner-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+
+  background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+
+  // @include respond-to(tablet) {}
+  // @include respond-to(desktop) {}
+  
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    box-sizing: border-box;
+    padding: $bodyPadding4 $bodyPadding1;
+    width: 100%;
+    
+    text-align: center;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+    }
+
+    .title {
+      color: $white;
+      margin: 0 0 $bodyPadding2;
+      padding-right: $bodyPadding1;
+      
+      @include respond-to(tablet) {
+        margin-bottom: 0;
+        padding-right: $bodyPadding2;
+      }
+    }
+
+    .cta {
+      @extend %ctaButton_White;
+    }
+  }
+}

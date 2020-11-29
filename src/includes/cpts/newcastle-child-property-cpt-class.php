@@ -155,9 +155,8 @@ class Newcastle_Property_CPT {
     $_title = get_the_title( $property_id );
 
     // build output
-    $_html = '';
-    $_html .= '<div class="property-card style-1" style="background-image: url(' . $_featured_img . ')">';
-      $_html .= '<div class="content-container">';
+    $_html = '<div class="property-card style-1" style="background-image: url(' . $_featured_img . ')">';
+      $_html .= '<div class="property-content-container">';
         $_html .= '<h6 class="property-taxonomies">' . $_taxomonies . '</h6>';
         $_html .= '<h5 class="property-title">' . $_title . '</h5>';
       $_html .= '</div>';

@@ -8,13 +8,11 @@ body {
       top: 0;
       left: 0;
       right: 0;
+      background-color: $twilightBlue;
     }
 
     &.admin-bar {
       header#header-style-1 {
-        // top: 46px;
-        background-color: $twilightBlue;
-    
         @include respond-to-custom(783px) {
           top: 32px;
         }
@@ -302,7 +300,7 @@ header#header-style-1 {
         }
     
         .notification-bar-cta {
-          @extend %useCtaButtonWhite;
+          @extend %ctaButton_White;
         }
       }
   

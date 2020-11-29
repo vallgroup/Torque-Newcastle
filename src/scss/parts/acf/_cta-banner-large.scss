@@ -1,0 +1,36 @@
+.tq-cta-banner-large {
+  position: relative;
+  @extend %sectionPadding;
+  
+  background-image: linear-gradient(255deg, $softBlue, $frenchBlue, $twilightBlue);
+  // TODO: not working with percentages, as seen in Zeplin...
+  // background-image: linear-gradient(255deg, $softBlue, $frenchBlue 60%, $twilightBlue 1%);
+
+  // @include respond-to(tablet) {}
+
+  .content-container {
+    @extend %limitWidth;
+
+    .content-wrapper {
+      @extend %titleContentCta_Dark;
+      text-align: center;
+  
+      // .title {}
+      .content {
+        color: $white;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 295px;
+        
+        @include respond-to(tablet) {
+          max-width: 315px;
+        }
+
+        @include respond-to(desktop) {
+          max-width: 575px;
+        }
+      }
+      // .cta {}
+    }
+  }
+}

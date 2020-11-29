@@ -17,8 +17,16 @@
 @import 'parts/shared/footer';
 
 // content modules
+@import 'parts/acf/content-spacer';
 @import 'parts/acf/hero';
 @import 'parts/acf/property-showcase';
+@import 'parts/acf/two-column-content';
+@import 'parts/acf/recent-blog-posts';
+@import 'parts/acf/cta-banner-large';
+@import 'parts/acf/cta-banner-small';
+
+// posts
+@import 'parts/shared/posts/post_card';
 
 // properties
 @import 'parts/shared/properties/property_card';

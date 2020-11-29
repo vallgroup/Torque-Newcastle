@@ -1,0 +1,41 @@
+.tq-recent-blog-posts {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding;
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .column {
+      position: relative;
+      border-top: $border3 solid $softBlue;
+      margin-bottom: 25px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      &:first-child {
+        border-top: 0;
+      }
+      
+      @include respond-to(tablet) {
+        flex: 0 1 calc(33.33% - 6.66px);
+        margin-bottom: 0;
+      }
+
+      // @include respond-to(desktop) {}
+
+      .content-wrapper {
+        @extend %titleContentCta_Light;
+      }
+    }
+  }
+}

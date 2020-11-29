@@ -7,5 +7,94 @@ footer {
     @extend %limitWidth;
     padding-top: $bodyPadding8;
     padding-bottom: $bodyPadding8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include respond-to(desktop) {
+      flex-wrap: nowrap;
+    }
+
+    .footer-block {
+      flex: 1 1 100%;
+      word-break: break-word;
+
+      &:not(:last-child) {
+        margin-bottom: $bodyPadding6;
+      }
+
+      @include respond-to(tablet) {
+        &:not(:last-child) {
+          margin-bottom: $bodyPadding3;
+        }
+        &.footer-block-one {
+          flex: 1 1 100%;
+          margin-bottom: $bodyPadding6;
+        }
+        &.footer-block-two {
+          flex: 1 1 50%;
+        }
+        &.footer-block-three {
+          flex: 1 1 50%;
+        }
+        &.footer-block-four {
+          flex: 1 1 100%;
+        }
+      }
+
+      @include respond-to(desktop) {
+        margin-bottom: 0;
+
+        &.footer-block-one {
+          flex: 1 1 30%;
+          margin-bottom: $bodyPadding1;
+        }
+        &.footer-block-two {
+          flex: 1 1 25%;
+        }
+        &.footer-block-three {
+          flex: 1 1 25%;
+        }
+        &.footer-block-four {
+          flex: 1 1 20%;
+        }
+      }
+
+      .content-wrapper {
+
+        &.retail_leasing-contact {
+          margin-top: $bodyPadding5;
+        }
+
+        h4 {
+          color: $white;
+          margin-top: 0;
+          margin-bottom: $bodyPadding3;
+          text-transform: uppercase;
+        }
+  
+        span {
+          color: $white;
+          display: block;
+  
+          &.address {
+            margin-bottom: $bodyPadding3;
+          }
+        }
+  
+        .footer-menu-item {
+          color: $white;
+          margin-top: 0;
+          margin-bottom: $bodyPadding2;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 }

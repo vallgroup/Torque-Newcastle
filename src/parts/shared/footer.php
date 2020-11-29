@@ -12,7 +12,8 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
     if ( $menu ) {
       $menu_items = wp_get_nav_menu_items($menu->term_id);
     
-      $menu_list = '<div class="footer-menu-container">';
+      $menu_list = '<div class="content-wrapper">';
+      $menu_list .= '<h4>Navigation</h4>';
     
       foreach ( (array) $menu_items as $key => $menu_item ) {
           $title = $menu_item->title;

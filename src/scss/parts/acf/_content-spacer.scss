@@ -1,0 +1,40 @@
+.tq-content-spacer {
+  display: none;
+  width: 100%;
+  height: 0;
+
+  &.all_devices {
+    display: block;
+  }
+
+  &.mobile_only {
+    @include respond-to-max(tablet) {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: $TabletMaxWidth) and (min-width: $MobileMaxWidth + 1px) {
+    &.tablet_only {
+      display: block;
+    }
+  }
+
+  &.desktop_only {
+    @include respond-to(desktop) {
+      display: block;
+    }
+  }
+
+  &.mobile_tablet {
+    @include respond-to-max(desktop) {
+      display: block;
+    }
+  }
+
+  &.tablet_desktop {
+    @include respond-to(tablet) {
+      display: block;
+    }
+  }
+
+}

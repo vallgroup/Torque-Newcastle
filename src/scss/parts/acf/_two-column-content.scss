@@ -1,0 +1,49 @@
+.tq-two-column-content {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding;
+  
+  .two-column-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .col-left,
+    .col-right {
+      position: relative;
+      border-top: $border3 solid $twilightBlue;
+      margin-bottom: 10px;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 250px;
+
+      @extend %tiledContentPadding;
+      
+      @include respond-to(tablet) {
+        flex: 0 1 calc(50% - 5px);
+        margin-bottom: 0;
+        min-height: 370px;
+      }
+
+      @include respond-to(desktop) {
+        min-height: 500px;
+      }
+
+      .content-wrapper {
+        @extend %titleContentCta_Dark;
+      }
+    }
+  }
+}
