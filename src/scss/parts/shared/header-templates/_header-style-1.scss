@@ -337,4 +337,15 @@ header#header-style-1 {
       @include useHeaderSpacer(top, false, true);
     }
   }
+
+  // update for dark header
+  &.style-dark {
+    .torque-header-content-wrapper .torque-header-right-area-wrapper .cta-menu-container .cta-menu-item > a,
+    .torque-header-content-wrapper .torque-header-right-area-wrapper .torque-header-menu-items-inline-wrapper .torque-menu-items-inline .torque-menu-item-wrapper .torque-menu-item,
+    .torque-header-content-wrapper .torque-header-right-area-wrapper .torque-header-menu-items-inline-wrapper .torque-menu-items-inline > .torque-menu-item-wrapper.parent > a > .torque-menu-item:after
+    {
+      color: $softBlue;
+    }
+  }
+
 }

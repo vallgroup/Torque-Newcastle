@@ -49,6 +49,26 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'title_intro' :
+
+        // options
+        $title = get_sub_field( 'title' )
+          ? strip_tags(
+            get_sub_field( 'title' ),
+            $allowable_title_tags
+          )
+          : null;
+        $intro = get_sub_field( 'intro' )
+          ? strip_tags(
+            get_sub_field( 'intro' ),
+            $allowable_tagline_tags
+          )
+          : null;
+
+        include locate_template( $modules_path . 'title-intro.php' );
+
+        break;
+
       case 'property_showcase' :
 
         // options
