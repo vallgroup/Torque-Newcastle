@@ -11,9 +11,9 @@ require_once( get_stylesheet_directory() . '/includes/posts/newcastle-child-post
  * Child Theme Nav Menus
  */
 
- if ( class_exists( 'Newcastle_Nav_Menus' ) ) {
-   new Newcastle_Nav_Menus();
- }
+if ( class_exists( 'Newcastle_Nav_Menus' ) ) {
+  new Newcastle_Nav_Menus();
+}
 
 /**
  * Child Theme Widgets
@@ -35,25 +35,40 @@ if ( class_exists( 'Newcastle_Customizer' ) ) {
  * Child Theme ACF
  */
 
- if ( class_exists( 'Newcastle_ACF' ) ) {
-   new Newcastle_ACF();
- }
+if ( class_exists( 'Newcastle_ACF' ) ) {
+  new Newcastle_ACF();
+}
 
 /**
  * Child Theme CPTS
  */
 
- if ( class_exists( 'Newcastle_Property_CPT' ) ) {
-   new Newcastle_Property_CPT();
- }
+if ( class_exists( 'Newcastle_Property_CPT' ) ) {
+  new Newcastle_Property_CPT();
+}
 
 /**
  * Child Theme Posts
  */
 
- if ( class_exists( 'Newcastle_Post' ) ) {
-   new Newcastle_Post();
- }
+if ( class_exists( 'Newcastle_Post' ) ) {
+  new Newcastle_Post();
+}
+
+
+/**
+ * Filtered Loop plugin settings
+ */
+ 
+if ( 
+  class_exists( 'Torque_Filtered_Loop' ) 
+  && class_exists( 'Torque_Filtered_Loop_Shortcode' ) 
+) {
+  add_filter(
+    Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE,
+    function() { return "2"; }
+  );
+}
 
 
 /**

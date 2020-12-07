@@ -195,6 +195,54 @@
                         "min": "",
                         "max": ""
                     },
+                    "layout_5fc4c6834af7c": {
+                        "key": "layout_5fc4c6834af7c",
+                        "name": "title_intro",
+                        "label": "Title & Intro",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5fc4c68f4af7d",
+                                "label": "Title",
+                                "name": "title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5fc4c6ad4af7e",
+                                "label": "Intro",
+                                "name": "intro",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "tabs": "all",
+                                "toolbar": "full",
+                                "media_upload": 1,
+                                "delay": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
                     "layout_5fbcde438a0a1": {
                         "key": "layout_5fbcde438a0a1",
                         "name": "property_showcase",
@@ -1240,6 +1288,54 @@
         ],
         "menu_order": 0,
         "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5fc4c9d89942e",
+        "title": "Page Options",
+        "fields": [
+            {
+                "key": "field_5fc4c9f864a90",
+                "label": "Menu Bar Style",
+                "name": "menu_bar_style",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "light": "Light",
+                    "dark": "Dark"
+                },
+                "default_value": "dark",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
