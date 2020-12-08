@@ -66,7 +66,7 @@ if (
 ) {
   add_filter(
     Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE,
-    function() { return "2"; }
+    function() { return "3"; }
   );
 }
 

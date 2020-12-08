@@ -1,0 +1,19 @@
+.tq-title-intro {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding;
+  
+  .content-container {
+    text-align: center;
+
+    .title {
+      color: $twilightBlue;
+    }
+
+    .intro {
+      max-width: 570px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

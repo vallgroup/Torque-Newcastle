@@ -1,20 +1,104 @@
-@import "fonts";
+@import "./fonts";
 @import "../partials/variables";
 
 body {
+  font-family: $fontFamilyBody;
+  line-height: $lineHeight3;
 }
 
 h1 {
+  font-family: $fontFamilyHeading1;
+  font-size: 1.5em; // 24px
+  line-height: $lineHeight1;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+
+
+  @include respond-to(tablet) {
+    font-size: 2.6875em; // 43px
+    line-height: $lineHeight5;
+  }
 }
 
 h2 {
+  font-family: $fontFamilyHeading2;
+  font-size: 1.875em; // 30px
+  line-height: $lineHeight6;
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: $bodyPadding3;
+  letter-spacing: 1px;
 }
 
 h3 {
+  font-family: $fontFamilyHeading1;
+  font-size: 1.25em; // 20px
+  line-height: $lineHeight8;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: $letterSpacing6;
 }
 
-h4 {
+// h4 {}
+// h5 {}
+// h6 {}
+
+p {
+  font-family: $fontFamilyBody;
+  font-size: 1em; // 16px
+  line-height: $lineHeight4;
+  letter-spacing: $letterSpacing4;
 }
 
-a {
+// a {}
+
+ul {
+  padding-inline-start: 0;
+  margin: 0 auto 0 $bodyPadding6;
+
+  li {
+    position: relative;
+    list-style: none;
+    letter-spacing: $letterSpacing6;
+    line-height: $lineHeight3;
+    margin-bottom: 16px;
+
+    // &:before {
+    //   content: " ";
+    //   position: absolute;
+    //   width: 17px;
+    //   height: 3px;
+    //   background-color: $khaki;
+    //   left: -2.2em;
+    //   top: 7.5px;
+    // }
+  }
 }
+
+i {
+  &.fa {
+    font-size: 2em;
+  }
+}
+
+// form {
+//   input:not([type="submit"]),
+//   textarea
+//   {
+//     @extend %useFormInput;
+//   }
+
+//   input[type="submit"] {
+//     @extend %useButton;
+
+//     &.slim {
+//       @extend %useButtonSlim;
+//     }
+
+//     &.wide {
+//       @extend %useButtonWide;
+//     }
+//   }
+// }

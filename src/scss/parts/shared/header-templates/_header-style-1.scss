@@ -8,10 +8,21 @@ body {
       top: 0;
       left: 0;
       right: 0;
-      background-color: $twilightBlue;
 
-      .torque-menu-item-children-wrapper {
+      &.style-dark {
+        background-color: $white80pc;
+  
+        .torque-menu-item-children-wrapper {
+          background-color: $white80pc;
+        }
+      }
+
+      &.style-light {
         background-color: $twilightBlue;
+  
+        .torque-menu-item-children-wrapper {
+          background-color: $twilightBlue;
+        }
       }
     }
 

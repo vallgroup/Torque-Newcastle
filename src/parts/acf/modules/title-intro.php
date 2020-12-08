@@ -4,7 +4,7 @@
  */
 ?>
 
-<section class="tq-hero">
+<section class="tq-title-intro">
 
   <div class="content-container">
     
