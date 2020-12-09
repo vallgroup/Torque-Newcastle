@@ -31,7 +31,7 @@
             </a>
           <?php } ?>
 
-      </div>
+        </div>
       <?php } ?>
     </div>
 
@@ -60,7 +60,7 @@
             </a>
           <?php } ?>
 
-      </div>
+        </div>
       <?php } ?>
     </div>
   </div>

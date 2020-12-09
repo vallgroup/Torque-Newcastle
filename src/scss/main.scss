@@ -19,12 +19,16 @@
 // content modules
 @import 'parts/acf/content-spacer';
 @import 'parts/acf/hero';
+@import 'parts/acf/title-intro';
+@import 'parts/acf/subtitle-intro';
 @import 'parts/acf/property-showcase';
 @import 'parts/acf/two-column-content';
+@import 'parts/acf/three-column-content';
+@import 'parts/acf/title-content-image';
 @import 'parts/acf/recent-blog-posts';
+@import 'parts/acf/logo-grid.scss';
 @import 'parts/acf/cta-banner-large';
 @import 'parts/acf/cta-banner-small';
-@import 'parts/acf/title-intro';
 
 // posts
 @import 'parts/shared/posts/post_card';

@@ -1,4 +1,4 @@
-.tq-title-intro {
+.tq-subtitle-intro {
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding;
@@ -6,11 +6,11 @@
   .content-container {
     text-align: center;
 
-    .title {
-      color: $twilightBlue;
+    .subtitle {
+      color: $softBlue;
       text-transform: uppercase;
     }
-    
+
     .intro {
       color: $lightGreyBlue;
       max-width: 570px;

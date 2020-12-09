@@ -106,14 +106,14 @@
   background-position: center;
 }
 
-%titleAndContentPadding {
-  box-sizing: border-box;
-  padding: $bodyPadding8 $bodyPadding4;
-}
-
 %tiledContentPadding {
   box-sizing: border-box;
   padding: $bodyPadding11 $bodyPadding4;
+}
+
+%tiledContentPadding_Narrow {
+  box-sizing: border-box;
+  padding: $bodyPadding11 $bodyPadding11;
 }
 
 %sectionPadding {
@@ -281,7 +281,7 @@
 // // Filtered loop button
 // 
 // %filteredLoopFilters {
-//   @extend %titleAndContentPadding;
+//   @extend %tiledContentPadding;
 //   padding-top: 23px;
 //   padding-bottom: 20px;
 //   border-top: $border3 solid $twilightBlue;

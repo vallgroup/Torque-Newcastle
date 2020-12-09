@@ -1,0 +1,69 @@
+.tq-title-content-image {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding;
+  
+  .two-column-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &.align-right {
+        flex-direction: row-reverse;
+      }
+    }
+
+    // shared styles
+    .col-left,
+    .col-right {
+      position: relative;
+      margin-bottom: 10px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 250px;
+      
+      @include respond-to(tablet) {
+        margin-bottom: 0;
+        min-height: 370px;
+      }
+
+      @include respond-to(desktop) {
+        min-height: 500px;
+      }
+    }
+
+    // left col styles
+    .col-left {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include respond-to(tablet) {
+        flex: 0 1 calc(57% - 12.5px);
+      }
+    }
+
+    // right col styles
+    .col-right {
+      background-color: $veryLightGrey;
+      border-top: $border3 solid $softBlue;
+
+      @extend %tiledContentPadding_Narrow;
+
+      @include respond-to(tablet) {
+        flex: 0 1 calc(43% - 12.5px);
+      }
+
+      .content-wrapper {
+        @extend %titleContentCta_Light;
+      }
+    }
+  }
+}

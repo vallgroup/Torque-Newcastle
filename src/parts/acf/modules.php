@@ -69,6 +69,26 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'subtitle_intro' :
+
+        // options
+        $subtitle = get_sub_field( 'subtitle' )
+          ? strip_tags(
+            get_sub_field( 'subtitle' ),
+            $allowable_title_tags
+          )
+          : null;
+        $intro = get_sub_field( 'intro' )
+          ? strip_tags(
+            get_sub_field( 'intro' ),
+            $allowable_tagline_tags
+          )
+          : null;
+
+        include locate_template( $modules_path . 'subtitle-intro.php' );
+
+        break;
+
       case 'property_showcase' :
 
         // options
@@ -157,6 +177,112 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'two-column-content.php' );
 
         break;
+
+      case 'three_column_content' :
+
+        // Three Column Content
+        $col_one = get_sub_field( 'column_one' );
+        $col_two = get_sub_field( 'column_two' );
+        $col_three = get_sub_field( 'column_three' );
+
+        if ( $col_one ) {
+          $col_one_title = isset( $col_one['title'] )
+            ? strip_tags(
+              $col_one['title'],
+              $allowable_title_tags
+            )
+            : null;
+          $col_one_content = isset( $col_one['content'] )
+            ? strip_tags(
+              $col_one['content'],
+              $allowable_content_tags
+            )
+            : null;
+        }
+
+        if ( $col_two ) {
+          $col_two_title_top = isset( $col_two['title_top'] )
+            ? strip_tags( 
+              $col_two['title_top'], 
+              $allowable_title_tags
+            )
+            : null;
+          $col_two_content_top = isset( $col_two['content_top'] )
+            ? strip_tags(
+              $col_two['content_top'],
+              $allowable_content_tags
+            )
+            : null;
+          $col_two_title_bottom = isset( $col_two['title_bottom'] )
+            ? strip_tags( 
+              $col_two['title_bottom'], 
+              $allowable_title_tags
+            )
+            : null;
+          $col_two_content_bottom = isset( $col_two['content_bottom'] )
+            ? strip_tags(
+              $col_two['content_bottom'],
+              $allowable_content_tags
+            )
+            : null;
+        }
+
+        if ( $col_three ) {
+          $col_three_title_top = isset( $col_three['title_top'] )
+            ? strip_tags( 
+              $col_three['title_top'], 
+              $allowable_title_tags
+            )
+            : null;
+          $col_three_content_top = isset( $col_three['content_top'] )
+            ? strip_tags(
+              $col_three['content_top'],
+              $allowable_content_tags
+            )
+            : null;
+          $col_three_title_bottom = isset( $col_three['title_bottom'] )
+            ? strip_tags( 
+              $col_three['title_bottom'], 
+              $allowable_title_tags
+            )
+            : null;
+          $col_three_content_bottom = isset( $col_three['content_bottom'] )
+            ? strip_tags(
+              $col_three['content_bottom'],
+              $allowable_content_tags
+            )
+            : null;
+        }
+        
+        include locate_template( $modules_path . 'three-column-content.php' );
+
+        break;
+        
+      case 'title_content_image' :
+
+        $alignment = get_sub_field( 'align_image' )
+          ? get_sub_field( 'align_image' )
+          : 'right';
+        $title = get_sub_field( 'title' )
+          ? strip_tags( 
+            get_sub_field( 'title' ), 
+            $allowable_title_tags
+          )
+          : null;
+        $content = get_sub_field( 'content' )
+          ? strip_tags(
+            get_sub_field( 'content' ),
+            $allowable_tagline_tags
+          )
+          : null;
+        $image_url = get_sub_field( 'image' ) 
+          && isset( get_sub_field( 'image' )['url'] )
+            ? get_sub_field( 'image' )['url']
+            : false;
+
+        include locate_template( $modules_path . 'title-content-image.php' );
+
+        break;
         
       case 'recent_blog_posts' :
 
@@ -171,6 +297,19 @@ if ( have_rows( $modules ) ) :
           : null;
 
         include locate_template( $modules_path . 'recent-blog-posts.php' );
+
+        break;
+        
+      case 'logo_grid' :
+
+        $num_cols = get_sub_field( 'number_of_columns' )
+          ? get_sub_field( 'number_of_columns' )
+          : null;
+        $logos = get_sub_field( 'logos' )
+          ? get_sub_field( 'logos' )
+          : null;
+
+        include locate_template( $modules_path . 'logo-grid.php' );
 
         break;
         

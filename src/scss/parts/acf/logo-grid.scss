@@ -1,0 +1,67 @@
+.tq-logo-grid {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding;
+  
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    text-align: center;
+
+    @include respond-to(tablet) {
+      &.one-col {
+        padding: 0 1%;
+        
+        .logo-container {
+          flex: 1 1 100%;
+        }
+      }
+      &.two-cols {
+        padding: 0 10%;
+
+        .logo-container {
+          flex: 0 0 50%;
+        }
+      }
+      &.three-cols {
+        padding: 0 10%;
+
+        .logo-container {
+          flex: 0 0 33.33%;
+        }
+      }
+      &.four-cols {
+        padding: 0 20%;
+
+        .logo-container {
+          flex: 0 0 25%;
+        }
+      }
+      &.five-cols {
+        padding: 0 20%;
+
+        .logo-container {
+          flex: 0 0 20%;
+        }
+      }
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 10px 15px;
+
+      @include respond-to-max(tablet) {
+        flex: 0 0 33.33%;
+      }
+
+      .logo {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
