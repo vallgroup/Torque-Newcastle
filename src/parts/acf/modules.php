@@ -64,6 +64,9 @@ if ( have_rows( $modules ) ) :
             $allowable_tagline_tags
           )
           : null;
+        $cta = get_sub_field( 'cta' )
+          ? get_sub_field( 'cta' )
+          : null;
 
         include locate_template( $modules_path . 'title-intro.php' );
 
@@ -263,6 +266,9 @@ if ( have_rows( $modules ) ) :
         $alignment = get_sub_field( 'align_image' )
           ? get_sub_field( 'align_image' )
           : 'right';
+        $bg_color = get_sub_field( 'background_color' )
+          ? get_sub_field( 'background_color' )
+          : 'light_grey';
         $title = get_sub_field( 'title' )
           ? strip_tags( 
             get_sub_field( 'title' ), 
@@ -279,8 +285,49 @@ if ( have_rows( $modules ) ) :
           && isset( get_sub_field( 'image' )['url'] )
             ? get_sub_field( 'image' )['url']
             : false;
+        $cta = get_sub_field( 'cta' )
+          ? get_sub_field( 'cta' )
+          : null;
 
         include locate_template( $modules_path . 'title-content-image.php' );
+
+        break;
+        
+      case 'image_title_two_column_content' :
+
+        $alignment = get_sub_field( 'align_image' )
+          ? get_sub_field( 'align_image' )
+          : 'right';
+        $image_url = get_sub_field( 'image' ) 
+          && isset( get_sub_field( 'image' )['url'] )
+            ? get_sub_field( 'image' )['url']
+            : false;
+        $title = get_sub_field( 'title' )
+          ? strip_tags( 
+            get_sub_field( 'title' ), 
+            $allowable_title_tags
+          )
+          : null;
+        $content_top = get_sub_field( 'content_top' )
+          ? strip_tags(
+            get_sub_field( 'content_top' ),
+            $allowable_tagline_tags
+          )
+          : null;
+        $content_column_one = get_sub_field( 'content_column_one' )
+          ? strip_tags(
+            get_sub_field( 'content_column_one' ),
+            $allowable_tagline_tags
+          )
+          : null;
+        $content_column_two = get_sub_field( 'content_column_two' )
+          ? strip_tags(
+            get_sub_field( 'content_column_two' ),
+            $allowable_tagline_tags
+          )
+          : null;
+
+        include locate_template( $modules_path . 'image-title-two-column-content.php' );
 
         break;
         
@@ -310,6 +357,29 @@ if ( have_rows( $modules ) ) :
           : null;
 
         include locate_template( $modules_path . 'logo-grid.php' );
+
+        break;
+        
+      case 'quote' :
+
+        $quote = get_sub_field( 'quote' )
+          ? get_sub_field( 'quote' )
+          : null;
+        $author = get_sub_field( 'author' )
+          ? get_sub_field( 'author' )
+          : null;
+
+        include locate_template( $modules_path . 'quote.php' );
+
+        break;
+        
+      case 'gallery' :
+
+        $images = get_sub_field( 'images' )
+          ? get_sub_field( 'images' )
+          : null;
+
+        include locate_template( $modules_path . 'gallery.php' );
 
         break;
         

@@ -1,6 +1,7 @@
 .tq-cta-banner-large {
   position: relative;
-  @extend %sectionPadding;
+  @extend %sectionPadding_Both;
+  @extend %sectionMargin;
   
   background-image: linear-gradient(255deg, $softBlue, $frenchBlue, $twilightBlue);
   // TODO: not working with percentages, as seen in Zeplin...

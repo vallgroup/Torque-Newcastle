@@ -1,10 +1,14 @@
 .tq-three-column-content {
   background-color: $veryLightGrey;
   border-top: $border4 solid $softBlue;
+
+  @extend %sectionMargin;
   
   .three-column-wrapper {
     position: relative;
+
     @extend %limitWidth;
+    @extend %sectionPadding_Both;
 
     display: flex;
     flex-direction: column;
@@ -21,21 +25,17 @@
 
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 250px;
+      justify-content: flex-start;
+      align-items: flex-start;
       
       @include respond-to(tablet) {
+        align-items: center;
+        justify-content: center;
+
         margin-bottom: 0;
-        min-height: 370px;
 
         box-sizing: border-box;
-        padding: $bodyPadding11 $bodyPadding4;
-      }
-
-      @include respond-to(desktop) {
-        min-height: 500px;
+        padding: 0 $bodyPadding4;
       }
 
       .content-wrapper {

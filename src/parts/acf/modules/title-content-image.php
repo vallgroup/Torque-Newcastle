@@ -4,6 +4,7 @@
  */
 
 $extra_classes = 'align-' . $alignment;
+$extra_classes_right_col = 'bg-' . $bg_color;
 ?>
 
 <section class="tq-title-content-image">
@@ -13,7 +14,7 @@ $extra_classes = 'align-' . $alignment;
       style="background-image: url(<?php echo $image_url; ?>);"
     ></div>
 
-    <div class="col-right">
+    <div class="col-right <?php echo $extra_classes_right_col; ?>">
       <div class="content-wrapper">
         
         <?php if ( $title ) { ?>
@@ -22,6 +23,16 @@ $extra_classes = 'align-' . $alignment;
         
         <?php if ( $content ) { ?>
           <div class="content"><?php echo $content; ?></div>
+        <?php } ?>
+
+        <?php if ( $cta ) { ?>
+          <a 
+            class="cta" 
+            href="<?php echo $cta['url']; ?>" 
+            target="<?php echo $cta['target']; ?>"
+          >
+            <?php echo $cta['title']; ?>
+          </a>
         <?php } ?>
 
       </div>

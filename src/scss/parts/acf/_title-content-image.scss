@@ -52,13 +52,19 @@
 
     // right col styles
     .col-right {
-      background-color: $veryLightGrey;
-      border-top: $border3 solid $softBlue;
+      @extend %tiledContentPadding_NarrowContent;
 
-      @extend %tiledContentPadding_Narrow;
-
+      @include respond-to-max(tablet) {
+        padding-left: $bodyPadding4;
+        padding-right: $bodyPadding4;
+      }
       @include respond-to(tablet) {
         flex: 0 1 calc(43% - 12.5px);
+      }
+
+      &.bg-light_grey {
+        border-top: $border3 solid $softBlue;
+        background-color: $veryLightGrey;
       }
 
       .content-wrapper {

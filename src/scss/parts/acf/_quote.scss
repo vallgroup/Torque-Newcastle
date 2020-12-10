@@ -1,0 +1,26 @@
+.tq-quote {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding;
+  
+  .content-container {
+    text-align: center;
+
+    .quote {
+      color: $twilightBlue;
+      font-size: 1.95em;
+      line-height: 1.23;
+      letter-spacing: 1.5px;
+      max-width: 975px;
+      margin-left: auto;
+      margin-right: auto;
+      text-transform: initial;
+    }
+
+    .author {
+      color: $softBlue;
+      margin-top: 30px;
+      text-transform: uppercase;
+    }
+  }
+}

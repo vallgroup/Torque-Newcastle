@@ -109,14 +109,31 @@
 %tiledContentPadding {
   box-sizing: border-box;
   padding: $bodyPadding11 $bodyPadding4;
+
+  @include respond-to(tablet) {
+    padding: $bodyPadding11 $bodyPadding4;
+  }
 }
 
-%tiledContentPadding_Narrow {
+%tiledContentPadding_NarrowContent {
   box-sizing: border-box;
-  padding: $bodyPadding11 $bodyPadding11;
+  padding: $bodyPadding11 0;
+
+  @include respond-to(tablet) {
+    padding: $bodyPadding11 $bodyPadding11;
+  }
 }
 
 %sectionPadding {
+  box-sizing: border-box;
+  padding-top: $bodyPadding7;
+
+  @include respond-to(tablet) {
+    padding-top: $bodyPadding10;
+  }
+}
+
+%sectionPadding_Both {
   box-sizing: border-box;
   padding-top: $bodyPadding7;
   padding-bottom: $bodyPadding7;
@@ -127,6 +144,14 @@
   }
 }
 
+%sectionMargin {
+  margin-top: $bodyPadding7;
+
+  @include respond-to(tablet) {
+    margin-top: $bodyPadding10;
+  }
+}
+
 %titleContentCta_Setup {
   .title {
     margin-top: 0;
@@ -134,7 +159,10 @@
     text-transform: uppercase;
   }
 
-  .content {
+  .content,
+  [class^="content"],
+  .content > *,
+  [class^="content"] > * {
     margin-top: 0;
     margin-bottom: $bodyPadding3;
   }
@@ -147,11 +175,15 @@
 %titleContentCta_Dark {
   @extend %titleContentCta_Setup;
 
-  .title {
+  .title,
+  .title > * {
     color: $white;
   }
 
-  .content {
+  .content,
+  [class^="content"],
+  .content > *,
+  [class^="content"] > * {
     color: $greyOne;
   }
 }
@@ -159,11 +191,15 @@
 %titleContentCta_Light {
   @extend %titleContentCta_Setup;
 
-  .title {
+  .title,
+  .title > * {
     color: $twilightBlue;
   }
 
-  .content {
+  .content,
+  [class^="content"],
+  .content > *,
+  [class^="content"] > * {
     color: $lightGreyBlue;
   }
 }

@@ -20,6 +20,16 @@
       </div>
     <?php } ?>
 
+    <?php if ( $cta ) { ?>
+      <a 
+        class="cta" 
+        href="<?php echo $cta['url']; ?>" 
+        target="<?php echo $cta['target']; ?>"
+      >
+        <?php echo $cta['title']; ?>
+      </a>
+    <?php } ?>
+
   </div>
 
 </section>
