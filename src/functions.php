@@ -6,6 +6,8 @@ require_once( get_stylesheet_directory() . '/includes/customizer/newcastle-child
 require_once( get_stylesheet_directory() . '/includes/acf/newcastle-child-acf-class.php');
 require_once( get_stylesheet_directory() . '/includes/cpts/newcastle-child-property-cpt-class.php');
 require_once( get_stylesheet_directory() . '/includes/posts/newcastle-child-post-class.php');
+require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-class.php' );
+require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-fields-class.php' );
 
 /**
  * Child Theme Nav Menus
@@ -40,11 +42,19 @@ if ( class_exists( 'Newcastle_ACF' ) ) {
 }
 
 /**
- * Child Theme CPTS
+ * Child Theme Property CPT
  */
 
 if ( class_exists( 'Newcastle_Property_CPT' ) ) {
   new Newcastle_Property_CPT();
+}
+
+/**
+ * Child Theme Team CPT
+ */
+
+if ( class_exists( 'Newcastle_Team_CPT' ) ) {
+  new Newcastle_Team_CPT();
 }
 
 /**
@@ -69,6 +79,17 @@ if (
     function() { return "3"; }
   );
 }
+
+/**
+ * Jetpack filters, for local/staging use
+ */
+// Hook into Jetpack's form redirect filter when WP loads, without instantiating the entire class
+if ( class_exists( 'Torque_Jetpack_Form' ) ) {
+  Torque_Jetpack_Form::register_redirect_filter();
+  Torque_Jetpack_Form::activate_contact_module();
+}
+// add_filter( 'jetpack_offline_mode', '__return_true' );
+// add_filter( 'jetpack_is_staging_site', '__return_true' );
 
 
 /**

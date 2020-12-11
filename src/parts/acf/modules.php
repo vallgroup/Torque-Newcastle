@@ -349,11 +349,32 @@ if ( have_rows( $modules ) ) :
         
       case 'logo_grid' :
 
+        $include_content = get_sub_field( 'include_content' )
+          ? get_sub_field( 'include_content' )
+          : null;
+        $bg_color = get_sub_field( 'background_color' )
+          ? get_sub_field( 'background_color' )
+          : 'white';
         $num_cols = get_sub_field( 'number_of_columns' )
           ? get_sub_field( 'number_of_columns' )
+          : 3;
+        $title = $include_content && get_sub_field( 'title' )
+          ? strip_tags( 
+            get_sub_field( 'title' ), 
+            $allowable_title_tags
+          )
+          : null;
+        $content = $include_content && get_sub_field( 'content' )
+          ? strip_tags(
+            get_sub_field( 'content' ),
+            $allowable_tagline_tags
+          )
           : null;
         $logos = get_sub_field( 'logos' )
           ? get_sub_field( 'logos' )
+          : null;
+        $cta = $include_content && get_sub_field( 'cta' )
+          ? get_sub_field( 'cta' )
           : null;
 
         include locate_template( $modules_path . 'logo-grid.php' );
@@ -418,6 +439,12 @@ if ( have_rows( $modules ) ) :
           : null;
 
         include locate_template( $modules_path . 'cta-banner-small.php' );
+
+        break;
+        
+      case 'contact_form_details' :
+
+        include locate_template( $modules_path . 'contact-form-details.php' );
 
         break;
 

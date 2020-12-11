@@ -83,22 +83,7 @@ i {
   }
 }
 
-// form {
-//   input:not([type="submit"]),
-//   textarea
-//   {
-//     @extend %useFormInput;
-//   }
-
-//   input[type="submit"] {
-//     @extend %useButton;
-
-//     &.slim {
-//       @extend %useButtonSlim;
-//     }
-
-//     &.wide {
-//       @extend %useButtonWide;
-//     }
-//   }
-// }
+button {
+  background: transparent;
+    border: 0;
+}

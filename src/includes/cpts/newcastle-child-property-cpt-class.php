@@ -4,7 +4,7 @@
  */
 class Newcastle_Property_CPT {
 
-  public static $PROPERTY_PROPERTY_TYPE_TAX_SLUG = 'newcastle_property_type';
+  public static $PROPERTY_TYPE_TAX_SLUG = 'newcastle_property_type';
 
   public static $PROPERTY_REGION_TAX_SLUG = 'newcastle_property_region';
 
@@ -58,7 +58,7 @@ class Newcastle_Property_CPT {
 
 	function add_property_taxonomies() {
 		register_taxonomy(
-			self::$PROPERTY_PROPERTY_TYPE_TAX_SLUG,
+			self::$PROPERTY_TYPE_TAX_SLUG,
 			self::$property_labels['post_type_name'],
 			array(
 			'label'        => 'Property Types',
@@ -96,7 +96,7 @@ class Newcastle_Property_CPT {
 
 		// A list of taxonomy slugs to filter by
 		$taxonomies = array( 
-      self::$PROPERTY_PROPERTY_TYPE_TAX_SLUG,
+      self::$PROPERTY_TYPE_TAX_SLUG,
       self::$PROPERTY_REGION_TAX_SLUG
     );
 
@@ -142,7 +142,7 @@ class Newcastle_Property_CPT {
     $_featured_img = get_the_post_thumbnail_url( $property_id );
     $_types = get_the_terms( 
       $property_id,
-      self::$PROPERTY_PROPERTY_TYPE_TAX_SLUG
+      self::$PROPERTY_TYPE_TAX_SLUG
     );
     $_neighborhoods = get_the_terms( 
       $property_id,
