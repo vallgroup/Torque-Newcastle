@@ -137,6 +137,7 @@
 
     // right col styles
     .col-right {
+      align-items: flex-start;
       @extend %tiledContentPadding_NarrowContent;
 
       @include respond-to-max(tablet) {
@@ -145,6 +146,67 @@
       }
       @include respond-to(tablet) {
         flex: 0 1 calc(43% - 12.5px);
+        padding-top: 0;
+      }
+
+      .content-wrapper {
+
+        &.primary-contact {
+          h4 {
+            display: none;
+          }
+        }
+
+        span,
+        a {
+          position: relative;
+          display: block;
+          padding-left: 25px;
+          margin-bottom: 5px;
+  
+          &.address {
+            margin-bottom: $bodyPadding3;
+
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background: red;
+            }
+          }
+          &.phone {
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background: purple;
+            }
+          }
+          &.email {
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background: green;
+            }
+          }
+          &.website {
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background: yellow;
+            }
+          }
+        }
       }
     }
   }

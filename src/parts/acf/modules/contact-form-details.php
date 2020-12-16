@@ -21,19 +21,19 @@
     <div class="col-right">
 
       <div>
-        Primary Contact
+        <?php get_template_part( 'parts/shared/contact-parts/contact', 'primary' ); ?>
       </div>
 
       <div>
-        Investment Contact
+        <?php get_template_part( 'parts/shared/contact-parts/contact', 'investment' ); ?>
       </div>
 
       <div>
-        Retail Leasing Contact
+        <?php get_template_part( 'parts/shared/contact-parts/contact', 'retail-leasing' ); ?>
       </div>
 
       <div>
-        Reside Contact
+        <?php get_template_part( 'parts/shared/contact-parts/contact', 'reside-living' ); ?>
       </div>
 
     </div>

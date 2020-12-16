@@ -1,9 +1,9 @@
 <?php 
 
-// Template for displaying the primary contact info
+// Template for displaying the Reside Living contact info
 
 // ACF data
-$contact_type = 'primary';
+$contact_type = 'reside_living';
 $contact_info = get_field( $contact_type, 'options' );
 $address = isset( $contact_info['address'] )
   ? $contact_info['address']
@@ -32,7 +32,7 @@ if ( $has_content ) { ?>
 
   <div class="content-wrapper <?php echo $contact_type; ?>-contact">
 
-    <h4>Contact</h4>
+    <h4>Reside Living</h4>
 
     <?php if ( $address ) { ?>
       <span class="address"><?php echo $address; ?></span>
@@ -47,7 +47,13 @@ if ( $has_content ) { ?>
     <?php } ?>
 
     <?php if ( $website ) { ?>
-      <span class="website"><?php echo $website; ?></span>
+      <a 
+        class="website" 
+        href="<?php echo $website['url']; ?>" 
+        target="<?php echo $website['target']; ?>"
+      >
+        <?php echo $website['title']; ?>
+      </a>
     <?php } ?>
 
   </div>

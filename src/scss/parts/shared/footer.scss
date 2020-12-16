@@ -80,7 +80,8 @@ footer {
           text-transform: uppercase;
         }
   
-        span {
+        span,
+        a {
           position: relative;
           color: $white;
           display: block;

@@ -1,6 +1,6 @@
 <?php 
 
-// Template for displaying the primary contact info
+// Template for displaying the Retail Leasing contact info
 
 // ACF data
 $contact_type = 'retail_leasing';
@@ -47,7 +47,13 @@ if ( $has_content ) { ?>
     <?php } ?>
 
     <?php if ( $website ) { ?>
-      <span class="website"><?php echo $website; ?></span>
+      <a 
+        class="website" 
+        href="<?php echo $website['url']; ?>" 
+        target="<?php echo $website['target']; ?>"
+      >
+        <?php echo $website['title']; ?>
+      </a>
     <?php } ?>
 
   </div>
