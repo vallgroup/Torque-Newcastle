@@ -1,7 +1,7 @@
 .tq-subtitle-intro {
   position: relative;
   @extend %limitWidth;
-  @extend %sectionPadding;
+  @extend %sectionPadding_Top;
   
   .content-container {
     text-align: center;

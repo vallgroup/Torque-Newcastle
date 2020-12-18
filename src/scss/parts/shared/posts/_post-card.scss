@@ -11,12 +11,7 @@
     
     @include respond-to(tablet) {}
 
-    .post-taxonomies {
-      color: $softBlue;
-      text-transform: uppercase;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+    // .post-taxonomies {}
     
     .post-title {
       color: $twilightBlue;
@@ -26,7 +21,19 @@
     }
     
     .post-excerpt {
+      font-size: 0.8125em;
       color: $lightGreyBlue;
+      line-height: 1.23;
+
+      @include respond-to(tablet) {
+        font-size: 0.875em;
+        line-height: 1.14;
+      }
+
+      @include respond-to(tablet) {
+        font-size: 1.125em;
+        line-height: 1.22;
+      }
     }
 
     .post-cta {

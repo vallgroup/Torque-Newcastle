@@ -1,7 +1,7 @@
 .tq-two-column-content {
   position: relative;
   @extend %limitWidth;
-  @extend %sectionPadding;
+  @extend %sectionPadding_Top;
   
   .two-column-wrapper {
     display: flex;

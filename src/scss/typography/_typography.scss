@@ -2,14 +2,18 @@
 @import "../partials/variables";
 
 body {
-  font-family: $fontFamilyBody;
+  font-family: $fontFamilyOne;
+  font-size: $fontSizeBody;
   line-height: $lineHeight3;
+  word-break: break-all;
 }
 
 h1 {
-  font-family: $fontFamilyHeading1;
+  font-family: $fontFamilyThree;
   font-size: 1.5em; // 24px
+  font-weight: 400;
   line-height: $lineHeight1;
+  color: $twilightBlue;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
@@ -22,31 +26,81 @@ h1 {
 }
 
 h2 {
-  font-family: $fontFamilyHeading2;
+  font-family: $fontFamilyThree;
   font-size: 1.875em; // 30px
-  line-height: $lineHeight6;
-  text-transform: capitalize;
+  font-weight: 400;
+  letter-spacing: 0.27px;
+  line-height: 1.03;
+  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: $bodyPadding3;
   letter-spacing: 1px;
+
+  @include respond-to(tablet) {
+    font-size: 3.125em; // 50px
+    line-height: 0.9;
+  }
+  @include respond-to(desktop) {
+    font-size: 5em; // 80px
+    line-height: 0.88;
+  }
 }
 
 h3 {
-  font-family: $fontFamilyHeading1;
-  font-size: 1.25em; // 20px
-  line-height: $lineHeight8;
+  font-family: $fontFamilyThree;
+  font-size: 2.0625em; // 33px
+  font-weight: 400;
+  line-height: 0.79;
+  letter-spacing: 0.35px;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-  letter-spacing: $letterSpacing6;
+
+  @include respond-to(tablet) {
+    line-height: 0.97;
+  }
+  @include respond-to(desktop) {
+    font-size: 3.75em; // 60px
+  }
 }
 
-// h4 {}
-// h5 {}
-// h6 {}
+h4 {
+  font-family: $fontFamilyFour;
+  font-weight: 400;
+}
+
+h5 {
+  font-family: $fontFamilyTwo;
+  font-size: 1em; // 16px
+  font-weight: 400;
+  letter-spacing: $letterSpacing7;
+  line-height: $lineHeight8;
+  color: $white;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  // @include respond-to(tablet) {}
+  // @include respond-to(desktop) {}
+}
+
+h6 {
+  font-family: $fontFamilyFour;
+  font-size: 0.75em; // 12px
+  font-weight: 400;
+  letter-spacing: $letterSpacing3;
+  line-height: $lineHeight8;
+  color: $lightBlueGrey;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  // @include respond-to(tablet) {}
+  // @include respond-to(desktop) {}
+}
 
 p {
-  font-family: $fontFamilyBody;
+  font-family: $fontFamilyOne;
   font-size: 1em; // 16px
   line-height: $lineHeight4;
   letter-spacing: $letterSpacing4;

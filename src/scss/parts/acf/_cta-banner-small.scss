@@ -28,12 +28,20 @@
 
     .title {
       color: $white;
+      font-family: $fontFamilyFour;
+      font-size: 0.65em;
+      font-weight: 400;
       margin: 0 0 $bodyPadding2;
       padding-right: $bodyPadding1;
       
       @include respond-to(tablet) {
+        font-size: 1em;
         margin-bottom: 0;
         padding-right: $bodyPadding2;
+      }
+      
+      @include respond-to(desktop) {
+        font-size: 1.5625em;
       }
     }
 

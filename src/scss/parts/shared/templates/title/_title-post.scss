@@ -1,0 +1,13 @@
+.single-post-title {
+  @extend %limitWidth;
+  @extend %sectionPadding_Both;
+  text-align: center;
+
+  // h1 {}
+
+  .wp-post-image {
+    margin-top: $bodyPadding6;
+    width: 100%;
+    height: auto;
+  }
+}

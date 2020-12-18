@@ -19,19 +19,14 @@
     padding: $bodyPadding2;
     
     @include respond-to(tablet) {
-      max-width: 183px;
+      max-width: 205px;
     }
     
     @include respond-to(desktop) {
-      max-width: 200px;
+      padding: $bodyPadding2 $bodyPadding3;
     }
 
-    .property-taxonomies {
-      color: $white;
-      text-transform: uppercase;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+    // .property-taxonomies {}
     
     .property-title {
       color: $white;

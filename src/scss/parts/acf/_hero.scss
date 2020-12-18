@@ -34,40 +34,62 @@
     }
 
     .text-top {
-      font-size: 0.9375em;
       width: 100%;
       max-width: 273px;
       margin-left: 0;
       margin-right: auto;
+      
+      & > * {
+        font-size: 0.9375em;
+        line-height: 1.067em;
+        margin-bottom: 0;
+      }
 
       @include respond-to(tablet) {
-        font-size: 1.3125em;
         max-width: 375px;
+
+        & > * {
+          font-size: 1.3125em;
+        }
       }
 
       @include respond-to(desktop) {
-        font-size: 2.25em;
         max-width: 574px;
+        
+        & > * {
+          font-size: 2.25em;
+        }
       }
     }
     
     .text-bottom {
-      font-size: 0.8125em;
       width: 100%;
       max-width: 273px;
       margin-left: 0;
       margin-right: auto;
       margin-top: 12px;
+      
+      & > * {
+        font-size: 0.8125em;
+        line-height: 1.2307em;
+        margin-bottom: 0;
+      }
 
       @include respond-to(tablet) {
-        font-size: 1em;
         max-width: 375px;
         margin-top: 25px;
+
+        & > * {
+          font-size: 1em;
+        }
       }
 
       @include respond-to(desktop) {
-        font-size: 1.5625em;
         max-width: 574px;
+
+        & > * {
+          font-size: 1.5625em;
+        }
       }
     }
   }

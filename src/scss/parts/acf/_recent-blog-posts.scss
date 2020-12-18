@@ -1,7 +1,7 @@
 .tq-recent-blog-posts {
   position: relative;
   @extend %limitWidth;
-  @extend %sectionPadding;
+  @extend %sectionPadding_Top;
   
   .content-container {
     display: flex;

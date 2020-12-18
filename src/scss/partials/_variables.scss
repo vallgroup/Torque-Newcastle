@@ -9,6 +9,7 @@ $steel:#848790;
 $warmGrey:#979797;
 $veryLightGrey:#f6f6f6;
 $lightGreyBlue:#b2b7bb;
+$lightBlueGrey:#bad7e6;
 $lightTeal:#b0dcee;
 $softBlue:#78b6d8;
 $frenchBlue:#456da3;
@@ -47,15 +48,13 @@ $bodyPadding20: 9.5em;
 $bodyPadding21: 10em;
 
 // font families
-$fontFamilyBody: 'Akkurat', sans-serif;
-$fontFamilyHeading1: 'TradeGothicLTStd-BoldExt', sans-serif;
-$fontFamilyHeading2: 'Cochin-Bold', sans-serif;
-$fontFamilyForms: 'HelveticaNeue', sans-serif;  
+$fontFamilyOne: "Knockout HTF31-JuniorMiddlewt Regular", sans-serif;
+$fontFamilyTwo: "Knockout HTF28-JuniorFeatherwt Regular", sans-serif;
+$fontFamilyThree: "Knockout HTF26-JuniorFlyweight Regular", sans-serif;
+$fontFamilyFour: "Knockout HTF33-JuniorHeviwt Regular", sans-serif;
 
 // font sizes
-$fontBodyMobile: 14px;
-$fontBodyTablet: 16px;
-$fontBodyDesktop: 16px;
+$fontSizeBody: 16px;
 
 // letter spacing
 $letterSpacing1: 1px;
@@ -64,6 +63,7 @@ $letterSpacing3: 1.4px;
 $letterSpacing4: 1.6px;
 $letterSpacing5: 16px;
 $letterSpacing6: 2px;
+$letterSpacing7: 0.62px;
 
 // line height
 $lineHeight1: 1em;

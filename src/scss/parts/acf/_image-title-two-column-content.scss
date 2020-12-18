@@ -35,7 +35,7 @@
       
       @include respond-to(tablet) {
         margin-bottom: 0;
-        min-height: 370px;
+        // min-height: 370px;
       }
 
       @include respond-to(desktop) {
@@ -85,8 +85,25 @@
           }
         }
 
+        .content-top {
+          & > * {
+            font-size: 1em;
+            line-height: 1.23;
+
+            @include respond-to(tablet) {
+              line-height: 1.19;
+            }
+
+            @include respond-to(desktop) {
+              line-height: 1.14;
+            }
+          }
+        }
+
         strong {
+          display: inline-block;
           color: $twilightBlue;
+          margin-bottom: $bodyPadding2;
         }
 
         .two-content-column-wrapper {
@@ -105,7 +122,6 @@
           .content-column-one,
           .content-column-two {
             position: relative;
-            margin-top: 25px;
             margin-bottom: 10px;
             flex: 0 0 calc(50% - 10px);
       
@@ -114,16 +130,34 @@
             justify-content: flex-start;
             align-items: flex-start;
       
-            min-height: 250px;
+            // min-height: 250px;
             
             @include respond-to(tablet) {
+              margin-top: 25px;
               margin-bottom: 0;
-              min-height: 370px;
+              // min-height: 370px;
             }
       
             @include respond-to(desktop) {
               min-height: 500px;
             }
+
+            & > * {
+              font-size: 1em;
+              line-height: 1.23;
+  
+              @include respond-to(tablet) {
+                line-height: 1.19;
+              }
+  
+              @include respond-to(desktop) {
+                line-height: 1.14;
+              }
+            }
+          }
+
+          .content-column-one {
+            margin-top: 25px;
           }
         }
       }

@@ -36,33 +36,31 @@ if ( 5 === (int) $num_cols ) {
     <?php if ( $content ) { ?>
       <div class="content"><?php echo $content; ?></div>
     <?php } ?>
-
-    <div class="logos-container <?php echo $extra_classes_logos; ?>">
       
-      <?php if ( $logos ) { 
-        foreach ( $logos as $logo ) { 
-          $link = isset( $logo['link'] )
-            ? $logo['link']
-            : '';
-          $image = isset( $logo['image'] )
-            ? $logo['image']
-            : null;
-      ?>
-        <a 
-          class="logo-container"
-          href="<?php echo $link; ?>"
-          target="_blank"
-        >
-          <img
-            class="logo"
-            src="<?php echo $image['url'] ?>"
-            alt="<?php echo $image['alt'] ?>"
-          />
-        </a>
-      <?php }
-      } ?>
-
-    </div>
+      <?php if ( $logos ) { ?>
+        <div class="logos-container <?php echo $extra_classes_logos; ?>">
+          <?php foreach ( $logos as $logo ) { 
+            $link = isset( $logo['link'] )
+              ? $logo['link']
+              : '';
+            $image = isset( $logo['image'] )
+              ? $logo['image']
+              : null;
+          ?>
+            <a 
+              class="logo-container"
+              href="<?php echo $link; ?>"
+              target="_blank"
+            >
+              <img
+                class="logo"
+                src="<?php echo $image['url'] ?>"
+                alt="<?php echo $image['alt'] ?>"
+              />
+            </a>
+          <?php } ?>
+        </div>
+      <?php } ?>
 
     <?php if ( $cta ) { ?>
       <a 

@@ -1,17 +1,19 @@
 .tq-title-content-image {
   position: relative;
   @extend %limitWidth;
-  @extend %sectionPadding;
+  @extend %sectionPadding_Top;
   
   .two-column-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     @include respond-to(tablet) {
       flex-direction: row;
       justify-content: space-between;
+    }
 
-      &.align-right {
+    &.align-right {
+      @include respond-to(tablet) {
         flex-direction: row-reverse;
       }
     }
@@ -69,6 +71,22 @@
 
       .content-wrapper {
         @extend %titleContentCta_Light;
+
+        .content {
+          & > * {
+            font-size: 1em;
+            line-height: 1.23;
+
+            @include respond-to(tablet) {
+              line-height: 1.19;
+            }
+
+            @include respond-to(desktop) {
+              font-size: 1.125em;
+              line-height: 1.14;
+            }
+          }
+        }
       }
     }
   }

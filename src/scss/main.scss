@@ -13,8 +13,14 @@
 
 // shared parts
 @import 'parts/shared/header-templates/header-style-1';
-@import 'parts/shared/page-hero';
 @import 'parts/shared/footer';
+
+@import 'parts/shared/page-hero';
+
+@import 'parts/shared/templates/title/title-post';
+
+@import 'parts/shared/templates/content-news';
+@import 'parts/shared/templates/content-post';
 
 // content modules
 @import 'parts/acf/content-spacer';
@@ -35,8 +41,7 @@
 @import 'parts/acf/contact-form-details';
 
 // posts
-@import 'parts/shared/posts/post_card';
-@import 'parts/shared/posts/post_loop';
+@import 'parts/shared/posts/post-card';
 
 // properties
-@import 'parts/shared/properties/property_card';
+@import 'parts/shared/properties/property-card';

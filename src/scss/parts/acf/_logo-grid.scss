@@ -16,12 +16,37 @@
 
     .title {
       color: $softBlue;
+      font-size: 0.75em;
+      font-family: $fontFamilyFour;
+
+      @include respond-to(tablet) {
+        font-size: 1em;
+        margin-bottom: $bodyPadding4;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 1.125em;
+      }
     }
 
     .content {
       max-width: 570px;
       margin-left: auto;
       margin-right: auto;
+
+      & > * {
+        font-size: 0.8125em;
+        line-height: 1.23;
+
+        @include respond-to(tablet) {
+          font-size: 1em;
+          line-height: 1.19;
+        }
+
+        @include respond-to(desktop) {
+          line-height: 1.14;
+        }
+      }
     }
 
     .cta {

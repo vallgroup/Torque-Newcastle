@@ -1,0 +1,28 @@
+.single-post-content {
+  @extend %limitWidth;
+  @extend %sectionPadding_Bottom;
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    
+    @include respond-to(desktop) {
+      flex-direction: row;
+    }
+
+    .col-left {
+      flex: 1 1 100%;
+      
+      @include respond-to(desktop) {
+        flex: 0 0 30%;
+      }
+    }
+    .col-right {
+      flex: 1 1 100%;
+      
+      @include respond-to(desktop) {
+        flex: 0 0 70%;
+      }
+    }
+  }
+}

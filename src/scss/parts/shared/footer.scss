@@ -75,9 +75,23 @@ footer {
 
         h4 {
           color: $white;
+          font-family: $fontFamilyThree;
+          font-size: 2.5em;
+          line-height: 0.75;
           margin-top: 0;
-          margin-bottom: $bodyPadding3;
+          margin-bottom: $bodyPadding2;
           text-transform: uppercase;
+
+          @include respond-to(tablet) {
+            font-size: 2.5em;
+            line-height: 0.75;
+          }
+        }
+
+        .footer-menu-item {
+          a {
+            padding-left: 0;
+          }
         }
   
         span,

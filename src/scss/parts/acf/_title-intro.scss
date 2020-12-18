@@ -1,7 +1,7 @@
 .tq-title-intro {
   position: relative;
   @extend %limitWidth;
-  @extend %sectionPadding;
+  @extend %sectionPadding_Top;
   
   .content-container {
     text-align: center;
@@ -9,13 +9,38 @@
     .title {
       color: $twilightBlue;
       text-transform: uppercase;
+      font-size: 2.6875em;
+      line-height: 0.9;
+
+      @include respond-to(tablet) {
+        font-size: 4.5625em;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 7.8125em;
+      }
     }
     
     .intro {
-      color: $lightGreyBlue;
       max-width: 570px;
       margin-left: auto;
       margin-right: auto;
+
+      & > * {
+        color: $lightGreyBlue;
+        font-size: 0.8125em;
+        line-height: 1.23;
+
+        @include respond-to(tablet) {
+          font-size: 1em;
+          line-height: 1.19;
+        }
+
+        @include respond-to(desktop) {
+          font-size: 1.375em;
+          line-height: 1.14;
+        }
+      }
     }
 
     .cta {
