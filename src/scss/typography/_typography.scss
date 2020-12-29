@@ -5,23 +5,24 @@ body {
   font-family: $fontFamilyOne;
   font-size: $fontSizeBody;
   line-height: $lineHeight3;
-  word-break: break-all;
 }
 
 h1 {
   font-family: $fontFamilyThree;
-  font-size: 1.5em; // 24px
+  font-size: 2.6875em;
   font-weight: 400;
-  line-height: $lineHeight1;
+  line-height: 0.9;
   color: $twilightBlue;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
 
-
   @include respond-to(tablet) {
-    font-size: 2.6875em; // 43px
-    line-height: $lineHeight5;
+    font-size: 4.5625em;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 7.8125em;
   }
 }
 

@@ -1,3 +1,6 @@
+$phone_icon: url('../statics/icons/phone.png');
+$mail_icon: url('../statics/icons/mail.png');
+
 .tq-contact-form-details {
   position: relative;
   @extend %limitWidth;
@@ -48,7 +51,7 @@
           flex-wrap: wrap;
           position: relative;
   
-          input:not([type="checkbox"]):not([type="radio"]),
+          input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
           select,
           optgroup {
             font-family: $fontFamilyOne;
@@ -79,8 +82,8 @@
             }
           }
   
-          .grunion-field-wrap,
-          .contact-submit {
+          .grunion-field-wrap {
+            position: relative;
             flex: 1 1 100%;
     
             @include respond-to(tablet) {
@@ -94,9 +97,45 @@
                 flex: 0 0 75%;
               }
             }
+
+            // input labels
+            .grunion-field-label {
+              color: $softBlue;
+              font-size: 0.75em;
+              font-family: $fontFamilyFour;
+              text-transform: uppercase;
+              
+              // hide 'required' label
+              & > span {
+                display: none;
+              }
+            }
+            // non-textarea labels
+            .grunion-field-label:not(.textarea) {
+              position: absolute;
+              bottom: -#{$bodyPadding2};
+              left: $bodyPadding3;
+            }
+            // textarea labels
+            .grunion-field-label.textarea {
+              position: absolute;
+              top: #{$bodyPadding7};
+              left: $bodyPadding3;
+            }
+
+            // input margins
+            input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]) {
+              margin-top: $bodyPadding2;
+              margin-bottom: $bodyPadding5;
+            }
+            textarea {
+              margin-top: $bodyPadding5;
+            }
           }
   
           .contact-submit {
+            flex: 1 1 100%;
+
             button {
               @extend %ctaButton_Blue;
             }
@@ -157,15 +196,42 @@
           }
         }
 
+        h4 {
+          color: $twilightBlue;
+          font-family: $fontFamilyThree;
+          font-size: 2.5em;
+          line-height: 0.75;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin-top: 0.85em;
+          margin-bottom: $bodyPadding2;
+        }
+
         span,
         a {
+          color: $lightGreyBlue;
+          letter-spacing: 0.34px;
           position: relative;
           display: block;
-          padding-left: 25px;
           margin-bottom: 5px;
+
+
   
           &.address {
+            // padding-left: 25px;
             margin-bottom: $bodyPadding3;
+
+            // &:before {
+            //   content: '';
+            //   position: absolute;
+            //   left: 0;
+            //   height: 20px;
+            //   width: 20px;
+            //   background: red;
+            // }
+          }
+          &.phone {
+            padding-left: 25px;
 
             &:before {
               content: '';
@@ -173,39 +239,39 @@
               left: 0;
               height: 20px;
               width: 20px;
-              background: red;
-            }
-          }
-          &.phone {
-            &:before {
-              content: '';
-              position: absolute;
-              left: 0;
-              height: 20px;
-              width: 20px;
-              background: purple;
+              background: $phone_icon;
+              background-size: auto 16px;
+              background-repeat: no-repeat;
+              background-position: center;
             }
           }
           &.email {
+            padding-left: 25px;
+
             &:before {
               content: '';
               position: absolute;
               left: 0;
               height: 20px;
               width: 20px;
-              background: green;
+              background-image: $mail_icon;
+              background-size: 16px auto;
+              background-repeat: no-repeat;
+              background-position: center;
             }
           }
-          &.website {
-            &:before {
-              content: '';
-              position: absolute;
-              left: 0;
-              height: 20px;
-              width: 20px;
-              background: yellow;
-            }
-          }
+          // &.website {
+          //   padding-left: 25px;
+
+          //   &:before {
+          //     content: '';
+          //     position: absolute;
+          //     left: 0;
+          //     height: 20px;
+          //     width: 20px;
+          //     background: yellow;
+          //   }
+          // }
         }
       }
     }

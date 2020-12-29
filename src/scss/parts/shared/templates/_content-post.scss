@@ -1,6 +1,11 @@
 .single-post-content {
   @extend %limitWidth;
-  @extend %sectionPadding_Bottom;
+
+  @include respond-to-max(desktop) {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .content-container {
     display: flex;
@@ -12,16 +17,150 @@
 
     .col-left {
       flex: 1 1 100%;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       
       @include respond-to(desktop) {
-        flex: 0 0 30%;
+        flex: 0 0 25%;
+      }
+
+      .content-box {
+        margin-bottom: $bodyPadding2;
+
+        @include respond-to(desktop) {
+          margin-bottom: $bodyPadding4;
+        }
+          
+        @include respond-to(desktop) {
+          flex: 1 1 100%;
+        }
+
+        &.author {
+          flex: 0 0 50%;
+          
+          @include respond-to(tablet) {
+            flex: 0 0 25%;
+          }
+
+          .info {
+            text-transform: capitalize;
+          }
+        }
+
+        &.date {
+          flex: 0 0 50%;
+          
+          @include respond-to(tablet) {
+            flex: 0 0 25%;
+          }
+        }
+
+        &.tags {
+          flex: 1 1 100%;
+          
+          @include respond-to(tablet) {
+            flex: 0 0 50%;
+          }
+          
+          .info {
+            text-decoration: underline;
+          }
+        }
+
+        .title {
+          color: $softBlue;
+        }
+
+        .info {
+          color: $steel;
+          font-size: 0.75em;
+        }
       }
     }
     .col-right {
       flex: 1 1 100%;
+      color: $steel;
+      font-family: $fontFamilyOne;
+      font-size: 0.75em;
+      max-width: 681px;
+      margin: 0 auto 0 0;
+
+      @include respond-to-max(desktop) {
+        margin-top: $bodyPadding3;
+      }
       
+      @include respond-to(tablet) {
+        font-size: 0.875em;
+      }
+
       @include respond-to(desktop) {
-        flex: 0 0 70%;
+        flex: 0 0 75%;
+        font-size: 1.125em; 
+      }
+
+      p {
+        line-height: 1.23;
+        margin-top: 0;
+        margin-bottom: $bodyPadding7;
+
+        @include respond-to(tablet) {
+          line-height: 1.14;
+        }
+      }
+
+      .wp-block-image {
+        margin: 0 0 $bodyPadding7 0;
+
+        figcaption {
+          color: $blackTwo;
+        }
+      }
+    }
+  }
+}
+
+.related-posts {
+  @extend %limitWidth;
+  @extend %sectionPadding_Both;
+
+  border-top: $border1 solid $warmGrey;
+
+  .content-container {
+
+    @include respond-to-max(desktop) {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .related-posts-title {
+      color: $twilightBlue;
+    }
+  
+    .related-posts-loop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      &:after {
+        content: '';
+        flex: 1 1 100%;
+        
+        @include respond-to(tablet) {
+          flex: 0 0 32%;
+        }
+      }
+
+      .post-card {
+        flex: 1 1 100%;
+        border-top: $border3 solid $softBlue;
+        
+        @include respond-to(tablet) {
+          flex: 0 0 32%;
+        }
       }
     }
   }

@@ -10,11 +10,11 @@ body {
       right: 0;
 
       &.style-dark {
-        background-color: $white80pc;
+        background-color: $white95pc;
   
         .torque-header-content-wrapper {
           .torque-menu-item-children-wrapper {
-            background-color: $white80pc;
+            background-color: $white95pc;
           }
         }
       }
@@ -374,10 +374,10 @@ header#header-style-1 {
 
     // mobile menu active
     &.active {
-      background-color: $white80pc !important;
+      background-color: $white95pc !important;
     }
     .torque-header-menu-items-mobile {
-      background-color: $white80pc !important;
+      background-color: $white95pc !important;
     }
   }
 

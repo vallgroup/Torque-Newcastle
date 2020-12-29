@@ -5,11 +5,17 @@
  * @package Torque
  */
 
+$thumbnail = get_the_post_thumbnail();
+$caption = get_the_post_thumbnail_caption();
+
 ?>
 
 <div class="single-post-title">
   <h1><?php the_title(); ?></h1>
-  <?php if ( the_post_thumbnail() ) { ?>
-    <?php the_post_thumbnail(); ?>
+  <?php if ( $thumbnail ) { ?>
+    <?php echo $thumbnail ?>
+  <?php } ?>
+  <?php if ( $caption ) { ?>
+    <div class="post-thumbnail-caption"><?php echo $caption ?></div>
   <?php } ?>
 </div>

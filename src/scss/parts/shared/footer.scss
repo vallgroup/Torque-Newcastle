@@ -1,3 +1,6 @@
+$phone_icon: url('../statics/icons/phone.png');
+$mail_icon: url('../statics/icons/mail.png');
+
 footer {
   width: 100%;
   box-sizing: border-box;
@@ -74,13 +77,14 @@ footer {
         }
 
         h4 {
-          color: $white;
+          color: $lightGreyBlue;
           font-family: $fontFamilyThree;
           font-size: 2.5em;
           line-height: 0.75;
+          letter-spacing: 1px;
+          text-transform: uppercase;
           margin-top: 0;
           margin-bottom: $bodyPadding2;
-          text-transform: uppercase;
 
           @include respond-to(tablet) {
             font-size: 2.5em;
@@ -93,17 +97,30 @@ footer {
             padding-left: 0;
           }
         }
-  
+
         span,
         a {
+          color: $lightGreyBlue;
+          letter-spacing: 0.34px;
           position: relative;
-          color: $white;
           display: block;
-          padding-left: 25px;
           margin-bottom: 5px;
   
           &.address {
+            // padding-left: 25px;
             margin-bottom: $bodyPadding3;
+
+            // &:before {
+            //   content: '';
+            //   position: absolute;
+            //   left: 0;
+            //   height: 20px;
+            //   width: 20px;
+            //   background: red;
+            // }
+          }
+          &.phone {
+            padding-left: 25px;
 
             &:before {
               content: '';
@@ -111,39 +128,39 @@ footer {
               left: 0;
               height: 20px;
               width: 20px;
-              background: red;
-            }
-          }
-          &.phone {
-            &:before {
-              content: '';
-              position: absolute;
-              left: 0;
-              height: 20px;
-              width: 20px;
-              background: purple;
+              background: $phone_icon;
+              background-size: auto 16px;
+              background-repeat: no-repeat;
+              background-position: center;
             }
           }
           &.email {
+            padding-left: 25px;
+
             &:before {
               content: '';
               position: absolute;
               left: 0;
               height: 20px;
               width: 20px;
-              background: green;
+              background-image: $mail_icon;
+              background-size: 16px auto;
+              background-repeat: no-repeat;
+              background-position: center;
             }
           }
-          &.website {
-            &:before {
-              content: '';
-              position: absolute;
-              left: 0;
-              height: 20px;
-              width: 20px;
-              background: yellow;
-            }
-          }
+          // &.website {
+          //   padding-left: 25px;
+
+          //   &:before {
+          //     content: '';
+          //     position: absolute;
+          //     left: 0;
+          //     height: 20px;
+          //     width: 20px;
+          //     background: yellow;
+          //   }
+          // }
         }
   
         .footer-menu-item {

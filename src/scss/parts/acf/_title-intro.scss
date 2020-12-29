@@ -6,20 +6,7 @@
   .content-container {
     text-align: center;
 
-    .title {
-      color: $twilightBlue;
-      text-transform: uppercase;
-      font-size: 2.6875em;
-      line-height: 0.9;
-
-      @include respond-to(tablet) {
-        font-size: 4.5625em;
-      }
-
-      @include respond-to(desktop) {
-        font-size: 7.8125em;
-      }
-    }
+    // .title {}
     
     .intro {
       max-width: 570px;

@@ -36,12 +36,12 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
     </div>
 
     <div class="footer-block footer-block-two">
-      <?php get_template_part( 'parts/shared/contact-parts/primary' ); ?>
+      <?php get_template_part( 'parts/shared/contact-parts/contact', 'primary' ); ?>
     </div>
 
     <div class="footer-block footer-block-three">
-      <?php get_template_part( 'parts/shared/contact-parts/investment' ); ?>
-      <?php get_template_part( 'parts/shared/contact-parts/retail-leasing' ); ?>
+      <?php get_template_part( 'parts/shared/contact-parts/contact', 'investment' ); ?>
+      <?php get_template_part( 'parts/shared/contact-parts/contact', 'retail-leasing' ); ?>
     </div>
     
     <div class="footer-block footer-block-four">

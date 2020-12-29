@@ -5,6 +5,7 @@ require_once( get_stylesheet_directory() . '/includes/widgets/newcastle-child-wi
 require_once( get_stylesheet_directory() . '/includes/customizer/newcastle-child-customizer-class.php');
 require_once( get_stylesheet_directory() . '/includes/acf/newcastle-child-acf-class.php');
 require_once( get_stylesheet_directory() . '/includes/cpts/newcastle-child-property-cpt-class.php');
+require_once( get_stylesheet_directory() . '/includes/cpts/newcastle-child-team-cpt-class.php');
 require_once( get_stylesheet_directory() . '/includes/posts/newcastle-child-post-class.php');
 require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-class.php' );
 require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-fields-class.php' );

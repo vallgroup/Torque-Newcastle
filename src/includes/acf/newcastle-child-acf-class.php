@@ -1260,6 +1260,33 @@ class Newcastle_ACF {
                 'min' => '',
                 'max' => '',
               ),
+              'layout_5fdd4671a37fe' => array(
+                'key' => 'layout_5fdd4671a37fe',
+                'name' => 'team_grid',
+                'label' => 'Team Grid',
+                'display' => 'block',
+                'sub_fields' => array(
+                  array(
+                    'key' => 'field_5fdd4699a37ff',
+                    'label' => 'Message',
+                    'name' => '',
+                    'type' => 'message',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                      'width' => '',
+                      'class' => '',
+                      'id' => '',
+                    ),
+                    'message' => 'Outputs all published team profiles in a grid format.',
+                    'new_lines' => 'wpautop',
+                    'esc_html' => 0,
+                  ),
+                ),
+                'min' => '',
+                'max' => '',
+              ),
               'layout_5fd06f9cd8aba' => array(
                 'key' => 'layout_5fd06f9cd8aba',
                 'name' => 'logo_grid',

@@ -347,6 +347,12 @@ if ( have_rows( $modules ) ) :
 
         break;
         
+      case 'team_grid' :
+
+        include locate_template( $modules_path . 'team-grid.php' );
+
+        break;
+
       case 'logo_grid' :
 
         $include_content = get_sub_field( 'include_content' )
