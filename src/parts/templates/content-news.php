@@ -1,7 +1,7 @@
 <?php
 
 // check posts exists
-$news_posts = get_posts('numberposts=1');
+$news_posts = get_posts( 'numberposts=1' );
 
 if ( 0 < count( $news_posts ) ) {
   $shortcode = '[torque_filtered_loop ';
@@ -11,7 +11,7 @@ if ( 0 < count( $news_posts ) ) {
   $shortcode .= 'filters_args="category,post_tag"';
   $shortcode .= ']';
   
-  echo do_shortcode($shortcode);
+  echo do_shortcode( $shortcode );
 } else {
   echo 'No news found.';
 }

@@ -1254,6 +1254,60 @@
                         "min": "",
                         "max": ""
                     },
+                    "layout_5ff37aa3b0948": {
+                        "key": "layout_5ff37aa3b0948",
+                        "name": "properties_grid",
+                        "label": "Properties Grid",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5ff37aa3b0949",
+                                "label": "Message",
+                                "name": "",
+                                "type": "message",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Outputs all published properties grid format.",
+                                "new_lines": "wpautop",
+                                "esc_html": 0
+                            },
+                            {
+                                "key": "field_5ff3895c736a1",
+                                "label": "Template",
+                                "name": "template",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "investment": "Investment",
+                                    "retail": "Retail"
+                                },
+                                "default_value": [
+                                    "investment"
+                                ],
+                                "allow_null": 0,
+                                "multiple": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
                     "layout_5fd06f9cd8aba": {
                         "key": "layout_5fd06f9cd8aba",
                         "name": "logo_grid",

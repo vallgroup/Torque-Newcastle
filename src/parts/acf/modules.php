@@ -352,6 +352,16 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'team-grid.php' );
 
         break;
+        
+      case 'properties_grid' :
+
+        $template = get_sub_field( 'template' )
+          ? get_sub_field( 'template' )
+          : 'investment';
+
+        include locate_template( $modules_path . 'properties-grid.php' );
+
+        break;
 
       case 'logo_grid' :
 

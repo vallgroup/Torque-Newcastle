@@ -5,8 +5,8 @@
 class Newcastle_Property_CPT {
 
   public static $PROPERTY_TYPE_TAX_SLUG = 'newcastle_property_type';
-
-  public static $PROPERTY_REGION_TAX_SLUG = 'newcastle_property_region';
+  public static $PROPERTY_LOCATION_TAX_SLUG = 'newcastle_property_location';
+  public static $PROPERTY_AVAILABILITY_TAX_SLUG = 'newcastle_property_availability';
 
 	/**
 	 * Holds the listing cpt object
@@ -61,27 +61,42 @@ class Newcastle_Property_CPT {
 			self::$PROPERTY_TYPE_TAX_SLUG,
 			self::$property_labels['post_type_name'],
 			array(
-			'label'        => 'Property Types',
-			'labels'       => array(
-				'singular_name'   => 'Property Type'
-			),
-			'hierarchical' => true,
-			'show_admin_column' => true,
-			'show_in_rest' => true
+				'label'        => 'Type',
+				'labels'       => array(
+					'add_new_item'   => 'Add New Type',
+				),
+				'hierarchical' => true,
+				'show_admin_column' => true,
+				'show_in_rest' => true,
 			)
 		);
 
 		register_taxonomy(
-			self::$PROPERTY_REGION_TAX_SLUG,
+			self::$PROPERTY_LOCATION_TAX_SLUG,
 			self::$property_labels['post_type_name'],
 			array(
-			'label'        => 'Neighborhoods',
-			'labels'       => array(
-				'singular_name'   => 'Neighborhood'
-			),
-			'hierarchical' => true,
-			'show_admin_column' => true,
-			'show_in_rest' => true
+				'label'        => 'Location',
+				'labels'       => array(
+					'add_new_item'   => 'Add New Location',
+				),
+				'hierarchical' => true,
+				'show_admin_column' => true,
+				'show_in_rest' => true,
+			)
+		);
+
+		register_taxonomy(
+			self::$PROPERTY_AVAILABILITY_TAX_SLUG,
+			self::$property_labels['post_type_name'],
+			array(
+				'label'        			=> 'Availability',
+				'labels'       => array(
+					'add_new_item'   => 'Add New Availability',
+				),
+				'hierarchical'			=> true,
+				'show_admin_column' => true,
+				'show_in_rest' 			=> true,
+				'meta_box_cb' 			=> 'post_categories_meta_box',
 			)
 		);
 	}
@@ -97,7 +112,7 @@ class Newcastle_Property_CPT {
 		// A list of taxonomy slugs to filter by
 		$taxonomies = array( 
       self::$PROPERTY_TYPE_TAX_SLUG,
-      self::$PROPERTY_REGION_TAX_SLUG
+      self::$PROPERTY_LOCATION_TAX_SLUG
     );
 
 		foreach ( $taxonomies as $taxonomy_slug ) {
@@ -126,12 +141,262 @@ class Newcastle_Property_CPT {
 	}
 
 	function add_acf_metaboxes() {
-    
-    // ACF defs - START
+		
+		// Updated: 20210109
+		
+		// ACF defs - START
 
+		if( function_exists('acf_add_local_field_group') ):
 
-
-    // ACF defs - END
+			acf_add_local_field_group(array(
+				'key' => 'group_5ff8e4a0b30dc',
+				'title' => 'Property Options',
+				'fields' => array(
+					array(
+						'key' => 'field_5ff8e4a8be294',
+						'label' => 'Multifamily Display Name',
+						'name' => 'multifamily_display_name',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ff8e5ddbe295',
+						'label' => 'Street Address',
+						'name' => 'street_address',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ff8e5e5be296',
+						'label' => 'City',
+						'name' => 'city',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ff8e5eabe297',
+						'label' => 'State',
+						'name' => 'state',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ff8e5f2be298',
+						'label' => 'Zip Code',
+						'name' => 'zip_code',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ff8e5f8be299',
+						'label' => 'Retail Gallery',
+						'name' => 'retail_gallery',
+						'type' => 'gallery',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
+						'preview_size' => 'thumbnail',
+						'insert' => 'append',
+						'library' => 'all',
+						'min' => '',
+						'max' => '',
+						'min_width' => '',
+						'min_height' => '',
+						'min_size' => '',
+						'max_width' => '',
+						'max_height' => '',
+						'max_size' => '',
+						'mime_types' => '',
+					),
+					array(
+						'key' => 'field_5ff8e618be29a',
+						'label' => 'Multifamily Gallery',
+						'name' => 'multifamily_gallery',
+						'type' => 'gallery',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
+						'preview_size' => 'thumbnail',
+						'insert' => 'append',
+						'library' => 'all',
+						'min' => '',
+						'max' => '',
+						'min_width' => '',
+						'min_height' => '',
+						'min_size' => '',
+						'max_width' => '',
+						'max_height' => '',
+						'max_size' => '',
+						'mime_types' => '',
+					),
+					array(
+						'key' => 'field_5ff8e622be29b',
+						'label' => 'Retail Description',
+						'name' => 'retail_description',
+						'type' => 'wysiwyg',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'tabs' => 'all',
+						'toolbar' => 'full',
+						'media_upload' => 1,
+						'delay' => 0,
+					),
+					array(
+						'key' => 'field_5ff8e637be29c',
+						'label' => 'Multifamily Description',
+						'name' => 'multifamily_description',
+						'type' => 'wysiwyg',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'tabs' => 'all',
+						'toolbar' => 'full',
+						'media_upload' => 1,
+						'delay' => 0,
+					),
+					array(
+						'key' => 'field_5ff8e64bbe29d',
+						'label' => 'Available Retail Space',
+						'name' => 'available_retail_space',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ff8e686be29e',
+						'label' => 'Website Link',
+						'name' => 'website_link',
+						'type' => 'url',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'newcastle_property',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+			
+			endif;
+		
+		// ACF defs - END
 
   }
 
@@ -146,7 +411,7 @@ class Newcastle_Property_CPT {
     );
     $_neighborhoods = get_the_terms( 
       $property_id,
-      self::$PROPERTY_REGION_TAX_SLUG
+      self::$PROPERTY_LOCATION_TAX_SLUG
     );
     $_taxomonies = self::build_taxonomy_display(
       $_types,

@@ -338,16 +338,16 @@ $flag_icon: url('../statics/icons/flag.png');
 
   @include respond-to(tablet) {
     font-size: 1em;
-    padding: 10px 15px;
+    padding: 11px 15px 9px;
   }  
   @include respond-to(desktop) {
     font-size: 1.25em;
-    padding: 9px 20px;
+    padding: 10px 20px 9px;
 
-    &:hover {
-      background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
-      color: $white;
-    }
+    // &:hover {
+    //   background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+    //   color: $white;
+    // }
   }
 }
 // regular btn
@@ -359,70 +359,21 @@ $flag_icon: url('../statics/icons/flag.png');
   background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
   color: $white;
 }
-
-// // Filtered loop button
-// 
-// %filteredLoopFilters {
-//   @extend %tiledContentPadding;
-//   padding-top: 23px;
-//   padding-bottom: 20px;
-//   border-top: $border3 solid $twilightBlue;
-//   border-bottom: $border3 solid $twilightBlue;
-
-//   button {
-//     font-family: $fontFamilyFour;
-//     font-size: 1.25em; // 20px
-//     background-color: transparent;
-//     border: 0;
-//     border-radius: 0;
-//     color: $twilightBlue;
-//     padding: 8px 40px 8px 0;
-
-//     &.active {
-//       background: $twilightBlue;
-//       color: $white;
-//     }
-//   }
-// }
-
-// %formInput {
-//   background-color: $transparent;
-//   border: 1px solid transparent;
-//   border-radius: 0;
-
-//   font-family: $fontFamilyOne;
-//   font-size: 1.25em; // 20px
-//   color: $softBlue;
-  
-//   width: 100%;
-//   box-sizing: border-box;
-//   // padding: $bodyPadding3 $bodyPadding4;
-//   padding: 0.8em 1.2em;
-//   margin-bottom: $bodyPadding3;
-
-//   -webkit-appearance: none;
-//   outline: none;
-
-//   &::placeholder {
-//     color: $softBlue;
-//   }
-
-//   &:focus,
-//   &:active {
-//     border: 1px solid $twilightBlue;
-//   }
-// }
-
-// %useBackgroundGraphicContainer {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   z-index: -1;
-//   // hack to workaround overflow flaws
-//   padding-bottom: 25%;
-//   margin-bottom: -25%;
-//   // end hack...
-// }
+%buttonAlt_2 {
+  @extend %button_Setup;
+  border: $border1 solid $softBlue;
+  background: $transparent;
+  color: $softBlue;
+}
+%buttonAlt_3 {
+  @extend %button_Setup;
+  border: $border1 solid $softBlue;
+  background-image: linear-gradient(249deg, $softBlue, $frenchBlue);
+  color: $white;
+}
+%buttonAlt_4 {
+  @extend %button_Setup;
+  border: $border2 solid $twilightBlue;
+  background-image: linear-gradient(249deg, $twilightBlue, $twilightBlue);
+  color: $white;
+}

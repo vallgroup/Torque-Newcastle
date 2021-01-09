@@ -1,0 +1,372 @@
+.torque-filtered-loop {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding_Both;
+
+  display: flex;
+  flex-wrap: wrap;
+
+
+  .filters-wrapper {
+    flex: 1 1 100%;
+
+    @include respond-to(desktop) {
+      flex: 0 0 25%;
+    }
+
+    & > div {
+      margin-bottom: $bodyPadding2;
+      
+      @include respond-to(desktop) {
+        margin-bottom: $bodyPadding4;
+      }
+    }
+
+    // tabs styling
+    .torque-custom-filter-tabs {
+      .tabs-title-wrapper {
+        margin-bottom: $bodyPadding2;
+
+        .tabs-title {
+          color: $softBlue;
+          font-family: $fontFamilyFour;
+          font-size: 0.75em;
+          text-transform: uppercase;
+
+          .pre-title {
+            display: none;
+          }
+        }
+      }
+
+      .tabs-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        @include respond-to-max(desktop) {
+          margin-left: 2px;
+        }
+
+        @include respond-to(desktop) {
+          flex-direction: column;
+        }
+
+        &.multi-select {
+          .tabs-item {
+            position: relative;
+            padding-left: 25px;
+
+            @include respond-to(tablet) {
+              padding-left: 35px;
+            }
+            // @include respond-to(desktop) {}
+
+            &:before {
+              content: '+';
+              font-family: 'Courier New', Courier, monospace, sans-serif;
+              font-size: 2em;
+              font-weight: 100;
+              position: absolute;
+              left: 5px;
+              top: 50%;
+              transform: translateY(-45%);
+
+              @include respond-to(tablet) {
+                font-size: 1.8em;
+                left: 8px;
+                transform: translateY(-50%);
+              }
+              @include respond-to(tablet) {
+                font-size: 1.6em;
+              }
+            }
+          }
+        }
+
+        .tabs-item {
+          @extend %buttonRegular;
+          margin-bottom: $bodyPadding2;
+
+          @include respond-to-max(desktop) {
+            margin-left: -2px;
+          }
+
+          &.selected {
+            @extend %buttonAlt;
+          }
+        }
+      }
+    }
+  }
+
+  .posts-wrapper {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: $bodyPadding3;
+    position: relative;
+    
+    @include respond-to(desktop) {
+      flex: 1 1 75%;
+      margin-top: 0;
+    }
+
+    &:after {
+      content: '';
+      flex: 1 1 100%;
+      
+      @include respond-to(tablet) {
+        flex: 0 0 49%;
+      }
+      @include respond-to(desktop) {
+        flex: 0 0 32%;
+      }
+    }
+
+    .loop-post {
+      flex: 1 1 100%;
+      margin-bottom: $bodyPadding5;
+      
+      @include respond-to(tablet) {
+        flex: 0 0 49%;
+      }
+      @include respond-to(desktop) {
+        flex: 0 0 32%;
+      }
+
+      .featured-image-wrapper {
+        @extend %imageSizeDouble;
+
+        .featured-image {
+          @extend %imageInner;
+        }
+      }
+
+      .content-wrapper {
+        box-sizing: border-box;
+
+        .post-terms-wrapper {
+          .term {
+            display: none;
+            color: $softBlue;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 0;
+  
+            &:first-of-type {
+              display: block;
+            }
+          }
+        }
+        
+        .post-title {
+          color: $twilightBlue;
+          text-transform: uppercase;
+          margin-bottom: 0.2em;
+        }
+        
+        .post-excerpt {
+          color: $lightGreyBlue;
+          margin-bottom: 1.2em;
+        }
+      }
+
+      .info-box-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-self: start;
+
+        background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+        padding: $bodyPadding3;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        z-index: 99;
+
+        @include respond-to(tablet) {
+          flex-direction: row;
+          padding: $bodyPadding6 $bodyPadding7;
+        }
+
+        // general col styles
+        .info-box-col1,
+        .info-box-col2 {
+          flex: 1 1 100%;
+
+          @include respond-to(tablet) {
+            flex: 0 0 45%;
+          }
+          
+          & > * {
+            color: $white;
+          }
+        }
+        
+        // col 1 styles
+        .info-box-col1 {
+          @include respond-to-max(tablet) {
+            padding: $bodyPadding3;
+          }
+
+          .info-box-title {
+            @include respond-to-max(tablet) {
+              margin-top: $bodyPadding2;
+            }
+          }
+
+          .info-box-address-wrapper {
+            color: $lightBlueGrey;
+            font-family: $fontFamilyFour;
+            font-size: 0.75em;
+            line-height: 1.17;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-transform: uppercase;
+          }
+
+          .info-box-excerpt {
+            margin-top: $bodyPadding4;
+
+            & > * {
+              @include respond-to(desktop) {
+                font-size: 1.125em;
+                letter-spacing: 1.2px;
+              } 
+            }
+          }
+
+          .info-box-buttons-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-self: start;
+            flex-wrap: wrap;
+            margin-top: $bodyPadding4;
+
+            &:after {
+              content: '';
+              flex: 1 1 100%;
+
+              @include respond-to(tablet) {
+                flex: 0 0 45%;
+              }
+            }
+
+            .info-box-button {
+              @extend %buttonAlt_2;
+              flex: 100%;
+              margin-bottom: $bodyPadding2;
+
+              @include respond-to(tablet) {
+                flex: 0 0 45%;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+
+      &.template-3 {
+        background: $veryLightGrey;
+        border-top: $border3 solid $softBlue;
+
+        .content-wrapper {
+          padding: $bodyPadding4 $bodyPadding3;
+        
+          .post-title {
+            margin-top: 0.2em;
+          }
+    
+          .post-cta {
+            @extend %ctaButton_Blue;
+          }
+        }
+      }
+      &.template-4 {
+        border-top: $border3 solid $twilightBlue;
+
+        .content-wrapper {
+          padding: $bodyPadding2 $bodyPadding1 $bodyPadding1;
+
+          .post-terms-wrapper {
+            margin-top: 0.6em;
+          }
+        
+          .post-title {
+            margin-top: 0em;
+          }
+    
+          .post-cta {
+            @extend %buttonAlt_2;
+            padding-right: 40px;
+
+            &:after {
+              content: '\F347';
+              font-family: 'dashicons';
+              position: absolute;
+              right: 12px;
+              top: 50%;
+              transform: translateY(-42%);
+            }
+
+            &.opened {
+              @extend %buttonAlt_4;
+              padding-right: 40px;
+
+              &:after {
+                content: '\f335';
+              }
+            }
+          }
+        }
+      }
+      &.template-5 {
+        border-top: $border3 solid $twilightBlue;
+
+        .content-wrapper {
+          padding: $bodyPadding2 $bodyPadding1;
+
+          .post-terms-wrapper {
+            margin-top: 0.6em;
+          }
+        
+          .post-title {
+            margin-top: 0em;
+          }
+    
+          .post-cta {
+            @extend %buttonAlt_2;
+            padding-right: 40px;
+
+            &:after {
+              content: '\F347';
+              font-family: 'dashicons';
+              position: absolute;
+              right: 12px;
+              top: 50%;
+              transform: translateY(-42%);
+
+              &.opened {
+                content: '\f335';
+              }
+            }
+            
+            &:hover {
+              @extend %buttonAlt_3;
+              padding-right: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

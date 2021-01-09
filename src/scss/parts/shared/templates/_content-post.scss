@@ -24,6 +24,7 @@
       
       @include respond-to(desktop) {
         flex: 0 0 25%;
+        display: block;
       }
 
       .content-box {
@@ -31,10 +32,6 @@
 
         @include respond-to(desktop) {
           margin-bottom: $bodyPadding4;
-        }
-          
-        @include respond-to(desktop) {
-          flex: 1 1 100%;
         }
 
         &.author {

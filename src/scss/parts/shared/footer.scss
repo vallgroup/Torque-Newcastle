@@ -22,6 +22,8 @@ footer {
     }
     @include respond-to(desktop) {
       flex-wrap: nowrap;
+      padding-top: $bodyPadding12;
+      padding-bottom: $bodyPadding8;
     }
 
     .footer-block {
