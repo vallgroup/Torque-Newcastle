@@ -1286,7 +1286,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "50",
                                     "class": "",
                                     "id": ""
                                 },
@@ -1294,15 +1294,32 @@
                                     "investment": "Investment",
                                     "retail": "Retail"
                                 },
-                                "default_value": [
-                                    "investment"
-                                ],
+                                "default_value": "investment",
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
                                 "ajax": 0,
                                 "return_format": "value",
                                 "placeholder": ""
+                            },
+                            {
+                                "key": "field_5ffd71a7e5b88",
+                                "label": "Enable Map View",
+                                "name": "enable_map_view",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
                             }
                         ],
                         "min": "",

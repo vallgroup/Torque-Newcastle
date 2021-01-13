@@ -12,6 +12,9 @@ if ( class_exists( 'Newcastle_Property_CPT' ) ) {
   $shortcode .= 'post_type="' . Newcastle_Property_CPT::$property_labels['post_type_name'] . '" ';
   $shortcode .= 'posts_per_page="12" ';
   $shortcode .= 'property_type="' . $template . '" ';
+  $shortcode .= 'enable_map_view="'; // map view start
+  $shortcode .= $enable_map_view ? '1' : '0'; // map view arg
+  $shortcode .= '" '; // map view end
 
   // set properties template
   if ( 'retail' === $template ) {

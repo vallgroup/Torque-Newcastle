@@ -358,6 +358,7 @@ if ( have_rows( $modules ) ) :
         $template = get_sub_field( 'template' )
           ? get_sub_field( 'template' )
           : 'investment';
+        $enable_map_view = get_sub_field( 'enable_map_view' );
 
         include locate_template( $modules_path . 'properties-grid.php' );
 

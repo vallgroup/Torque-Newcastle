@@ -322,6 +322,7 @@ $flag_icon: url('../statics/icons/flag.png');
   padding: 3px 10px 2px;
   border: $border1 solid $twilightBlue;
   border-radius: 0;
+  box-sizing: border-box;
   background-color: $white;
   font-family: $fontFamilyTwo;
   font-size: 0.8125em;
