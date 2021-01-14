@@ -11,6 +11,8 @@ class Newcastle_ACF {
     // hide acf in admin - client doesnt need to see this
     // add_filter('acf/settings/show_admin', '__return_false');
 
+    add_action('acf/render_field_settings/type=text', array( $this, 'add_readonly_and_disabled_to_text_field' ) );
+
     // add acf fields to wp search
     if ( class_exists( 'Torque_ACF_Search' ) ) {
       add_filter( Torque_ACF_Search::$ACF_SEARCHABLE_FIELDS_FILTER_HANDLE, array( $this, 'add_fields_to_search' ) );
@@ -27,7 +29,37 @@ class Newcastle_ACF {
     return $fields;
   }
 
+  function add_readonly_and_disabled_to_text_field($field) {
+    acf_render_field_setting( $field, array(
+      'label'      => __('Read Only?','acf'),
+      'instructions'  => '',
+      'type'      => 'radio',
+      'name'      => 'readonly',
+      'choices'    => array(
+        1        => __("Yes",'acf'),
+        0        => __("No",'acf'),
+      ),
+			'default_value' => 0,
+      'layout'  =>  'horizontal',
+    ));
+    acf_render_field_setting( $field, array(
+      'label'      => __('Disabled?','acf'),
+      'instructions'  => '',
+      'type'      => 'radio',
+      'name'      => 'disabled',
+      'choices'    => array(
+        1        => __("Yes",'acf'),
+        0        => __("No",'acf'),
+			),
+			'default_value' => 0,
+      'layout'  =>  'horizontal',
+    ));
+  }
+
   public function acf_init() {
+
+    // Updated: 20210114
+
     // START: ACF defs
     
     if( function_exists('acf_add_local_field_group') ):

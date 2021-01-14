@@ -53,7 +53,8 @@ class Newcastle_Property_CPT {
 
 		add_action( 'init', array( $this, 'add_property_taxonomies' ) );
 		add_action('acf/init', array( $this, 'add_acf_metaboxes' ) );
-		add_action( 'restrict_manage_posts', array( $this, 'filter_properies_by_taxonomies' ) , 10, 2);
+		add_action( 'restrict_manage_posts', array( $this, 'filter_properies_by_taxonomies' ), 10, 2);
+		add_action( 'acf/save_post', array( $this, 'retrieve_lat_long' ), 20 );
 	}
 
 	function add_property_taxonomies() {
@@ -105,8 +106,8 @@ class Newcastle_Property_CPT {
 	 * Render the CPT filters on the admin UI
 	 */
 	function filter_properies_by_taxonomies( $post_type, $which ) {
-		// Apply this only on a specific post type
-		if ( 'newcastle_property' !== $post_type )
+		// early exit
+		if ( self::$property_labels['post_type_name'] !== $post_type )
 			return;
 
 		// A list of taxonomy slugs to filter by
@@ -140,14 +141,227 @@ class Newcastle_Property_CPT {
 		}
 	}
 
+	// function retrieve_lat_long( $post_id, $post_after, $post_before ) {
+	function retrieve_lat_long( $post_id ) {
+		// early exit
+		// if ( self::$property_labels['post_type_name'] !== $post_after->post_type ) 
+		if ( self::$property_labels['post_type_name'] !== get_post_type( $post_id ) )
+			return;
+
+		$base_url = 'https://maps.googleapis.com/maps/api/geocode/json';
+		$api_key = 'AIzaSyBtV0qDI-J9OoIm_p1nDHBtorLb7oD1z7k';
+
+		$street_address = get_field( 'street_address', $post_id );
+		$city = get_field( 'city', $post_id );
+		$state = get_field( 'state', $post_id );
+		$zip_code = get_field( 'zip_code', $post_id );
+
+		if (
+			$street_address
+			&& $city
+			&& $state
+			&& $zip_code
+		) {
+			$address = str_replace( 
+				' ',
+				'+',
+				$street_address . '+' . $city . '+' . $state . '+' . $zip_code
+			);
+
+			$curl = curl_init();
+			curl_setopt_array( $curl, array(
+				CURLOPT_URL => $base_url . '?address=' . $address . '&key=' . $api_key,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'GET',
+			) );
+			$response = curl_exec( $curl );
+			curl_close( $curl );
+
+			$response = json_decode( $response );
+
+			if (
+				'OK' == $response->status
+				&& $response->results
+				&& 0 < count( $response->results )
+			) {
+				update_field( 
+					'latitude_longitude',
+					$response->results[0]->geometry->location,
+					$post_id
+				);
+			}
+		} else {
+			update_field( 
+				'latitude_longitude',
+				'',
+				$post_id
+			);
+		}
+	}
+
 	function add_acf_metaboxes() {
 		
-		// Updated: 20210109
+		// Updated: 20210114
 		
 		// ACF defs - START
 
 		if( function_exists('acf_add_local_field_group') ):
 
+			acf_add_local_field_group(array(
+				'key' => 'group_600015b62acd4',
+				'title' => 'Properties Options',
+				'fields' => array(
+					array(
+						'key' => 'field_600016b8ad033',
+						'label' => 'Google Maps API Key',
+						'name' => 'google_maps_api_key',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array(
+						'key' => 'field_600016c8ad034',
+						'label' => 'Map Zoom',
+						'name' => 'map_zoom',
+						'type' => 'range',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'min' => 0,
+						'max' => 19,
+						'step' => 1,
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'field_60001a4904e5b',
+						'label' => 'Map Center Latitude',
+						'name' => 'map_center_latitude',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array(
+						'key' => 'field_60001a5904e5c',
+						'label' => 'Map Center Longitude',
+						'name' => 'map_center_longitude',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array(
+						'key' => 'field_600016edad036',
+						'label' => 'Marker Icon',
+						'name' => 'marker_icon',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'url',
+						'preview_size' => 'medium',
+						'library' => 'all',
+						'min_width' => '',
+						'min_height' => '',
+						'min_size' => '',
+						'max_width' => '',
+						'max_height' => '',
+						'max_size' => '',
+						'mime_types' => '',
+					),
+					array(
+						'key' => 'field_600016dead035',
+						'label' => 'Map Styles',
+						'name' => 'map_styles',
+						'type' => 'textarea',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '50',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => '',
+						'rows' => '',
+						'new_lines' => '',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'options_page',
+							'operator' => '==',
+							'value' => 'acf-options',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+			
 			acf_add_local_field_group(array(
 				'key' => 'group_5ff8e4a0b30dc',
 				'title' => 'Property Options',
@@ -246,6 +460,27 @@ class Newcastle_Property_CPT {
 						'prepend' => '',
 						'append' => '',
 						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5fff7a6dd0c0a',
+						'label' => 'Latitude & Longitude',
+						'name' => 'latitude_longitude',
+						'type' => 'text',
+						'instructions' => 'This field will be populated automatically when the property is saved and then the page is refreshed.',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '100',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 1,
+						'disabled' => 1,
 					),
 					array(
 						'key' => 'field_5ff8e5f8be299',

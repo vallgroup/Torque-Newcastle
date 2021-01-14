@@ -148,6 +148,60 @@
       margin-top: 0;
       min-height: 550px;
     }
+
+    .gm-style-iw {
+      box-shadow: 0px 0px 0px 1px $warmGrey;
+      border-radius: 0;
+
+      &:after {
+        box-shadow: 0px 0px 0px 1px $warmGrey;
+      }
+
+      & > button {
+        color: $twilightBlue;
+      }
+
+      .infowindow {
+        padding: $bodyPadding2;
+
+        .title {
+          color: $twilightBlue;
+          font-family: $fontFamilyTwo;
+          font-size: 2.307em;
+        }
+
+        .address {
+          color: $steel;
+          font-family: $fontFamilyFour;
+          font-size: 0.9231em;
+          line-height: 1.2;
+        }
+
+        .cta {
+          @extend %buttonAlt_2;
+          padding-right: 40px;
+          margin-top: $bodyPadding2;
+
+          &:after {
+            content: '\F347';
+            font-family: 'dashicons';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-42%);
+          }
+
+          &.opened {
+            @extend %buttonAlt_4;
+            padding-right: 40px;
+
+            &:after {
+              content: '\f335';
+            }
+          }
+        }
+      }
+    }
   }
 
   .info-box-wrapper {
