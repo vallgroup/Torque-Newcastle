@@ -142,6 +142,18 @@ function torque_enqueue_child_styles() {
     
     // enqueue dashicons for frontend
     wp_enqueue_style( 'dashicons' );
+
+    // enqueue owl carousel styles
+    wp_enqueue_style( 'owl-carousel',
+        get_stylesheet_directory_uri() . '/statics/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css',
+        array(),
+        wp_get_theme()->get('Version')
+    );
+    wp_enqueue_style( 'owl-carousel-theme',
+        get_stylesheet_directory_uri() . '/statics/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css',
+        array( 'owl-carousel' ),
+        wp_get_theme()->get('Version')
+    );
 }
 
 // enqueue child scripts after parent script
@@ -151,6 +163,14 @@ function torque_enqueue_child_scripts() {
     wp_enqueue_script( 'newcastle-child-script',
         get_stylesheet_directory_uri() . '/bundles/bundle.js',
         array( 'torque-theme-scripts' ), // depends on parent script
+        wp_get_theme()->get('Version'),
+        true // put it in the footer
+    );
+
+    // enqueue owl carousel scripts
+    wp_enqueue_script( 'owl-carousel',
+        get_stylesheet_directory_uri() . '/statics/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
+        array( 'jquery' ),
         wp_get_theme()->get('Version'),
         true // put it in the footer
     );

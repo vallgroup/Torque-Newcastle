@@ -128,6 +128,40 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'property-showcase.php' );
 
         break;
+        
+      case 'property_showcase_alternate' :
+
+          $alignment = get_sub_field( 'align_image' )
+            ? get_sub_field( 'align_image' )
+            : 'right';
+          $bg_color = get_sub_field( 'background_color' )
+            ? get_sub_field( 'background_color' )
+            : 'light_grey';
+          $title = get_sub_field( 'title' )
+            ? strip_tags( 
+              get_sub_field( 'title' ), 
+              $allowable_title_tags
+            )
+            : null;
+          $subtitle = get_sub_field( 'subtitle' )
+            ? strip_tags( 
+              get_sub_field( 'subtitle' ), 
+              $allowable_title_tags
+            )
+            : null;
+          $content = get_sub_field( 'content' )
+            ? strip_tags(
+              get_sub_field( 'content' ),
+              $allowable_tagline_tags
+            )
+            : null;
+          $images = get_sub_field( 'images' )
+            ? get_sub_field( 'images' )
+            : null;
+  
+          include locate_template( $modules_path . 'property-showcase-alternate.php' );
+  
+          break;
 
       case 'two_column_content' :
 

@@ -138,6 +138,9 @@ $flag_icon: url('../statics/icons/flag.png');
   padding: $bodyPadding11 0;
 
   @include respond-to(tablet) {
+    padding: $bodyPadding8 $bodyPadding8;
+  }
+  @include respond-to(desktop) {
     padding: $bodyPadding11 $bodyPadding11;
   }
 }
