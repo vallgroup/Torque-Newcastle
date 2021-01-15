@@ -1,0 +1,30 @@
+.single-property-title {
+  @extend %limitWidth;
+  @extend %sectionPadding_Both;
+  text-align: left;
+
+  @include respond-to-max(tablet) {
+    padding-top: $bodyPadding5;
+    padding-bottom: $bodyPadding5;
+  }
+
+  @include respond-to-max(desktop) {
+    padding-top: $bodyPadding3;
+    padding-bottom: $bodyPadding3;
+  }
+
+  // btn
+  .back-btn {
+    @extend %buttonRegular;
+    padding-left: 40px;
+
+    &:before {
+      content: '\f341';
+      font-family: 'dashicons';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-42%);
+    }
+  }
+}

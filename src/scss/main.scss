@@ -20,8 +20,10 @@
 @import 'parts/shared/filtered-loop';
 
 @import 'parts/shared/templates/title/title-post';
+@import 'parts/shared/templates/title/title-property';
 
 @import 'parts/shared/templates/content-post';
+@import 'parts/shared/templates/content-property';
 
 // content modules
 @import 'parts/acf/content-spacer';
