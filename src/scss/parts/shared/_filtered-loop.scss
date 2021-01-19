@@ -178,7 +178,7 @@
         }
 
         .cta {
-          @extend %buttonAlt_2;
+          @extend %buttonAlt_5;
           padding-right: 40px;
           margin-top: $bodyPadding2;
 
@@ -200,6 +200,21 @@
             }
           }
         }
+      }
+    }
+
+    .info-box-wrapper {
+      top: calc(450px + #{$bodyPadding5});
+      
+      @include respond-to(desktop) {
+        top: calc(550px + #{$bodyPadding5});
+      }
+    }
+    &.info-box-open {
+      margin-bottom: calc(350px + #{$bodyPadding5});
+      
+      @include respond-to(desktop) {
+        margin-bottom: calc(400px + #{$bodyPadding5});
       }
     }
   }
@@ -310,6 +325,14 @@
       @include respond-to(tablet) {
         padding-left: 2em;
       }
+
+      .featured-image-wrapper {
+        @extend %imageSizeDouble;
+
+        .featured-image {
+          @extend %imageInner;
+        }
+      }
     }
   }
 
@@ -359,19 +382,34 @@
         }
       }
 
+      // general styles for each post
       .content-wrapper {
         box-sizing: border-box;
 
         .post-terms-wrapper {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+
           .term {
-            display: none;
             color: $softBlue;
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 0;
-  
-            &:first-of-type {
+
+            &:after {
+              content: ',';
+              margin-right: $bodyPadding2;
+            }
+            
+            &:last-of-type {
               display: block;
+
+              &:after {
+                content: '';
+              }
             }
           }
         }
@@ -388,12 +426,23 @@
         }
       }
 
+      // blog post
       &.template-3 {
         background: $veryLightGrey;
         border-top: $border3 solid $softBlue;
 
         .content-wrapper {
           padding: $bodyPadding4 $bodyPadding3;
+
+          .post-terms-wrapper {
+            .term {
+              display: none;
+  
+              &:first-of-type {
+                display: block;
+              }
+            }
+          }
         
           .post-title {
             margin-top: 0.2em;
@@ -404,6 +453,8 @@
           }
         }
       }
+
+      // investment post
       &.template-4 {
         border-top: $border3 solid $twilightBlue;
 
@@ -442,6 +493,8 @@
           }
         }
       }
+
+      // retail post
       &.template-5 {
         border-top: $border3 solid $twilightBlue;
 
@@ -461,16 +514,12 @@
             padding-right: 40px;
 
             &:after {
-              content: '\F347';
+              content: '\f345';
               font-family: 'dashicons';
               position: absolute;
-              right: 12px;
+              right: 8px;
               top: 50%;
               transform: translateY(-42%);
-
-              &.opened {
-                content: '\f335';
-              }
             }
             
             &:hover {

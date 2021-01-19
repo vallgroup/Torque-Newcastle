@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying property content in single-newcastle_property.php
+ * Template part for displaying RETAIL property content in single-newcastle_property.php
  *
  * @package Torque
  */
@@ -23,6 +23,14 @@ $contacts = build_contacts();
 
 // right col data
 $thumbnail = get_the_post_thumbnail();
+$additional_files_links = get_field( 'additional_files_links' );
+
+// map
+$api_key = get_field( 'google_maps_api_key', 'options' );
+$lat_long = get_field( 'latitude_longitude' );
+
+// gallery
+$gallery = get_field( 'retail_gallery' );
 
 ?>
 
@@ -93,22 +101,59 @@ $thumbnail = get_the_post_thumbnail();
 
       <?php if ( $thumbnail ) { ?>
         <div class="featured-image">
-          <?php echo $thumbnail ?>
+          <?php echo $thumbnail; ?>
         </div>
       <?php } ?>
 
-      
+      <?php if ( $additional_files_links ) { ?>
+        <div class="additional-links-container">
+          <?php foreach( $additional_files_links as $link ) { 
+            // data
+            $title = $link['button_title'];
+            $type = $link['type'];
+            $target = 'file' === $type
+              ? '_blank'
+              : '_blank';
+            $url = 'file' === $type
+              ? isset( $link['file']['url'] )
+                ? $link['file']['url']
+                : null
+              : $link['link'];
+            
+            // if there is a url, output the button
+            if ( $url ) { ?>
+              <a class="button" href="<?php echo $url; ?>" target="<?php echo $target; ?>">
+                <?php echo $title; ?>
+              </a>
+            <?php } 
+          } ?>
+        </div>
+      <?php } ?>
 
     </div>
 
   </div>
 
-  <div class="content-container map-content">
-        
-  </div>
+  <?php if ( $lat_long && $api_key ) { ?>
+    <div class="content-container map-content">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api_key; ?>"></script>
+      <div 
+        id="property-map" 
+        data-lat="<?php echo $lat_long->lat; ?>"
+        data-lng="<?php echo $lat_long->lng; ?>"
+      ></div>
+    </div>
+  <?php } ?>
 
-  <div class="content-container gallery-content">
-  </div>
+  <?php if ( $gallery ) { ?>
+    <div class="content-container gallery-content">
+      <?php foreach( $gallery as $image ) { ?>
+        <div class="gallery-image-wrapper">
+          <div class="gallery-image" style="background-image: url(<?php echo $image['url']; ?>);" alt="<?php echo $image['alt']; ?>"></div>
+        </div>
+      <?php } ?>
+    </div>
+  <?php } ?>
 
 </div>
 

@@ -381,3 +381,9 @@ $flag_icon: url('../statics/icons/flag.png');
   background-image: linear-gradient(249deg, $twilightBlue, $twilightBlue);
   color: $white;
 }
+%buttonAlt_5 {
+  @extend %button_Setup;
+  border: $border1 solid $twilightBlue;
+  background: $transparent;
+  color: $twilightBlue;
+}
