@@ -12,9 +12,10 @@ global $post;
 $content = get_field( 'retail_description' )
   ? get_field( 'retail_description' )
   : get_the_content();
-$status = get_the_terms( $post, Newcastle_Property_CPT::$PROPERTY_AVAILABILITY_TAX_SLUG )
-  ? 'Available'
-  : 'Unavailable';
+$availability = get_the_terms( $post, Newcastle_Property_CPT::$PROPERTY_AVAILABILITY_TAX_SLUG );
+$status = $availability
+  ? $availability[0]->name
+  : 'Not Available';
 $available_retail_space = get_field( 'available_retail_space' );
 $address = build_address();
 $locations = build_locations( $post );

@@ -400,6 +400,27 @@
                 "maxlength": ""
             },
             {
+                "key": "field_6007f97a72273",
+                "label": "Area Retail Tenants",
+                "name": "area_retail_tenants",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
                 "key": "field_6000fd3d150c9",
                 "label": "Price",
                 "name": "price",

@@ -9,6 +9,9 @@ require_once( get_stylesheet_directory() . '/includes/cpts/newcastle-child-team-
 require_once( get_stylesheet_directory() . '/includes/posts/newcastle-child-post-class.php');
 require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-class.php' );
 require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-fields-class.php' );
+require_once( get_stylesheet_directory() . '/api/newcastle-child-rest-controller-class.php');
+require_once( get_stylesheet_directory() . '/api/controllers/newcastle-child-property-controller-class.php');
+// require_once( get_stylesheet_directory() . '/api/controllers/newcastle-child-blog-controller-class.php');
 
 /**
  * Child Theme Nav Menus
@@ -64,6 +67,30 @@ if ( class_exists( 'Newcastle_Team_CPT' ) ) {
 
 if ( class_exists( 'Newcastle_Post' ) ) {
   new Newcastle_Post();
+}
+
+/**
+ * Child Theme REST Controller
+ */
+
+if ( class_exists( 'Newcastle_REST_Controller' ) ) {
+  new Newcastle_REST_Controller();
+}
+
+/**
+ * Child Theme Property Controller
+ */
+
+if ( class_exists( 'Newcastle_Property_Controller' ) ) {
+  new Newcastle_Property_Controller();
+}
+
+/**
+ * Child Theme Blog Controller
+ */
+
+if ( class_exists( 'Newcastle_Blog_Controller' ) ) {
+  new Newcastle_Blog_Controller();
 }
 
 

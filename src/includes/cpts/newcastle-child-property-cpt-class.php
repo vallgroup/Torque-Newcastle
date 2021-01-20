@@ -142,7 +142,7 @@ class Newcastle_Property_CPT {
 	}
 
 	// function retrieve_lat_long( $post_id, $post_after, $post_before ) {
-	function retrieve_lat_long( $post_id ) {
+	public static function retrieve_lat_long( $post_id ) {
 		// early exit
 		// if ( self::$property_labels['post_type_name'] !== $post_after->post_type ) 
 		if ( self::$property_labels['post_type_name'] !== get_post_type( $post_id ) )
@@ -206,7 +206,7 @@ class Newcastle_Property_CPT {
 
 	function add_acf_metaboxes() {
 		
-		// Updated: 20210119
+		// Updated: 20210120
 		
 		// ACF defs - START
 
@@ -614,6 +614,27 @@ class Newcastle_Property_CPT {
 						'maxlength' => '',
 					),
 					array(
+						'key' => 'field_6007f97a72273',
+						'label' => 'Area Retail Tenants',
+						'name' => 'area_retail_tenants',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array(
 						'key' => 'field_6000fd3d150c9',
 						'label' => 'Price',
 						'name' => 'price',
@@ -894,7 +915,7 @@ class Newcastle_Property_CPT {
 			));
 			
 			endif;
-		
+
 		// ACF defs - END
 
   }
