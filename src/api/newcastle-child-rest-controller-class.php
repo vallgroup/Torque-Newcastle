@@ -1,5 +1,6 @@
 <?php
-
+require_once( get_stylesheet_directory() . '/api/controllers/newcastle-child-property-controller-class.php');
+require_once( get_stylesheet_directory() . '/api/controllers/newcastle-child-blog-controller-class.php');
 define( 'NEWCASTLE_API_ROOT', dirname(__FILE__) . '/' );
 
 /**

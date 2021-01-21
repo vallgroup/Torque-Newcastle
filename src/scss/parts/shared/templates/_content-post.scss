@@ -10,6 +10,7 @@
   .content-container {
     display: flex;
     flex-direction: column;
+    margin-bottom: $bodyPadding10;
     
     @include respond-to(desktop) {
       flex-direction: row;

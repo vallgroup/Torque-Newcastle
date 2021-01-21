@@ -9,7 +9,7 @@
     box-sizing: border-box;
     padding: $bodyPadding4 $bodyPadding3;
     
-    @include respond-to(tablet) {}
+    // @include respond-to(tablet) {}
 
     // .post-taxonomies {}
     
@@ -40,6 +40,4 @@
       @extend %ctaButton_Blue;
     }
   }
-
-  // &.style-1 {}
 }
