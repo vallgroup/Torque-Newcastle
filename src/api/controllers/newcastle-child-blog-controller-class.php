@@ -20,7 +20,7 @@ class Newcastle_Blog_Controller {
   protected static $meta_keys = array(
     'published' => 'post_date',
     'content'   => 'post_content',
-    'content'   => 'post_excerpt',
+    'excerpt'   => 'post_excerpt',
   );
 
   public static function import_data() {
@@ -66,12 +66,12 @@ class Newcastle_Blog_Controller {
       if ( ! $__blog || 'trash' === $__blog->post_status ) {
         self::output_msg( 'Did not find blog with title \'' . $blog_name . '\'.');
         self::output_msg( 'Creating new blog: ' . $blog_name . '.' );
-        self::create_blog( $new_blog );
+        self::create_blog( $blog_name, $new_blog );
         continue;
       } else {
         self::output_msg( 'Found blog \'' . $blog_name . '\', with ID \'' . $__blog->ID . '\'.' );
         self::output_msg( 'Updating blog \'' . $blog_name . '\'.');
-        self::update_blog( $__blog->ID, $new_blog );
+        self::update_blog( $blog_name, $__blog->ID, $new_blog );
       }
 
       self::output_msg( '------ end of '.$blog_name.' import ------' );
@@ -80,13 +80,13 @@ class Newcastle_Blog_Controller {
     ob_end_flush();
   }
 
-  private static function update_blog( $id, $blog = null ) {
+  private static function update_blog( $blog_name, $id, $blog = null ) {
     if ( null === $blog ) return false;
-    self::update_meta( $id, $blog );
+    self::update_meta( $blog_name, $id, $blog );
     self::update_taxonomies( $id, $blog );
   }
 
-  private static function create_blog( $blog = null ) {
+  private static function create_blog( $blog_name, $blog = null ) {
     if ( null === $blog ) return false;
 
     $blog_name = trim( $blog['title'] );
@@ -101,17 +101,24 @@ class Newcastle_Blog_Controller {
       self::output_msg( 'There was an error creating the blog \'' . $blog_name . '\'.' );
       self::output_msg( $_id->get_error_message() );
     } else {
-      self::update_meta( $_id, $blog );
+      self::update_meta( $blog_name, $_id, $blog );
       self::update_taxonomies( $_id, $blog );
       self::output_msg( 'The blog \'' . $blog_name . '\' was created successfully. The new blog ID is \'' . $_id . '\'.');
     }
   }
 
-  private static function update_meta( $post_id, $blog ) {
+  private static function update_meta( $blog_name, $post_id, $blog ) {
+    self::output_msg( 'Updating meta data for blog.');
+    // disable the security features
+    kses_remove_filters();
+
     $_meta_data = array(
       'ID' => $post_id
     );
+
     foreach( self::$meta_keys as $key => $label ) {
+      // var_dump( $label );
+      // var_dump( $blog[ $key ] );
       if ( 'post_content' === $label ) {
         $_author = trim( $blog['author and source'] );
         $_read_more_text = trim( $blog['read more text'] );
@@ -121,7 +128,7 @@ class Newcastle_Blog_Controller {
           ? $_author . '<br><br>'
           : '';
         // post content
-        $_content .= trim( $blog[ $key ] );
+        $_content .= trim( (string) $blog[ $key ] );
         // append read more link
         $_content .= ( '' !== $_read_more_text && '' !== $_read_more_link )
             ? '<br><br><a href="'.$_read_more_link.'" target="_blank">'.$_read_more_text.'</a>'
@@ -137,14 +144,18 @@ class Newcastle_Blog_Controller {
         }
       } elseif ( 'post_excerpt' === $label ) {
         // post excerpt
-        $_excerpt = trim( $blog[ $key ] );
+        $_excerpt = trim( (string) $blog[ $key ] );
         $_excerpt = substr( $_excerpt, 0, 100 );
         $_meta_data[ $label ] = $_excerpt;
       } else {
         $_meta_data[ $label ] = $blog[ $key ];
       }
     }
+
     wp_update_post( $_meta_data );
+
+    // enable the security features
+    kses_init_filters();
   }
 
   private static function update_taxonomies( $post_id, $blog ) {
