@@ -9,7 +9,7 @@
 $author = get_the_author();
 $publish_date = get_the_date();
 $tags = get_the_tag_list();
-$content = get_the_content();
+$content = wpautop( $post->post_content );
 
 // related posts
 $args = array(

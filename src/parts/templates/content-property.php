@@ -91,7 +91,7 @@ $gallery = get_field( 'retail_gallery' );
 
       <?php if ( $contacts ) { ?>
         <div class="content-box contact-info">
-          <h4 class="subtitle">Contact Info</h4>
+          <h4 class="subtitle">Leasing</h4>
           <?php echo $contacts; ?>
         </div>
       <?php } ?>

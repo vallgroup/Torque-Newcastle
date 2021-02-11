@@ -1,4 +1,5 @@
 $flag_icon: url('../statics/icons/flag.png');
+$flag_icon_white: url('../statics/icons/flag_white.png');
 
 %hideOnDesktop {
   @include respond-to(desktop) {
@@ -310,6 +311,10 @@ $flag_icon: url('../statics/icons/flag.png');
 %ctaButton_White {
   @extend %ctaButton_Setup;
   color: $white;
+
+  &:before {
+    background-image: $flag_icon_white;
+  }
 
 }
 %ctaButton_Blue {

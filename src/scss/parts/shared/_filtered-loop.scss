@@ -37,6 +37,10 @@
             display: none;
           }
         }
+
+        .accordion-toggle {
+          display: none;
+        }
       }
 
       .tabs-wrapper {
@@ -529,6 +533,33 @@
               padding-right: 40px;
             }
           }
+        }
+      }
+    }
+  }
+
+  &.template-3 {
+    .filters-wrapper {
+      .torque-custom-filter-tabs{
+        .tabs-title-wrapper {
+          .accordion-toggle {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .tabs-wrapper {
+      &.accordion {
+        flex-wrap: nowrap;
+        transition: 1s ease-in-out;
+        max-height: 415px;
+        overflow: hidden;
+    
+        &.expanded {
+          max-height: unset;
         }
       }
     }
