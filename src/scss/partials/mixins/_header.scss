@@ -11,13 +11,13 @@
   // header/logo/menu area
   $mobileHeaderHeight: 75px;
   $tabletHeaderHeight: 100px;
-  $desktopHeaderHeight: 150px;
+  $desktopHeaderHeight: 100px;
 
 
   @if $negativeProperty == true {
     $mobileHeaderHeight: -75px;
     $tabletHeaderHeight: -100px;
-    $desktopHeaderHeight: -150px;
+    $desktopHeaderHeight: -100px;
   }
 
   // return property
@@ -60,7 +60,7 @@
   // header/logo/menu area
   $mobileHeaderHeight: 75px;
   $tabletHeaderHeight: 100px;
-  $desktopHeaderHeight: 150px;
+  $desktopHeaderHeight: 100px;
 
   // without notification bar
   @if $hasNotificationBar != true and $isFixed == true {
