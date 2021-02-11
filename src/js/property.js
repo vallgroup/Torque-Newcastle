@@ -29,10 +29,10 @@
         ? parseInt(mapOptions.map_zoom_single)
         : 12;
       const mapIcon = mapOptions.marker_icon;
-      const mapCenterLat = mapContainer.getAttribute('data-lat')
+      const mapCenterLat = mapContainer && mapContainer.hasAttribute('data-lat')
         ? parseFloat(mapContainer.getAttribute('data-lat'))
         : false;
-      const mapCenterLng = mapContainer.getAttribute('data-lng')
+      const mapCenterLng = mapContainer && mapContainer.hasAttribute('data-lng')
         ? parseFloat(mapContainer.getAttribute('data-lng'))
         : false;
 
