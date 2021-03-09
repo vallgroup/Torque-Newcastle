@@ -17,6 +17,7 @@ $status = $availability
   ? $availability[0]->name
   : 'Not Available';
 $available_retail_space = get_field( 'available_retail_space' );
+$area_retail_tenants = get_field( 'area_retail_tenants' );
 $address = build_address();
 $locations = build_locations( $post );
 $price = get_field( 'price' );
@@ -76,6 +77,13 @@ $gallery = get_field( 'retail_gallery' );
             <div class="detail">
               <div class="key">Submarket</div>
               <div class="value"><?php echo $locations; ?></div>
+            </div>
+          <?php } ?>
+
+          <?php if ( $area_retail_tenants ) { ?>
+            <div class="detail">
+              <div class="key">Nearby Tenants</div>
+              <div class="value"><?php echo $area_retail_tenants; ?></div>
             </div>
           <?php } ?>
 

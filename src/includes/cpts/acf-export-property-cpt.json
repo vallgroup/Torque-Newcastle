@@ -445,7 +445,7 @@
                 "key": "field_5ff8e686be29e",
                 "label": "Website Link",
                 "name": "website_link",
-                "type": "url",
+                "type": "link",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -454,8 +454,7 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "",
-                "placeholder": ""
+                "return_format": "array"
             },
             {
                 "key": "field_6000f27fd8e32",

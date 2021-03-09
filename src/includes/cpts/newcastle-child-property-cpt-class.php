@@ -209,7 +209,7 @@ class Newcastle_Property_CPT {
 		// Updated: 20210120
 		
 		// ACF defs - START
-
+		
 		if( function_exists('acf_add_local_field_group') ):
 
 			acf_add_local_field_group(array(
@@ -659,7 +659,7 @@ class Newcastle_Property_CPT {
 						'key' => 'field_5ff8e686be29e',
 						'label' => 'Website Link',
 						'name' => 'website_link',
-						'type' => 'url',
+						'type' => 'link',
 						'instructions' => '',
 						'required' => 0,
 						'conditional_logic' => 0,
@@ -668,8 +668,7 @@ class Newcastle_Property_CPT {
 							'class' => '',
 							'id' => '',
 						),
-						'default_value' => '',
-						'placeholder' => '',
+						'return_format' => 'array',
 					),
 					array(
 						'key' => 'field_6000f27fd8e32',
@@ -915,7 +914,7 @@ class Newcastle_Property_CPT {
 			));
 			
 			endif;
-
+		
 		// ACF defs - END
 
   }
