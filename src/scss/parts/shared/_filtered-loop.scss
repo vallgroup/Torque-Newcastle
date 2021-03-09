@@ -2,6 +2,12 @@
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding_Both;
+  // override the bottom padding
+  padding-bottom: $bodyPadding9;
+
+  @include respond-to(tablet) {
+    padding-bottom: $bodyPadding12;
+  }
 
   display: flex;
   flex-wrap: wrap;
@@ -538,9 +544,30 @@
     }
   }
 
+  .torque-filtered-loop-load-more {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @extend %ctaButton_Blue;
+
+    @include respond-to(desktop) {
+      left: 62.5%; // half the post container width + the sidebar width
+    }
+  }
+
+  // blog
   &.template-3 {
     .filters-wrapper {
-      .torque-custom-filter-tabs{
+      .torque-custom-filter-tabs {
+
+        @include respond-to-max(desktop) {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+
         .tabs-title-wrapper {
           .accordion-toggle {
             display: inline-block;
