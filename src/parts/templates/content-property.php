@@ -186,15 +186,6 @@ $gallery = get_field( 'retail_gallery' );
     </div>
   <?php } ?>
 
-  <div class="content-container map-content">
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api_key; ?>"></script>
-    <div 
-      id="property-map" 
-      data-lat="<?php echo $lat_long->lat; ?>"
-      data-lng="<?php echo $lat_long->lng; ?>"
-    ></div>
-  </div>
-
   <?php if ( $lat_long && $api_key ) { ?>
     <div class="content-container map-content">
     <script defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api_key; ?>"></script>
