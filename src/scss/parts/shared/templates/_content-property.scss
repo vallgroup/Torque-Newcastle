@@ -180,6 +180,27 @@ $mail_icon: url('../statics/icons/mail.png');
       }
     }
 
+    &.video-content {
+      margin-bottom: $bodyPadding10;
+
+      @include respond-to(tablet) {
+        margin-bottom: $bodyPadding10;
+      }
+      @include respond-to(desktop) {
+        margin-bottom: $bodyPadding12;
+      }
+
+      @extend %limitWidthNarrow;
+
+      .type-video_link {
+        @extend %iframeSize;
+
+        .hero-video-link {
+          @extend %iframeInner;
+        }
+      }
+    }
+
     &.map-content {
       margin-bottom: $bodyPadding10;
 

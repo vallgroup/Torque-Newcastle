@@ -22,6 +22,7 @@ $address = build_address();
 $locations = build_locations( $post );
 $price = get_field( 'price' );
 $contacts = build_contacts();
+$embedded_video = get_field( 'embedded_video' );
 
 // right col data
 $thumbnail = get_the_post_thumbnail();
@@ -141,6 +142,57 @@ $gallery = get_field( 'retail_gallery' );
 
     </div>
 
+  </div>
+
+  <?php if ( $embedded_video ) { ?>
+    <div class="content-container video-content">
+      <div class="type-video_link">
+      
+        <?php // set iframe start/end
+        $_video_html = '';
+        $_video_html_start = '<iframe class="hero-video-link" src="';
+        $_video_html_end = '" frameborder="0" allow="autoplay"></iframe>';
+
+        if ( strpos( $embedded_video, 'vimeo' ) !== false ) {
+          // remove trailing slash if found
+          $embedded_video = rtrim( $embedded_video, '/' );
+          // explode by slash
+          $_url_parts = explode( '/', $embedded_video );
+          // use last element in array as video id, and compose video src string
+          $_video_src = 'https://player.vimeo.com/video/' . end( $_url_parts ) . '?title=0&byline=0&portrait=0&autoplay=0&loop=0&autopause=0&background=0&muted=0';
+          // compose iframe html
+          $_video_html = $_video_html_start . $_video_src . $_video_html_end;
+        } elseif ( 
+          strpos( $embedded_video, 'youtube' ) !== false || 
+          strpos( $embedded_video, 'youtu.be' ) !== false
+        ) {
+          // remove trailing slash if found
+          $embedded_video = rtrim( $embedded_video, '/' );
+          // explode by slash
+          $_url_parts = explode( '?v=', $embedded_video );
+          $_url_parts = explode( '&', end( $_url_parts ) );
+          // use last element in array as video id, and compose video src string
+          $_video_src = 'https://youtube.com/embed/' . $_url_parts[0] . '';
+          // compose iframe html
+          $_video_html = $_video_html_start . $_video_src . $_video_html_end;
+        } else  {
+          // simple iframe fallback with link provided by user
+          $_video_html = $_video_html_start . $embedded_video . $_video_html_end;
+        }
+
+        echo $_video_html; ?>
+
+      </div>
+    </div>
+  <?php } ?>
+
+  <div class="content-container map-content">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api_key; ?>"></script>
+    <div 
+      id="property-map" 
+      data-lat="<?php echo $lat_long->lat; ?>"
+      data-lng="<?php echo $lat_long->lng; ?>"
+    ></div>
   </div>
 
   <?php if ( $lat_long && $api_key ) { ?>

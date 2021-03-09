@@ -1,174 +1,5 @@
 [
     {
-        "key": "group_600015b62acd4",
-        "title": "Properties Options",
-        "fields": [
-            {
-                "key": "field_600016b8ad033",
-                "label": "Google Maps API Key",
-                "name": "google_maps_api_key",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": "",
-                "readonly": 0,
-                "disabled": 0
-            },
-            {
-                "key": "field_600016c8ad034",
-                "label": "Map Zoom (Archive)",
-                "name": "map_zoom_archive",
-                "type": "range",
-                "instructions": "The initial map zoom when multiple markers are displayed.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "25",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "min": 0,
-                "max": 19,
-                "step": 1,
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6006433db77f3",
-                "label": "Map Zoom (Single)",
-                "name": "map_zoom_single",
-                "type": "range",
-                "instructions": "The initial map zoom when a single marker is displayed.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "25",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "min": 0,
-                "max": 19,
-                "step": 1,
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_60001a4904e5b",
-                "label": "Map Center Latitude",
-                "name": "map_center_latitude",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": "",
-                "readonly": 0,
-                "disabled": 0
-            },
-            {
-                "key": "field_60001a5904e5c",
-                "label": "Map Center Longitude",
-                "name": "map_center_longitude",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": "",
-                "readonly": 0,
-                "disabled": 0
-            },
-            {
-                "key": "field_600016edad036",
-                "label": "Marker Icon",
-                "name": "marker_icon",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "preview_size": "medium",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_600016dead035",
-                "label": "Map Styles",
-                "name": "map_styles",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "maxlength": "",
-                "rows": "",
-                "new_lines": ""
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "options_page",
-                    "operator": "==",
-                    "value": "acf-options"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": true,
-        "description": ""
-    },
-    {
         "key": "group_5ff8e4a0b30dc",
         "title": "Property Options",
         "fields": [
@@ -678,6 +509,22 @@
                         "disabled": 0
                     }
                 ]
+            },
+            {
+                "key": "field_604713ccdb1e6",
+                "label": "Embedded Video",
+                "name": "embedded_video",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
             }
         ],
         "location": [
@@ -686,6 +533,175 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "newcastle_property"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_600015b62acd4",
+        "title": "Properties Options",
+        "fields": [
+            {
+                "key": "field_600016b8ad033",
+                "label": "Google Maps API Key",
+                "name": "google_maps_api_key",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_600016c8ad034",
+                "label": "Map Zoom (Archive)",
+                "name": "map_zoom_archive",
+                "type": "range",
+                "instructions": "The initial map zoom when multiple markers are displayed.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 0,
+                "max": 19,
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6006433db77f3",
+                "label": "Map Zoom (Single)",
+                "name": "map_zoom_single",
+                "type": "range",
+                "instructions": "The initial map zoom when a single marker is displayed.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 0,
+                "max": 19,
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_60001a4904e5b",
+                "label": "Map Center Latitude",
+                "name": "map_center_latitude",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_60001a5904e5c",
+                "label": "Map Center Longitude",
+                "name": "map_center_longitude",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_600016edad036",
+                "label": "Marker Icon",
+                "name": "marker_icon",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_600016dead035",
+                "label": "Map Styles",
+                "name": "map_styles",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options"
                 }
             ]
         ],
