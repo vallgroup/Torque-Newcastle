@@ -1,0 +1,17 @@
+.tq-title-embedded-script {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding_Top;
+  
+  .content-container {
+    text-align: center;
+
+    // .title {}
+    
+    .embedded-script {
+      max-width: 570px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

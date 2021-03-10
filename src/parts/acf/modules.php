@@ -499,6 +499,23 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'title_embedded_script' :
+
+        // options
+        $title = get_sub_field( 'title' )
+          ? strip_tags(
+            get_sub_field( 'title' ),
+            $allowable_title_tags
+          )
+          : null;
+        $embedded_script = get_sub_field( 'embedded_script' )
+          ? get_sub_field( 'embedded_script' )
+          : null;
+
+        include locate_template( $modules_path . 'title-embedded-script.php' );
+
+        break;
+
     }
 
   endwhile;
