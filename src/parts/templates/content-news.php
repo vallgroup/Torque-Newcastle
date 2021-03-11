@@ -8,7 +8,8 @@ if ( 0 < count( $news_posts ) ) {
   $shortcode .= 'post_type="post" ';
   $shortcode .= 'posts_per_page="12" ';
   $shortcode .= 'filters_types="tabs_tax,tabs_tax_multi,tabs_date" ';
-  $shortcode .= 'filters_args="category,post_tag"';
+  $shortcode .= 'filters_args="category,post_tag" ';
+  $shortcode .= 'date_type="YYYY" ';
   $shortcode .= ']';
   
   echo do_shortcode( $shortcode );
