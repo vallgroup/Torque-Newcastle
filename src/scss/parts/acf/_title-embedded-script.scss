@@ -12,6 +12,13 @@
       max-width: 570px;
       margin-left: auto;
       margin-right: auto;
+
+      .rbox-opening-list {
+        font-family: $fontFamilyOne;
+        font-size: $fontSizeBody;
+        line-height: $lineHeight3;
+        color: $greyOne;
+      }
     }
   }
 }

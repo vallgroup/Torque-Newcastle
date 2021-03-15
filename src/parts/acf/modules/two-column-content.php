@@ -8,7 +8,7 @@
   <div class="two-column-wrapper">
     <div 
       class="col-left" 
-      style="background-image: url(<?php echo $col_two_img; ?>);"
+      style="background-image: url(<?php echo $col_one_img; ?>);"
     >
       <?php if ( $col_one ) { ?>
         <div class="content-wrapper">

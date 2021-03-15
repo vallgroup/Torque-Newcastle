@@ -123,7 +123,9 @@ $gallery = get_field( 'retail_gallery' );
             $type = $link['type'];
             $target = 'file' === $type
               ? '_blank'
-              : '_blank';
+              : isset( $link['new_tab'] ) && $link['new_tab']
+                ? '_blank'
+                : '_self';
             $url = 'file' === $type
               ? isset( $link['file']['url'] )
                 ? $link['file']['url']
