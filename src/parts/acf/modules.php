@@ -206,7 +206,10 @@ if ( have_rows( $modules ) ) :
           $col_two_cta = isset( $col_two['cta'] )
             ? $col_two['cta']
             : null;
-          $col_two_img = isset( $col_two['background_image'] )
+          $col_two_img = ( 
+            isset( $col_two['background_image'] ) && 
+            isset( $col_two['background_image']['url'] )
+          )
             ? $col_two['background_image']['url']
             : null;
         }
