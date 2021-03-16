@@ -14,7 +14,7 @@ body {
   
         .torque-header-content-wrapper {
           .torque-menu-item-children-wrapper {
-            background-color: $white95pc;
+            background-color: $white;
           }
         }
       }
@@ -79,7 +79,7 @@ header#header-style-1 {
             max-width: 148px;
           }
           @include respond-to(desktop) {
-            max-width: 214px;
+            max-width: 165px;
           }
         }
       }
@@ -203,6 +203,8 @@ header#header-style-1 {
             min-width: 150px;
             transition: 0.2s ease-in-out;
             padding: $bodyPadding2 $bodyPadding3;
+            overflow: hidden;
+            background-color: $white;
 
             .torque-menu-item-wrapper {
               display: block;
@@ -330,13 +332,13 @@ header#header-style-1 {
           color: $white;
           font-size: 0.625em;
           font-family: $fontFamilyFour;
+          line-height: 1;
+          letter-spacing: 0;
 
           @include respond-to(tablet) {
-            font-size: 1em;
+            font-size: 0.8em;
+            line-height: 1.8;
             padding-right: $bodyPadding3;
-          }
-          @include respond-to(desktop) {
-            font-size: 1.25em;
           }
         }
     

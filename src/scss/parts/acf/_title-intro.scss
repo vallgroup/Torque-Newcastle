@@ -9,23 +9,25 @@
     // .title {}
     
     .intro {
-      max-width: 570px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
 
       & > * {
         color: $lightGreyBlue;
-        font-size: 0.8125em;
-        line-height: 1.23;
+        font-size: 1.2em;
+        line-height: 1.25;
+      }
+        
+      ul {
+        letter-spacing: 0;
+        list-style-type: disc;
+        margin: 0.5em 0 0.5em 1em;
 
-        @include respond-to(tablet) {
-          font-size: 1em;
-          line-height: 1.19;
-        }
-
-        @include respond-to(desktop) {
-          font-size: 1.375em;
-          line-height: 1.14;
+        li {
+          letter-spacing: 0;
+          list-style-type: disc;
+          margin: 0.5em 0 0.5em 1em;
         }
       }
     }

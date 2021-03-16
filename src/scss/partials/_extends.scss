@@ -48,11 +48,11 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   overflow: hidden;
 
   @include respond-to(tablet) {
-    padding-bottom: 56%;
+    padding-bottom: 68%;
   }
 
   @include respond-to(desktop) {
-    padding-bottom: 44%;
+    padding-bottom: 55%;
   }
 }
 
@@ -240,13 +240,18 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   .title,
   .title > * {
     color: $white;
+    margin-bottom: 0.25em;
   }
 
   .content,
   [class^="content"],
   .content > *,
   [class^="content"] > * {
-    color: $greyOne;
+    color: $white;
+
+    @include respond-to-max(desktop) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -256,6 +261,7 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   .title,
   .title > * {
     color: $twilightBlue;
+    margin-bottom: 0.25em;
   }
 
   .content,
@@ -263,6 +269,10 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   .content > *,
   [class^="content"] > * {
     color: $lightGreyBlue;
+
+    @include respond-to-max(desktop) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -340,6 +350,11 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
 %ctaButton_Blue {
   @extend %ctaButton_Setup;
   color: $softBlue;
+  transition: color 250ms;
+
+  &:hover {
+    color: $twilightBlue;
+  }
 }
 
 // Regular Button

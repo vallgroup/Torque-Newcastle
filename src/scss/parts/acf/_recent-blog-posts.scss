@@ -30,8 +30,6 @@
         margin-bottom: 0;
       }
 
-      // @include respond-to(desktop) {}
-
       .content-wrapper {
         @extend %titleContentCta_Light;
       }

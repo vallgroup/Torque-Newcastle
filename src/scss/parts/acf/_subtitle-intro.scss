@@ -16,6 +16,18 @@
       max-width: 570px;
       margin-left: auto;
       margin-right: auto;
+
+      ul {
+        letter-spacing: 0;
+        list-style-type: disc;
+        margin: 0.5em 0 0.5em 1em;
+
+        li {
+          letter-spacing: 0;
+          list-style-type: disc;
+          margin: 0.5em 0 0.5em 1em;
+        }
+      }
     }
   }
 }

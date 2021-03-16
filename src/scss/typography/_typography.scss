@@ -18,11 +18,11 @@ h1 {
   margin-bottom: 0;
 
   @include respond-to(tablet) {
-    font-size: 4.5625em;
+    font-size: 4em;
   }
 
   @include respond-to(desktop) {
-    font-size: 7.8125em;
+    font-size: 6em;
   }
 }
 
@@ -38,11 +38,11 @@ h2 {
   letter-spacing: 1px;
 
   @include respond-to(tablet) {
-    font-size: 3.125em; // 50px
+    font-size: 3em;
     line-height: 0.9;
   }
   @include respond-to(desktop) {
-    font-size: 5em; // 80px
+    font-size: 4em;
     line-height: 0.88;
   }
 }
@@ -61,7 +61,7 @@ h3 {
     line-height: 0.97;
   }
   @include respond-to(desktop) {
-    font-size: 3.75em; // 60px
+    font-size: 2.5em; // 60px
   }
 }
 
@@ -72,17 +72,15 @@ h4 {
 
 h5 {
   font-family: $fontFamilyTwo;
-  font-size: 1em; // 16px
+  font-size: 1.75em;
   font-weight: 400;
   letter-spacing: $letterSpacing7;
-  line-height: $lineHeight8;
+  line-height: $lineHeight1;
   color: $white;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-
-  // @include respond-to(tablet) {}
-  // @include respond-to(desktop) {}
+  padding: 0.25em 0;
 }
 
 h6 {
@@ -91,20 +89,47 @@ h6 {
   font-weight: 400;
   letter-spacing: $letterSpacing3;
   line-height: $lineHeight9;
-  color: $lightBlueGrey;
+  color: $softBlue;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-
-  // @include respond-to(tablet) {}
-  // @include respond-to(desktop) {}
 }
 
 p {
   font-family: $fontFamilyOne;
   font-size: 1em; // 16px
   line-height: $lineHeight4;
-  letter-spacing: $letterSpacing4;
+  letter-spacing: 0;
+
+  a {
+    color: $softBlue;
+    border-bottom: 2px solid $softBlue;
+    transition: color 250ms;
+
+    &:hover {
+      color: $twilightBlue;
+      border-bottom: 2px solid $twilightBlue;
+    }
+
+    &.website:hover {
+      color: $coldGrey;
+    }
+  }
+}
+
+b,
+strong {
+  color: $twilightBlue;
+
+  a {
+    border-bottom: 2px solid $twilightBlue;
+    transition: color 250ms;
+
+    &:hover {
+      border-bottom: 2px solid #78b6d8;
+      color: $softBlue;
+    }
+  }
 }
 
 // a {}

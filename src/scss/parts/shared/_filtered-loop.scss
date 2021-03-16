@@ -74,7 +74,6 @@
             @include respond-to(tablet) {
               padding-left: 35px;
             }
-            // @include respond-to(desktop) {}
 
             &:before {
               content: '+';
@@ -295,7 +294,7 @@
         & > * {
           @include respond-to(desktop) {
             font-size: 1.125em;
-            letter-spacing: 1.2px;
+            letter-spacing: 0;
           } 
         }
       }
@@ -324,7 +323,6 @@
 
           @include respond-to(tablet) {
             flex: 0 0 48%;
-            margin-bottom: 0;
           }
         }
       }
@@ -455,11 +453,11 @@
               }
             }
           }
-        
+
           .post-title {
-            margin-top: 0.2em;
+            margin: 0.1em 0.25em 0.5em 0;
           }
-    
+
           .post-cta {
             @extend %ctaButton_Blue;
           }

@@ -1,3 +1,12 @@
+/* 
+FROM Lena: 
+  Careers page — This code allows us to show the entire image of the process map. This code won't work if we use another one of the same module on this page. The site is built to have this module set a background photo and set it to 'cover', but we need it, in this case, to be set to "contain" 
+*/
+body.page-id-29 .tq-title-content-image .col-left {
+  background-size: contain !important;
+}
+/* -- */
+
 .tq-title-content-image {
   position: relative;
   @extend %limitWidth;
@@ -73,18 +82,11 @@
         @extend %titleContentCta_Light;
 
         .content {
+          letter-spacing: 0;
+          
           & > * {
             font-size: 1em;
-            line-height: 1.23;
-
-            @include respond-to(tablet) {
-              line-height: 1.19;
-            }
-
-            @include respond-to(desktop) {
-              font-size: 1.125em;
-              line-height: 1.14;
-            }
+            line-height: 1.14;
           }
         }
       }

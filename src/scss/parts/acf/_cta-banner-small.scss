@@ -6,9 +6,6 @@
   width: 100%;
 
   background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
-
-  // @include respond-to(tablet) {}
-  // @include respond-to(desktop) {}
   
   .content-wrapper {
     display: flex;
@@ -33,15 +30,13 @@
       font-weight: 400;
       margin: 0 0 $bodyPadding2;
       padding-right: $bodyPadding1;
+      line-height: 1;
+      letter-spacing: 0;
       
       @include respond-to(tablet) {
-        font-size: 1em;
+        font-size: 0.8em;
         margin-bottom: 0;
         padding-right: $bodyPadding2;
-      }
-      
-      @include respond-to(desktop) {
-        font-size: 1.5625em;
       }
     }
 

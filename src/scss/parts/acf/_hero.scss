@@ -7,6 +7,16 @@
   .type-image {
     @extend %imageSize;
 
+    padding-bottom: 55vh;
+
+    @include respond-to(tablet) {
+      padding-bottom: 55vh;
+    }
+
+    @include respond-to(desktop) {
+      padding-bottom: 55vh;
+    }
+
     .hero-image {
       @extend %imageInner;
     }
@@ -35,36 +45,36 @@
 
     .text-top {
       width: 100%;
-      max-width: 273px;
       margin-left: 0;
       margin-right: auto;
       
       & > * {
-        font-size: 0.9375em;
+        font-family: "Knockout HTF26-JuniorFlyweight Regular", sans-serif;
+        text-transform: uppercase;
+        line-height: .9;
+        letter-spacing: .01em;
+        font-size: 4.5em;
         line-height: 1.067em;
         margin-bottom: 0;
       }
 
       @include respond-to(tablet) {
-        max-width: 375px;
-
         & > * {
-          font-size: 1.3125em;
+          font-size: 4.5em;
         }
       }
 
       @include respond-to(desktop) {
-        max-width: 574px;
-        
+        max-width: 70%;
+
         & > * {
-          font-size: 2.25em;
+          font-size: 5.5em;
         }
       }
     }
     
     .text-bottom {
       width: 100%;
-      max-width: 273px;
       margin-left: 0;
       margin-right: auto;
       margin-top: 12px;
@@ -73,10 +83,10 @@
         font-size: 0.8125em;
         line-height: 1.2307em;
         margin-bottom: 0;
+        letter-spacing: .01em;
       }
 
       @include respond-to(tablet) {
-        max-width: 375px;
         margin-top: 25px;
 
         & > * {
@@ -85,8 +95,8 @@
       }
 
       @include respond-to(desktop) {
-        max-width: 574px;
-
+        max-width: 70%;
+        
         & > * {
           font-size: 1.5625em;
         }

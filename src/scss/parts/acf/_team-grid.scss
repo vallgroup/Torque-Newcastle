@@ -47,9 +47,8 @@
           font-size: 2.0625em;
           font-family: $fontFamilyThree;
           margin-top: $bodyPadding2;
-          margin-bottom: $bodyPadding2;
+          margin-bottom: 0.25em;
 
-          // @include respond-to(tablet) {}
           @include respond-to(desktop) {
             font-size: 2.6875em;
           }
@@ -64,11 +63,7 @@
           margin-bottom: $bodyPadding4;
           margin-left: 0;
           margin-right: auto;
-          max-width: 174px;
-
-          // @include respond-to(tablet) {}
-          // @include respond-to(desktop) {}
-          
+          max-width: 95%;
         }
       }
     }
