@@ -121,15 +121,11 @@ $gallery = get_field( 'retail_gallery' );
             // data
             $title = $link['button_title'];
             $type = $link['type'];
-            $target = 'file' === $type
+            $target = ( isset( $link['new_tab'] ) && $link['new_tab'] ) || 'file' === $type
               ? '_blank'
-              : isset( $link['new_tab'] ) && $link['new_tab']
-                ? '_blank'
-                : '_self';
-            $url = 'file' === $type
-              ? isset( $link['file']['url'] )
-                ? $link['file']['url']
-                : null
+              : '_self';
+            $url = 'file' === $type && isset( $link['file']['url'] )
+              ? $link['file']['url']
               : $link['link'];
             
             // if there is a url, output the button
