@@ -261,7 +261,7 @@ function build_contacts() {
         $html .= '<div class="name">' . $contact['name'] . '</div>';
         $html .= '<div class="company">' . $contact['company'] . '</div>';
         $html .= '<div class="phone">' . $contact['phone'] . '</div>';
-        $html .= '<div class="email">' . $contact['email'] . '</div>';
+        $html .= '<div class="email"><a href="mailto:' . $contact['email'] . '">' . $contact['email'] . '</a></div>';
       $html .= '</div>';
     }
     $html .= '</div>';

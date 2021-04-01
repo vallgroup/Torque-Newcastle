@@ -43,7 +43,7 @@ if ( $has_content ) { ?>
     <?php } ?>
 
     <?php if ( $email ) { ?>
-      <span class="email"><?php echo $email; ?></span>
+      <span class="email"><a href="<?php echo $email; ?>"><?php echo $email; ?></a></span>
     <?php } ?>
 
     <?php if ( $website ) { ?>
