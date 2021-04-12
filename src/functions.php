@@ -124,7 +124,6 @@ if ( class_exists( 'Torque_Jetpack_Form' ) ) {
 
  // remove menu items
  function torque_remove_menus(){
-
    //remove_menu_page( 'index.php' );                  //Dashboard
    //remove_menu_page( 'edit.php' );                   //Posts
    //remove_menu_page( 'upload.php' );                 //Media
@@ -135,7 +134,6 @@ if ( class_exists( 'Torque_Jetpack_Form' ) ) {
    //remove_menu_page( 'users.php' );                  //Users
    //remove_menu_page( 'tools.php' );                  //Tools
    //remove_menu_page( 'options-general.php' );        //Settings
-
  }
  add_action( 'admin_menu', 'torque_remove_menus' );
 
@@ -150,7 +148,6 @@ if ( class_exists( 'Torque_Jetpack_Form' ) ) {
 // so child styles always get priority
 add_action( 'wp_enqueue_scripts', 'torque_enqueue_child_styles' );
 function torque_enqueue_child_styles() {
-
     $parent_style = 'parent-styles';
     $parent_main_style = 'torque-theme-styles';
 
@@ -184,7 +181,6 @@ function torque_enqueue_child_styles() {
 // enqueue child scripts after parent script
 add_action( 'wp_enqueue_scripts', 'torque_enqueue_child_scripts');
 function torque_enqueue_child_scripts() {
-
     wp_enqueue_script( 'newcastle-child-script',
         get_stylesheet_directory_uri() . '/bundles/bundle.js',
         array( 'torque-theme-scripts' ), // depends on parent script
@@ -199,6 +195,21 @@ function torque_enqueue_child_scripts() {
         wp_get_theme()->get('Version'),
         true // put it in the footer
     );
+}
+
+// add scripts to head tag
+add_action( 'wp_head', 'hook_wp_head' );
+function hook_wp_head() {
+	?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20619206-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-20619206-1');
+	</script>
+	<?php
 }
 
 ?>
