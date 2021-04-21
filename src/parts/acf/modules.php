@@ -518,6 +518,39 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'title-embedded-script.php' );
 
         break;
+        
+      case 'careers' :
+
+        $alignment = get_sub_field( 'align_image' )
+          ? get_sub_field( 'align_image' )
+          : 'right';
+        $bg_color = get_sub_field( 'background_color' )
+          ? get_sub_field( 'background_color' )
+          : 'light_grey';
+        $image_or_careers = get_sub_field( 'image_or_careers' )
+          ? get_sub_field( 'image_or_careers' )
+          : null;
+        $title = get_sub_field( 'title' )
+          ? strip_tags( 
+            get_sub_field( 'title' ), 
+            $allowable_title_tags
+          )
+          : null;
+        $content = get_sub_field( 'content' )
+          ? strip_tags(
+            get_sub_field( 'content' ),
+            $allowable_tagline_tags
+          )
+          : null;
+        $image_url = get_sub_field( 'image' ) 
+          && isset( get_sub_field( 'image' )['url'] )
+            ? get_sub_field( 'image' )['url']
+            : false;
+        $filters = get_sub_field( 'recruiterbox_filters' );
+
+        include locate_template( $modules_path . 'careers.php' );
+
+        break;
 
     }
 
