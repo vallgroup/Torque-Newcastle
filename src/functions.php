@@ -144,6 +144,13 @@ if ( class_exists( 'Torque_Jetpack_Form' ) ) {
  * Enqueues
  */
 
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+function replace_core_jquery_version() {
+  wp_deregister_script( 'jquery' );
+  // Change the URL if you want to load a local copy of jQuery from your own server.
+  wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.6.0.min.js", array(), '3.6.0' );
+}
+
 // enqueue child styles after parent styles, both style.css and main.css
 // so child styles always get priority
 add_action( 'wp_enqueue_scripts', 'torque_enqueue_child_styles' );
