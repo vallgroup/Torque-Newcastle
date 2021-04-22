@@ -2462,7 +2462,7 @@ class Newcastle_ACF {
                   ),
                   array(
                     'key' => 'field_607fc147cb391',
-                    'label' => 'RecruiterBox Filters',
+                    'label' => 'RecruiterBox Filters (optional)',
                     'name' => 'recruiterbox_filters',
                     'type' => 'group',
                     'instructions' => '',
@@ -2669,13 +2669,12 @@ class Newcastle_ACF {
                           'id' => '',
                         ),
                         'choices' => array(
-                          'all' => 'All',
                           'contract' => 'Contract',
                           'full_time' => 'Full-time',
                           'part_time' => 'Part-time',
                         ),
                         'default_value' => false,
-                        'allow_null' => 0,
+                        'allow_null' => 1,
                         'multiple' => 0,
                         'ui' => 1,
                         'ajax' => 0,

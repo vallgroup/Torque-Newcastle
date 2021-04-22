@@ -43,8 +43,60 @@
         flex: 0 1 calc(57% - 12.5px);
       }
 
-      .careers-image {
-        
+      // .careers-image {}
+
+      .torque-recruiterbox-react-entry {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        @include respond-to(tablet) {
+          padding-left: 12%;
+        }
+
+        .openings-container {
+          width: 100%;
+          height: 100%;
+          overflow-y: scroll;
+          max-height: 400px;
+          
+          &::-webkit-scrollbar {
+            width: 0.8em;
+          }
+           
+          &::-webkit-scrollbar-track {
+            box-shadow: none;
+            background: $powderBlue;
+          }
+           
+          &::-webkit-scrollbar-thumb {
+            background-color: $softBlue;
+            outline: none;
+          }
+
+          .opening-container {
+            padding: 1em 0;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            border-bottom: 0.5px solid $steel;
+
+            @include respond-to(tablet) {
+              margin-right: 8%;
+            }
+
+            .opening-wrapper {
+              .opening-title {
+                display: block;
+                color: $twilightBlue;
+              }
+              .opening-address {
+                display: block;
+                color: $steel;
+              }
+            }
+          }
+        }
+        // .openings-container-none {}
       }
     }
 

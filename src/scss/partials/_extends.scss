@@ -207,6 +207,8 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
 }
 
 %titleContentCta_Setup {
+  width: 100%;
+  
   .title {
     margin-top: 0;
     margin-bottom: $bodyPadding3;
