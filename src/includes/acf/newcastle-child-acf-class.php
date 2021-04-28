@@ -9,7 +9,7 @@ class Newcastle_ACF {
     add_action('acf/init', array( $this, 'acf_init' ) );
 
     // hide acf in admin - client doesnt need to see this
-    // add_filter('acf/settings/show_admin', '__return_false');
+    add_filter('acf/settings/show_admin', '__return_false');
 
     add_action('acf/render_field_settings/type=text', array( $this, 'add_readonly_and_disabled_to_text_field' ) );
 
