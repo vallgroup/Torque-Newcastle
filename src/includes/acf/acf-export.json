@@ -63,7 +63,9 @@
                                     "vw": "vw (percentage of viewport width)",
                                     "vh": "vh (percentage of viewport height)"
                                 },
-                                "default_value": "em",
+                                "default_value": [
+                                    "em"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -92,7 +94,9 @@
                                     "mobile_tablet": "Mobile & Tablet",
                                     "tablet_desktop": "Tablet & Desktop"
                                 },
-                                "default_value": "all_devices",
+                                "default_value": [
+                                    "all_devices"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -329,7 +333,9 @@
                                     "right": "Right",
                                     "left": "Left"
                                 },
-                                "default_value": "right",
+                                "default_value": [
+                                    "right"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -430,7 +436,7 @@
                                 "post_type": [
                                     "newcastle_property"
                                 ],
-                                "taxonomy": "",
+                                "taxonomy": [],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "return_format": "id",
@@ -452,7 +458,7 @@
                                 "post_type": [
                                     "newcastle_property"
                                 ],
-                                "taxonomy": "",
+                                "taxonomy": [],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "return_format": "id",
@@ -485,7 +491,9 @@
                                     "left": "Left",
                                     "right": "Right"
                                 },
-                                "default_value": "left",
+                                "default_value": [
+                                    "left"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -510,7 +518,9 @@
                                     "light_grey": "Light Grey",
                                     "white": "White"
                                 },
-                                "default_value": "light_grey",
+                                "default_value": [
+                                    "light_grey"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -1082,7 +1092,9 @@
                                     "left": "Left",
                                     "right": "Right"
                                 },
-                                "default_value": "left",
+                                "default_value": [
+                                    "left"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -1107,7 +1119,9 @@
                                     "light_grey": "Light Grey",
                                     "white": "White"
                                 },
-                                "default_value": "light_grey",
+                                "default_value": [
+                                    "light_grey"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -1219,7 +1233,9 @@
                                     "left": "Left",
                                     "right": "Right"
                                 },
-                                "default_value": "left",
+                                "default_value": [
+                                    "left"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -1442,7 +1458,9 @@
                                     "investment": "Investment",
                                     "retail": "Retail"
                                 },
-                                "default_value": "investment",
+                                "default_value": [
+                                    "investment"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -1517,7 +1535,9 @@
                                     "light_grey": "Light Grey",
                                     "white": "White"
                                 },
-                                "default_value": "white",
+                                "default_value": [
+                                    "white"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -2058,7 +2078,9 @@
                                             "select": "Select",
                                             "date": "Date"
                                         },
-                                        "default_value": "text",
+                                        "default_value": [
+                                            "text"
+                                        ],
                                         "allow_null": 0,
                                         "multiple": 0,
                                         "ui": 1,
@@ -2265,7 +2287,9 @@
                                     "left": "Left",
                                     "right": "Right"
                                 },
-                                "default_value": "left",
+                                "default_value": [
+                                    "left"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -2290,7 +2314,9 @@
                                     "light_grey": "Light Grey",
                                     "white": "White"
                                 },
-                                "default_value": "light_grey",
+                                "default_value": [
+                                    "light_grey"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -2355,7 +2381,9 @@
                                     "image": "Image",
                                     "careers": "Careers"
                                 },
-                                "default_value": "image",
+                                "default_value": [
+                                    "image"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 1,
@@ -2563,7 +2591,9 @@
                                             "modified_on": "Modified (ascending)",
                                             "-modified_on": "Modified (descending)"
                                         },
-                                        "default_value": "created_on",
+                                        "default_value": [
+                                            "created_on"
+                                        ],
                                         "allow_null": 0,
                                         "multiple": 0,
                                         "ui": 1,
@@ -2608,7 +2638,7 @@
                                             "full_time": "Full-time",
                                             "part_time": "Part-time"
                                         },
-                                        "default_value": false,
+                                        "default_value": [],
                                         "allow_null": 1,
                                         "multiple": 0,
                                         "ui": 1,
@@ -2642,6 +2672,58 @@
                         ],
                         "min": "",
                         "max": ""
+                    },
+                    "layout_60a544bb6ce00": {
+                        "key": "layout_60a544bb6ce00",
+                        "name": "anchor_section",
+                        "label": "Anchor Section",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_60a544d06ce12",
+                                "label": "Anchor ID",
+                                "name": "anchor_id",
+                                "type": "text",
+                                "instructions": "Enter a name for this anchor with no spaces or special characters. This field is required for this module to work.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "contact_section",
+                                "prepend": "#",
+                                "append": "",
+                                "maxlength": "",
+                                "readonly": 0,
+                                "disabled": 0
+                            },
+                            {
+                                "key": "field_60a545a96ce13",
+                                "label": "Offset",
+                                "name": "offset",
+                                "type": "number",
+                                "instructions": "Enter number of pixels to offset the scroll when anchoring to this section.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": 75,
+                                "prepend": "",
+                                "append": "px",
+                                "min": 0,
+                                "max": "",
+                                "step": 1
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
                     }
                 },
                 "button_label": "Add Content Module",
@@ -2664,7 +2746,7 @@
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",
-        "active": true,
+        "active": 1,
         "description": ""
     },
     {
@@ -3187,7 +3269,7 @@
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",
-        "active": true,
+        "active": 1,
         "description": ""
     },
     {
@@ -3211,7 +3293,9 @@
                     "light": "Light",
                     "dark": "Dark"
                 },
-                "default_value": "dark",
+                "default_value": [
+                    "dark"
+                ],
                 "allow_null": 0,
                 "multiple": 0,
                 "ui": 1,
@@ -3235,7 +3319,7 @@
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",
-        "active": true,
+        "active": 1,
         "description": ""
     }
 ]

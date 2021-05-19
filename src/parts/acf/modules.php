@@ -14,6 +14,16 @@ if ( have_rows( $modules ) ) :
 
     switch ( get_row_layout() ) {
 
+      case 'anchor_section' :
+
+        // options
+        $anchor_id = get_sub_field( 'anchor_id' );
+        $offset = get_sub_field( 'offset' );
+
+        include locate_template( $modules_path . 'anchor-section.php' );
+
+        break;
+
       case 'content_spacer' :
 
         // options
@@ -28,7 +38,7 @@ if ( have_rows( $modules ) ) :
       case 'hero' :
 
         // options
-        $image_url = get_sub_field( 'image' ) 
+        $image_url = get_sub_field( 'image' )
           && isset( get_sub_field( 'image' )['url'] )
             ? get_sub_field( 'image' )['url']
             : false;
@@ -113,8 +123,8 @@ if ( have_rows( $modules ) ) :
         $cta = get_sub_field( 'cta' )
           ? get_sub_field( 'cta' )
           : null;
-        
-        $background_url = get_sub_field( 'content_background' ) 
+
+        $background_url = get_sub_field( 'content_background' )
           && isset( get_sub_field( 'content_background' )['url'] )
             ? get_sub_field( 'content_background' )['url']
             : false;
@@ -128,7 +138,7 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'property-showcase.php' );
 
         break;
-        
+
       case 'property_showcase_alternate' :
 
           $alignment = get_sub_field( 'align_image' )
@@ -138,14 +148,14 @@ if ( have_rows( $modules ) ) :
             ? get_sub_field( 'background_color' )
             : 'light_grey';
           $title = get_sub_field( 'title' )
-            ? strip_tags( 
-              get_sub_field( 'title' ), 
+            ? strip_tags(
+              get_sub_field( 'title' ),
               $allowable_title_tags
             )
             : null;
           $subtitle = get_sub_field( 'subtitle' )
-            ? strip_tags( 
-              get_sub_field( 'subtitle' ), 
+            ? strip_tags(
+              get_sub_field( 'subtitle' ),
               $allowable_title_tags
             )
             : null;
@@ -158,9 +168,9 @@ if ( have_rows( $modules ) ) :
           $images = get_sub_field( 'images' )
             ? get_sub_field( 'images' )
             : null;
-  
+
           include locate_template( $modules_path . 'property-showcase-alternate.php' );
-  
+
           break;
 
       case 'two_column_content' :
@@ -192,8 +202,8 @@ if ( have_rows( $modules ) ) :
 
         if ( $col_two ) {
           $col_two_title = isset( $col_two['title'] )
-            ? strip_tags( 
-              $col_two['title'], 
+            ? strip_tags(
+              $col_two['title'],
               $allowable_title_tags
             )
             : null;
@@ -206,14 +216,14 @@ if ( have_rows( $modules ) ) :
           $col_two_cta = isset( $col_two['cta'] )
             ? $col_two['cta']
             : null;
-          $col_two_img = ( 
-            isset( $col_two['background_image'] ) && 
+          $col_two_img = (
+            isset( $col_two['background_image'] ) &&
             isset( $col_two['background_image']['url'] )
           )
             ? $col_two['background_image']['url']
             : null;
         }
-        
+
         include locate_template( $modules_path . 'two-column-content.php' );
 
         break;
@@ -242,8 +252,8 @@ if ( have_rows( $modules ) ) :
 
         if ( $col_two ) {
           $col_two_title_top = isset( $col_two['title_top'] )
-            ? strip_tags( 
-              $col_two['title_top'], 
+            ? strip_tags(
+              $col_two['title_top'],
               $allowable_title_tags
             )
             : null;
@@ -254,8 +264,8 @@ if ( have_rows( $modules ) ) :
             )
             : null;
           $col_two_title_bottom = isset( $col_two['title_bottom'] )
-            ? strip_tags( 
-              $col_two['title_bottom'], 
+            ? strip_tags(
+              $col_two['title_bottom'],
               $allowable_title_tags
             )
             : null;
@@ -269,8 +279,8 @@ if ( have_rows( $modules ) ) :
 
         if ( $col_three ) {
           $col_three_title_top = isset( $col_three['title_top'] )
-            ? strip_tags( 
-              $col_three['title_top'], 
+            ? strip_tags(
+              $col_three['title_top'],
               $allowable_title_tags
             )
             : null;
@@ -281,8 +291,8 @@ if ( have_rows( $modules ) ) :
             )
             : null;
           $col_three_title_bottom = isset( $col_three['title_bottom'] )
-            ? strip_tags( 
-              $col_three['title_bottom'], 
+            ? strip_tags(
+              $col_three['title_bottom'],
               $allowable_title_tags
             )
             : null;
@@ -293,11 +303,11 @@ if ( have_rows( $modules ) ) :
             )
             : null;
         }
-        
+
         include locate_template( $modules_path . 'three-column-content.php' );
 
         break;
-        
+
       case 'title_content_image' :
 
         $alignment = get_sub_field( 'align_image' )
@@ -307,8 +317,8 @@ if ( have_rows( $modules ) ) :
           ? get_sub_field( 'background_color' )
           : 'light_grey';
         $title = get_sub_field( 'title' )
-          ? strip_tags( 
-            get_sub_field( 'title' ), 
+          ? strip_tags(
+            get_sub_field( 'title' ),
             $allowable_title_tags
           )
           : null;
@@ -318,7 +328,7 @@ if ( have_rows( $modules ) ) :
             $allowable_tagline_tags
           )
           : null;
-        $image_url = get_sub_field( 'image' ) 
+        $image_url = get_sub_field( 'image' )
           && isset( get_sub_field( 'image' )['url'] )
             ? get_sub_field( 'image' )['url']
             : false;
@@ -329,19 +339,19 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'title-content-image.php' );
 
         break;
-        
+
       case 'image_title_two_column_content' :
 
         $alignment = get_sub_field( 'align_image' )
           ? get_sub_field( 'align_image' )
           : 'right';
-        $image_url = get_sub_field( 'image' ) 
+        $image_url = get_sub_field( 'image' )
           && isset( get_sub_field( 'image' )['url'] )
             ? get_sub_field( 'image' )['url']
             : false;
         $title = get_sub_field( 'title' )
-          ? strip_tags( 
-            get_sub_field( 'title' ), 
+          ? strip_tags(
+            get_sub_field( 'title' ),
             $allowable_title_tags
           )
           : null;
@@ -367,12 +377,12 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'image-title-two-column-content.php' );
 
         break;
-        
+
       case 'recent_blog_posts' :
 
         $title = get_sub_field( 'title' )
-          ? strip_tags( 
-            get_sub_field( 'title' ), 
+          ? strip_tags(
+            get_sub_field( 'title' ),
             $allowable_title_tags
           )
           : null;
@@ -383,13 +393,13 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'recent-blog-posts.php' );
 
         break;
-        
+
       case 'team_grid' :
 
         include locate_template( $modules_path . 'team-grid.php' );
 
         break;
-        
+
       case 'properties_grid' :
 
         $template = get_sub_field( 'template' )
@@ -413,8 +423,8 @@ if ( have_rows( $modules ) ) :
           ? get_sub_field( 'number_of_columns' )
           : 3;
         $title = $include_content && get_sub_field( 'title' )
-          ? strip_tags( 
-            get_sub_field( 'title' ), 
+          ? strip_tags(
+            get_sub_field( 'title' ),
             $allowable_title_tags
           )
           : null;
@@ -434,7 +444,7 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'logo-grid.php' );
 
         break;
-        
+
       case 'quote' :
 
         $quote = get_sub_field( 'quote' )
@@ -447,7 +457,7 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'quote.php' );
 
         break;
-        
+
       case 'gallery' :
 
         $images = get_sub_field( 'images' )
@@ -457,11 +467,11 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'gallery.php' );
 
         break;
-        
+
       case 'cta_banner_large' :
 
         $title = get_sub_field( 'title' )
-          ? strip_tags( 
+          ? strip_tags(
             get_sub_field( 'title' ),
             $allowable_title_tags
           )
@@ -479,11 +489,11 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'cta-banner-large.php' );
 
         break;
-        
+
       case 'cta_banner_small' :
 
         $title = get_sub_field( 'title' )
-          ? strip_tags( 
+          ? strip_tags(
             get_sub_field( 'title' ),
             $allowable_title_tags
           )
@@ -495,7 +505,7 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'cta-banner-small.php' );
 
         break;
-        
+
       case 'contact_form_details' :
 
         include locate_template( $modules_path . 'contact-form-details.php' );
@@ -518,7 +528,7 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'title-embedded-script.php' );
 
         break;
-        
+
       case 'careers' :
 
         $alignment = get_sub_field( 'align_image' )
@@ -531,8 +541,8 @@ if ( have_rows( $modules ) ) :
           ? get_sub_field( 'image_or_careers' )
           : null;
         $title = get_sub_field( 'title' )
-          ? strip_tags( 
-            get_sub_field( 'title' ), 
+          ? strip_tags(
+            get_sub_field( 'title' ),
             $allowable_title_tags
           )
           : null;
@@ -542,7 +552,7 @@ if ( have_rows( $modules ) ) :
             $allowable_tagline_tags
           )
           : null;
-        $image_url = get_sub_field( 'image' ) 
+        $image_url = get_sub_field( 'image' )
           && isset( get_sub_field( 'image' )['url'] )
             ? get_sub_field( 'image' )['url']
             : false;
