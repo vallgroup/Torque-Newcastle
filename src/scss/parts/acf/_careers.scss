@@ -2,7 +2,7 @@
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding_Top;
-  
+
   .two-column-wrapper {
     display: flex;
     flex-direction: column-reverse;
@@ -30,7 +30,7 @@
       justify-content: center;
 
       min-height: 250px;
-      
+
       @include respond-to(tablet) {
         margin-bottom: 0;
         min-height: 370px;
@@ -39,6 +39,7 @@
 
     // left col styles
     .col-left {
+
       @include respond-to(tablet) {
         flex: 0 1 calc(57% - 12.5px);
       }
@@ -59,16 +60,16 @@
           height: 100%;
           overflow-y: scroll;
           max-height: 400px;
-          
+
           &::-webkit-scrollbar {
             width: 0.8em;
           }
-           
+
           &::-webkit-scrollbar-track {
             box-shadow: none;
             background: $powderBlue;
           }
-           
+
           &::-webkit-scrollbar-thumb {
             background-color: $softBlue;
             outline: none;
@@ -112,6 +113,9 @@
         flex: 0 1 calc(43% - 12.5px);
       }
 
+      padding-top: 0;
+      justify-content: flex-start;
+
       &.bg-light_grey {
         border-top: $border3 solid $softBlue;
         background-color: $veryLightGrey;
@@ -126,7 +130,7 @@
           @include respond-to(tablet) {
             max-width: 75%;
           }
-          
+
           & > * {
             font-size: 1em;
             line-height: 1.14;
