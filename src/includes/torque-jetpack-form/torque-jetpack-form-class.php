@@ -16,7 +16,7 @@ class Torque_Jetpack_Form {
   );
 
   public function __construct() {
-    
+
     $this->form_options = get_sub_field( 'form_options' );
 
     $this->build_form();
@@ -28,26 +28,26 @@ class Torque_Jetpack_Form {
   }
 
   public static function register_redirect_filter() {
-    add_filter( 'grunion_contact_form_redirect_url', array( 
-      get_called_class(), 
-      'modify_jetpack_contact_form_redirect' 
+    add_filter( 'grunion_contact_form_redirect_url', array(
+      get_called_class(),
+      'modify_jetpack_contact_form_redirect'
     ), 10, 3 );
   }
 
   public static function activate_contact_module() {
-    add_filter( 'jetpack_active_modules', array( 
-      get_called_class(), 
+    add_filter( 'jetpack_active_modules', array(
+      get_called_class(),
       'modify_jetpack_modules'
     ) );
   }
 
   public function build_form() {
-    if ( 
+    if (
       have_rows( 'form_fields' )
-      && class_exists( 'Jetpack' ) 
-      && Jetpack::is_module_active( 'contact-form' ) 
-    ) : 
-    
+      && class_exists( 'Jetpack' )
+      && Jetpack::is_module_active( 'contact-form' )
+    ) :
+
       // start open shortcode tag
       $form_shortcode = '[contact-form';
 
@@ -56,17 +56,17 @@ class Torque_Jetpack_Form {
           $form_shortcode .= ' ' . $value . '="' . esc_attr( $this->form_options[ $key ] ) . '"';
         }
       }
-      
+
       // end open shortcode tag
       $form_shortcode .= ']';
-      
-      if ( class_exists( 'Torque_Jetpack_Form_Fields' ) ) : 
+
+      if ( class_exists( 'Torque_Jetpack_Form_Fields' ) ) :
 
         $form_fields = new Torque_Jetpack_Form_Fields( $this->form_options );
         $form_fields_shortcode = $form_fields->get_form_fields();
 
         if (
-          $form_fields_shortcode && 
+          $form_fields_shortcode &&
           $form_fields_shortcode !== ''
         ) :
           $form_shortcode .= $form_fields_shortcode;
@@ -75,25 +75,25 @@ class Torque_Jetpack_Form {
         endif;
 
       endif;
-      
+
       // close shortcode tag
       $form_shortcode .= '[/contact-form]';
 
       $this->built_form_shortcode = $form_shortcode;
-    
-    else : 
+
+    else :
       $this->display_warning( 'Please ensure the Jetpack plugin is installed, and the Contact Form module is active.' );
     endif;
   }
 
   public function print_form() {
-    
-    if ( 
-      $this->built_form_shortcode && 
-      $this->built_form_shortcode !== null 
+
+    if (
+      $this->built_form_shortcode &&
+      $this->built_form_shortcode !== null
     ) {
       // build extra css classess
-      $extra_form_classes = isset( $this->form_options['hide_labels'] ) 
+      $extra_form_classes = isset( $this->form_options['hide_labels'] )
         && $this->form_options['hide_labels']
           ? ' hide-labels'
           : '';
@@ -124,7 +124,7 @@ class Torque_Jetpack_Form {
 
     // check to see whether a redirect URL was added to the form config
     $redirect_url_post_var_name = 'g' . $id . '-' . self::$REDIRECT_FIELD_LABEL;
-    if ( 
+    if (
       isset( $_POST[ $redirect_url_post_var_name ] ) &&
       $_POST[ $redirect_url_post_var_name ] !== null
     ) {
@@ -132,7 +132,7 @@ class Torque_Jetpack_Form {
       $redirects = array(
         $id => $_POST[ $redirect_url_post_var_name ],
       );
-  
+
       // loop though each custom redirect
       foreach ( $redirects as $origin => $destination ) {
         if ( $id == $origin ) {
@@ -174,7 +174,7 @@ class Torque_Jetpack_Form {
       // 'module-info',
       // 'monitor',
       // 'notes',
-      // 'photon',
+      'photon',
       // 'post-by-email',
       // 'protect',
       // 'publicize',
