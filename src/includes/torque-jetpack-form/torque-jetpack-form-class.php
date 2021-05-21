@@ -174,7 +174,7 @@ class Torque_Jetpack_Form {
       // 'module-info',
       // 'monitor',
       // 'notes',
-      'photon',
+      // 'photon',
       // 'post-by-email',
       // 'protect',
       // 'publicize',
