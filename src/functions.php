@@ -95,10 +95,10 @@ if ( class_exists( 'Newcastle_Blog_Controller' ) ) {
 /**
  * Filtered Loop plugin settings
  */
- 
-if ( 
-  class_exists( 'Torque_Filtered_Loop' ) 
-  && class_exists( 'Torque_Filtered_Loop_Shortcode' ) 
+
+if (
+  class_exists( 'Torque_Filtered_Loop' )
+  && class_exists( 'Torque_Filtered_Loop_Shortcode' )
 ) {
   add_filter(
     Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE,
@@ -168,7 +168,7 @@ function torque_enqueue_child_styles() {
         array( $parent_style, $parent_main_style ),
         wp_get_theme()->get('Version')
     );
-    
+
     // enqueue dashicons for frontend
     wp_enqueue_style( 'dashicons' );
 
@@ -216,6 +216,16 @@ function hook_wp_head() {
 	  gtag('js', new Date());
 	  gtag('config', 'UA-20619206-1');
 	</script>
+
+  <!-- Spectra -->
+  <script>
+  (function(r, o, y, g, b, i, v){
+    r.__spectraBaseUrl = y;r.__spectraConfig = b;
+    i = o.createElement('script');i.src = y+g;i.async = 1;
+    v = o.getElementsByTagName('head')[0];v.appendChild(i);
+  })(window, document, 'https://spectrajs.com', '/stats/', null);
+  </script>
+  <!-- /End Of Spectra -->
 	<?php
 }
 
