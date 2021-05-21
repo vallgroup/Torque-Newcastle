@@ -1,6 +1,6 @@
 <?php
 /**
- * Template file for displaying Content Spacer
+ * Template file for displaying Anchor Section
  */
 
 ?>
