@@ -5,3 +5,4 @@ import "./notification-bar";
 import "./contact-form";
 import "./owl-carousel";
 import "./property";
+import "./scrolltop";
