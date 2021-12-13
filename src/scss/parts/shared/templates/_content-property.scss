@@ -9,7 +9,7 @@ $mail_icon: url('../statics/icons/mail.png');
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    
+
     @include respond-to(desktop) {
       flex-direction: row;
       justify-content: space-between;
@@ -21,26 +21,26 @@ $mail_icon: url('../statics/icons/mail.png');
 
       .col-left {
         flex: 1 1 100%;
-        
+
         @include respond-to(desktop) {
           flex: 0 0 40%;
         }
-  
+
         .content-box {
           margin-bottom: $bodyPadding2;
           max-width: 370px;
           margin-left: 0;
           margin-right: auto;
-  
+
           @include respond-to(desktop) {
             margin-bottom: $bodyPadding4;
           }
-  
+
           &.post-content {
             border-bottom: 1px solid $warmGrey;
             padding-bottom: $bodyPadding5;
             margin-bottom: $bodyPadding5;
-  
+
             .title {
               color: $twilightBlue;
               margin-bottom: $bodyPadding2;
@@ -57,12 +57,12 @@ $mail_icon: url('../statics/icons/mail.png');
               }
             }
           }
-  
+
           &.key-details {
             border-bottom: 1px solid $warmGrey;
             padding-bottom: $bodyPadding5;
             margin-bottom: $bodyPadding5;
-  
+
             .content {
               letter-spacing: 0;
 
@@ -73,7 +73,7 @@ $mail_icon: url('../statics/icons/mail.png');
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
-  
+
                 .key {
                   flex: 0 0 50%;
                   color: $twilightBlue;
@@ -85,7 +85,7 @@ $mail_icon: url('../statics/icons/mail.png');
               }
             }
           }
-  
+
           &.contact-info {
             .contacts {
               display: flex;
@@ -93,15 +93,15 @@ $mail_icon: url('../statics/icons/mail.png');
               flex-wrap: wrap;
               justify-content: space-between;
               align-items: flex-start;
-  
+
               .contact {
                 flex: 0 0 48%;
                 margin-bottom: $bodyPadding4;
-  
+
                 & > * {
                   margin-bottom: $bodyPadding2;
                 }
-    
+
                 .name {
                   color: $twilightBlue;
                 }
@@ -112,7 +112,7 @@ $mail_icon: url('../statics/icons/mail.png');
                   color: $steel;
                   padding-left: 25px;
                   position: relative;
-  
+
                   &:before {
                     content: '';
                     position: absolute;
@@ -129,7 +129,7 @@ $mail_icon: url('../statics/icons/mail.png');
                   color: $steel;
                   padding-left: 25px;
                   position: relative;
-  
+
                   &:before {
                     content: '';
                     position: absolute;
@@ -145,7 +145,7 @@ $mail_icon: url('../statics/icons/mail.png');
               }
             }
           }
-  
+
           .subtitle {
             color: $softBlue;
             font-size: 1.5625em;
@@ -153,28 +153,35 @@ $mail_icon: url('../statics/icons/mail.png');
           }
         }
       }
-  
+
       .col-right {
         flex: 1 1 100%;
-        
+
         .featured-image {
           width: 100%;
-  
+
           img {
             max-width: 100%;
             height: auto;
           }
         }
-  
+
         .additional-links-container {
           padding-top: $bodyPadding5;
-  
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 1rem;
+
+
           .button {
             @extend %ctaButton_Blue;
-  
+
+            white-space: unset;
+            /*
             &:not(:first-of-type) {
               margin-left: $bodyPadding6;
             }
+            */
           }
         }
       }
@@ -238,7 +245,7 @@ $mail_icon: url('../statics/icons/mail.png');
       @include respond-to(desktop) {
         margin-bottom: $bodyPadding12;
       }
-      
+
       .gallery-image-wrapper {
         @extend %imageSizeHalf;
         margin-bottom: $bodyPadding3;
