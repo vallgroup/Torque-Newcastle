@@ -111,7 +111,7 @@ class Newcastle_Property_CPT {
 			return;
 
 		// A list of taxonomy slugs to filter by
-		$taxonomies = array( 
+		$taxonomies = array(
       self::$PROPERTY_TYPE_TAX_SLUG,
       self::$PROPERTY_LOCATION_TAX_SLUG
     );
@@ -144,7 +144,7 @@ class Newcastle_Property_CPT {
 	// function retrieve_lat_long( $post_id, $post_after, $post_before ) {
 	public static function retrieve_lat_long( $post_id ) {
 		// early exit
-		// if ( self::$property_labels['post_type_name'] !== $post_after->post_type ) 
+		// if ( self::$property_labels['post_type_name'] !== $post_after->post_type )
 		if ( self::$property_labels['post_type_name'] !== get_post_type( $post_id ) )
 			return;
 
@@ -162,7 +162,7 @@ class Newcastle_Property_CPT {
 			&& $state
 			&& $zip_code
 		) {
-			$address = str_replace( 
+			$address = str_replace(
 				' ',
 				'+',
 				$street_address . '+' . $city . '+' . $state . '+' . $zip_code
@@ -189,14 +189,14 @@ class Newcastle_Property_CPT {
 				&& $response->results
 				&& 0 < count( $response->results )
 			) {
-				update_field( 
+				update_field(
 					'latitude_longitude',
 					$response->results[0]->geometry->location,
 					$post_id
 				);
 			}
 		} else {
-			update_field( 
+			update_field(
 				'latitude_longitude',
 				'',
 				$post_id
@@ -205,11 +205,11 @@ class Newcastle_Property_CPT {
 	}
 
 	function add_acf_metaboxes() {
-		
+
 		// Updated: 20210120
-		
+
 		// ACF defs - START
-		
+
 		if( function_exists('acf_add_local_field_group') ):
 
 			acf_add_local_field_group(array(
@@ -343,6 +343,25 @@ class Newcastle_Property_CPT {
 						'max_size' => '',
 						'mime_types' => '',
 					),
+          array(
+      			'key' => 'field_61b7c9c14db5d',
+      			'label' => 'Pin size',
+      			'name' => 'pin_size',
+      			'type' => 'text',
+      			'instructions' => 'Add the values in pixels and separate width and height by a coma',
+      			'required' => 0,
+      			'conditional_logic' => 0,
+      			'wrapper' => array(
+      				'width' => '',
+      				'class' => '',
+      				'id' => '',
+      			),
+      			'default_value' => '39,54',
+      			'placeholder' => '',
+      			'prepend' => '',
+      			'append' => '',
+      			'maxlength' => '',
+      		),
 					array(
 						'key' => 'field_600016dead035',
 						'label' => 'Map Styles',
@@ -381,7 +400,7 @@ class Newcastle_Property_CPT {
 				'active' => true,
 				'description' => '',
 			));
-			
+
 			acf_add_local_field_group(array(
 				'key' => 'group_5ff8e4a0b30dc',
 				'title' => 'Property Options',
@@ -955,9 +974,9 @@ class Newcastle_Property_CPT {
 				'active' => true,
 				'description' => '',
 			));
-			
+
 			endif;
-		
+
 		// ACF defs - END
 
   }
@@ -967,11 +986,11 @@ class Newcastle_Property_CPT {
 
     // get data
     $_featured_img = get_the_post_thumbnail_url( $property_id );
-    $_types = get_the_terms( 
+    $_types = get_the_terms(
       $property_id,
       self::$PROPERTY_TYPE_TAX_SLUG
     );
-    $_neighborhoods = get_the_terms( 
+    $_neighborhoods = get_the_terms(
       $property_id,
       self::$PROPERTY_LOCATION_TAX_SLUG
     );

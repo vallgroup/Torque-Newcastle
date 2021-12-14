@@ -131,6 +131,25 @@
                 "mime_types": ""
             },
             {
+                "key": "field_61b7c57c0525a",
+                "label": "Pin size",
+                "name": "pin_size",
+                "type": "text",
+                "instructions": "Add the values in pixels and separate width and height by a coma",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "39,54",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_600016dead035",
                 "label": "Map Styles",
                 "name": "map_styles",
