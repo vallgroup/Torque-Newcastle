@@ -7,7 +7,7 @@
     if ( currUrl && currUrl.includes('/property/') ) {
       // make a call to the filtered loop API endpoint, to retrieve map options
       $.get({
-        url: currHost + apiEndpoint, 
+        url: currHost + apiEndpoint,
         success: function(data) {
           if (true === data.success) {
             // initialise the map
@@ -80,5 +80,42 @@
       }
 
     }
+
+    const propertyModal = document.getElementById('propertyModal');
+    // Open the Modal
+    function openLightbox(e) {
+      //console.log(e.target.getAttribute('data-video-url'));
+      propertyModal.querySelector('.modal-content iframe').src = e.target.getAttribute('data-video-url');
+      propertyModal.style.display = 'block';
+    }
+
+    // Close the Modal
+    function closeLightbox() {
+      propertyModal.style.display = 'none';
+      propertyModal.querySelector('.modal-content iframe').src = '';
+    }
+
+    //add listeners
+    const videoGallery = document.querySelectorAll('.gallery-image-wrapper [data-video-url]');
+    videoGallery.forEach(thumbnail => thumbnail.addEventListener('click', openLightbox));
+
+    //close in click outside the modal
+    document.addEventListener('click', (event) => {
+      const boolIsOutside = propertyModal.isSameNode(event.target);
+      if (boolIsOutside) {
+        closeLightbox();
+      }
+    });
+
+    //close when esc key is pressed
+    document.onkeydown = function (evt) {
+      if (evt.keyCode == 27) {
+        closeLightbox();
+      }
+    };
+
+    //close when x button is clicked
+    const closeBtn = propertyModal.querySelector('.close');
+    closeBtn.addEventListener('click', closeLightbox);
   });
 })(jQuery);
