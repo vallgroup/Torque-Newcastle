@@ -11,17 +11,17 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
 
     if ( $menu ) {
       $menu_items = wp_get_nav_menu_items($menu->term_id);
-    
+
       $menu_list = '<div class="content-wrapper">';
       $menu_list .= '<h4>Navigation</h4>';
-    
+
       foreach ( (array) $menu_items as $key => $menu_item ) {
           $title = $menu_item->title;
           $url = $menu_item->url;
           $target = $menu_item->target;
           $menu_list .= '<div class="footer-menu-item"><a href="' . $url . '" target="' . $target . '">' . $title . '</a></div>';
       }
-      
+
       $menu_list .= '</div>';
     }
 }
@@ -43,10 +43,11 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
       <?php get_template_part( 'parts/shared/contact-parts/contact', 'investment' ); ?>
       <?php get_template_part( 'parts/shared/contact-parts/contact', 'retail-leasing' ); ?>
     </div>
-    
+
     <div class="footer-block footer-block-four">
       <?php echo $menu_list; ?>
     </div>
   </div>
-
+  
+  <button class="scrolltop">&#8673;</button>
 </footer>

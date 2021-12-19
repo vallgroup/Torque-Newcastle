@@ -1,0 +1,51 @@
+$scrolltop-background: #1c86f2 !default; //color of the button
+$scrolltop-color: #fff !default; //color of the text in the button
+$scrolltop-size: 40px !default; //size of the button
+$scrolltop-position-right: 10px !default; //position from the right border of the screen
+$scrolltop-position-bottom: 40px !default; //position from the bottom of the screen
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrolltop {
+  background-color: $scrolltop-background;
+  border-radius: 50%;
+  bottom: $scrolltop-position-bottom;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+  display: block;
+  height: $scrolltop-size;
+  line-height: $scrolltop-size;
+  position: fixed;
+  right: $scrolltop-position-right;
+  text-align: center;
+  transform: translateX(120px);
+  transition: 1s all;
+  width: $scrolltop-size;
+  z-index: 9999;
+  font-size: 2rem;
+  color: $scrolltop-color;
+
+  &:link {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: lighten($scrolltop-background, 6%);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
+  }
+
+  @media only screen and (min-width: 768px) {
+    bottom: $scrolltop-position-bottom - 20px;
+    right: $scrolltop-position-right + 10px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    bottom: $scrolltop-position-bottom - 10px;
+    height: $scrolltop-size + 10px;
+    line-height: $scrolltop-size + 10px;
+    right: $scrolltop-position-right + 20px;
+    width: $scrolltop-size + 10px;
+  }
+
+}
