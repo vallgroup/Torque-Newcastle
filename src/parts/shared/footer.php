@@ -48,6 +48,6 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
       <?php echo $menu_list; ?>
     </div>
   </div>
-  
-  <button class="scrolltop">&#8673;</button>
+
+  <button class="scrolltop"><img src="<?php echo get_stylesheet_directory_uri(); ?>/statics/icons/arrow_up.svg" alt="Scroll Top" /></button>
 </footer>
