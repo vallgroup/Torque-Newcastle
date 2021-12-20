@@ -1,0 +1,57 @@
+.tq-search-results {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding_Top;
+
+  //page title
+  header .page-title {
+    font-size: 5rem;
+    line-height: 4.375rem;
+    letter-spacing: 0.85px;
+    margin-bottom: 34px;
+  }
+
+  .search-result-count {
+    color: $softBlue;
+    text-transform: uppercase;
+    margin-bottom: 89px;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.96px;
+    font-family: $fontFamilyFour;
+
+    b {
+      color: $softBlue;
+    }
+  }
+
+  //single result styles
+  article {
+    margin-bottom: 71px;
+
+    h2 {
+      color: $twilightBlue;
+      font-size: 43px;
+      line-height: 50px;
+      letter-spacing: 0.46px;
+      margin-bottom: 0px;
+    }
+    .author {
+      font-size: 16px;
+      line-height: 30px;
+      letter-spacing: 0.62px;
+      color: $softBlue;
+      margin-bottom: 0px;
+      font-family: $fontFamilyFour;
+    }
+    .excerpt {
+      color: $steel;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+    .read-more {
+      @extend %ctaButton_Blue;
+    }
+  }
+}
