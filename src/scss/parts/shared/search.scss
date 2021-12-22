@@ -1,3 +1,60 @@
+//the search form
+.desktop-search-form {
+  .search-form {
+    width: 100%;
+    
+    @include respond-to-max(desktop) {
+      display: none;
+    }
+  }
+}
+
+.search-form {
+  width: calc(100% - 4em);
+  margin-left: auto;
+  margin-right: auto;
+
+  .search-field {
+    border: none;
+    background: none;
+    border-bottom: #78b6d8 1px solid;
+    min-width: 240px;
+    color: #78b6d8;
+    font-size: 14px;
+    letter-spacing: 0.68px;
+    font-family: "Knockout HTF31-JuniorMiddlewt Regular", sans-serif;
+    text-transform: uppercase;
+
+    &:focus {
+      outline: 2px solid;
+      outline-color: #ADDAED;
+    }
+
+    @include respond-to(desktop) {
+      position: relative;
+      left: 35px;
+      top: -2px;
+      padding: 4px 10px 4px 4px;
+    }
+
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #78b6d8;
+      opacity: 1; /* Firefox */
+    }
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: #78b6d8;
+    }
+  }
+  .search-submit {
+    background: none;
+    border: none;
+    min-width: 50px;
+    color: #78b6d8;
+  }
+}
+
+//the search results
 .tq-search-results {
   position: relative;
   @extend %limitWidth;

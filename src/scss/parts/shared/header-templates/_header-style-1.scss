@@ -11,7 +11,7 @@ body {
 
       &.style-dark {
         background-color: $white95pc;
-  
+
         .torque-header-content-wrapper {
           .torque-menu-item-children-wrapper {
             background-color: $white;
@@ -21,7 +21,7 @@ body {
 
       &.style-light {
         background-color: $twilightBlue;
-  
+
         .torque-header-content-wrapper {
           .torque-menu-item-children-wrapper {
             background-color: $twilightBlue;
@@ -83,7 +83,7 @@ header#header-style-1 {
           }
         }
       }
-      
+
       @include respond-to(desktop) {
         justify-self: flex-start;
       }
@@ -112,17 +112,22 @@ header#header-style-1 {
         @include respond-to-max(desktop) {
           display: none;
         }
+        @include respond-to(desktop) {
+          display: flex;
+        }
 
         .cta-menu-item > a {
           color: $white;
           font-size: 0.75em;
           font-family: $fontFamilyFour;
           text-transform: uppercase;
+          min-width: 185px;
+          display: block;
         }
       }
 
       .torque-header-burger-menu-wrapper {
-        
+
         @include respond-to(desktop) {
           display: none;
         }
@@ -139,6 +144,9 @@ header#header-style-1 {
 
         @include respond-to-max(desktop) {
           display: none;
+        }
+        @include respond-to(desktop) {
+          margin-top: 8px;
         }
 
         .torque-menu-items-inline {
@@ -221,7 +229,7 @@ header#header-style-1 {
     padding: $bodyPadding1 $bodyPadding1 $bodyPadding5;
 
     @include useHeaderSpacer(top, false, false);
-    
+
     @include respond-to(desktop) {
       display: none;
     }
@@ -316,9 +324,9 @@ header#header-style-1 {
       padding: $bodyPadding2;
       box-sizing: border-box;
       width: 100%;
-  
+
       background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
-  
+
       .notification-bar-content-wrapper {
         display: flex;
         flex-direction: column;
@@ -327,7 +335,7 @@ header#header-style-1 {
         @include respond-to(tablet) {
           flex-direction: row;
         }
-  
+
         .notification-bar-content {
           color: $white;
           font-size: 0.625em;
@@ -341,7 +349,7 @@ header#header-style-1 {
             padding-right: $bodyPadding3;
           }
         }
-    
+
         .notification-bar-cta {
           @extend %ctaButton_White;
         }

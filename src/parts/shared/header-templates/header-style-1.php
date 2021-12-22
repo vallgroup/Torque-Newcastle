@@ -38,7 +38,7 @@ $menu_bar_style = get_field( 'menu_bar_style' )
   : 'style-dark';
 
 // override the logo style based on page-specific menu bar style
-$logo_dark_light = $menu_bar_style === 'style-light' 
+$logo_dark_light = $menu_bar_style === 'style-light'
   ? 'white'
   : 'dark';
 
@@ -72,17 +72,22 @@ $call_to_action = get_field( 'drawer_menu_cta', 'options' );
     </div>
 
     <div class="torque-header-right-area-wrapper">
-      
+
       <div class="torque-header-burger-menu-wrapper">
         <?php // Burger Nav Toggle
           get_template_part( 'parts/elements/element', 'burger-menu-squeeze' );
         ?>
       </div>
 
-      <?php // CTA Menu 
+      <?php // CTA Menu
         get_template_part( 'parts/shared/header-parts/header-cta-menu' );
       ?>
-      
+
+      <?php
+      //search form
+      //get_search_form();
+      ?>
+
       <div class="torque-header-menu-items-inline-wrapper">
         <?php // Inline Tree Menu
           get_template_part( 'parts/shared/header-parts/menu-items/menu-tree', 'inline');
@@ -95,12 +100,13 @@ $call_to_action = get_field( 'drawer_menu_cta', 'options' );
 
   <div class="col1 torque-navigation-toggle torque-header-menu-items-mobile">
 
-    <?php // CTA Menu 
+    <?php // CTA Menu
       get_template_part( 'parts/shared/header-parts/header-cta-menu' );
     ?>
 
-    <?php // Burger Nav Items 
-      get_template_part( 'parts/shared/header-parts/menu-items/menu-tree', 'stacked' ); 
+    <?php // Burger Nav Items
+      get_search_form();
+      get_template_part( 'parts/shared/header-parts/menu-items/menu-tree', 'stacked' );
     ?>
 
   </div>
