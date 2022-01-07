@@ -62,20 +62,31 @@
 
   //page title
   header .page-title {
-    font-size: 5rem;
-    line-height: 4.375rem;
+    font-size: 43px;
+    line-height: 34px;
     letter-spacing: 0.85px;
-    margin-bottom: 34px;
+    margin-bottom: 10px;
+
+    @include respond-to(desktop) {
+      font-size: 5rem;
+      line-height: 4.375rem;
+      margin-bottom: 34px;
+    }
   }
 
   .search-result-count {
     color: $softBlue;
     text-transform: uppercase;
-    margin-bottom: 89px;
-    font-size: 25px;
+    margin-bottom: 45px;
+    font-size: 13px;
     line-height: 30px;
     letter-spacing: 0.96px;
     font-family: $fontFamilyFour;
+
+    @include respond-to(desktop) {
+      font-size: 25px;
+      margin-bottom: 89px;
+    }
 
     b {
       color: $softBlue;
@@ -84,15 +95,25 @@
 
   //single result styles
   article {
-    margin-bottom: 71px;
+    margin-bottom: 29px;
+
+    @include respond-to(desktop) {
+      margin-bottom: 71px;
+    }
 
     h2 {
       color: $twilightBlue;
-      font-size: 43px;
-      line-height: 50px;
+      font-size: 33px;
+      line-height: 26px;
       letter-spacing: 0.46px;
       margin-bottom: 0px;
+
+      @include respond-to(desktop) {
+        font-size: 43px;
+        line-height: 50px;
+      }
     }
+
     .author {
       font-size: 16px;
       line-height: 30px;
@@ -104,12 +125,49 @@
     }
     .excerpt {
       color: $steel;
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 20px;
+      font-size: 13px;
+      line-height: 16px;
+      margin-bottom: 15px;
+
+      @include respond-to(desktop) {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 20px;
+      }
     }
     .read-more {
       @extend %ctaButton_Blue;
+    }
+  }
+
+  .navigation.pagination {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: $fontFamilyOne;
+
+    @include respond-to(desktop) {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    .page-numbers {
+      color: #707070;
+      font-size: 20px;
+      width: 21px;
+      display: inline-block;
+      padding: 4px;
+      margin-left: 2px;
+      margin-right: 2px;
+
+      &.current {
+        border: solid 1px $softBlue;
+      }
+    }
+
+    .prev.page-numbers,
+    .next.page-numbers {
+
     }
   }
 }

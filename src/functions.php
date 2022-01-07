@@ -229,4 +229,14 @@ function hook_wp_head() {
 	<?php
 }
 
+function paginateSearch(){
+  the_posts_pagination(
+		array(
+			'before_page_number' => null,
+			'mid_size'           => 3,
+			'prev_text'          => '&lsaquo;',
+			'next_text'          => '&rsaquo;',
+		)
+	);
+}
 ?>

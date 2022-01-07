@@ -38,9 +38,6 @@ if ( have_posts() ) {
 		?>
 		<article>
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<?php if ( ! empty( get_the_author() ) ) { ?>
-				<div class="author">Written by <?php the_author(); ?> of Modern Luxury</div>
-			<?php } ?>
 			<div class="excerpt">
 				<?php
 				$post_excerpt = apply_filters('the_excerpt', $post->post_excerpt);
@@ -53,6 +50,8 @@ if ( have_posts() ) {
 		<?php
 	} // End the loop.
 
+	paginateSearch();
+	
 	// If no content, include the "No posts found" template.
 } else {
 	?>
