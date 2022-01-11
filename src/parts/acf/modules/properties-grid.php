@@ -30,7 +30,7 @@ if ( class_exists( 'Newcastle_Property_CPT' ) ) {
   } else {
     add_filter(
       Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE,
-      function() { return "5"; }
+      function() { return "4"; }
     );
 
     // include investment specific shortcode args
