@@ -27,7 +27,8 @@ class Newcastle_Team_CPT {
 			'thumbnail'
 		),
 		'menu_icon'           => 'dashicons-groups',
-    'show_in_rest'        => false
+    'show_in_rest'        => false,
+		'exclude_from_search' => true,
 	);
 
 	/**
@@ -42,9 +43,9 @@ class Newcastle_Team_CPT {
 	}
 
 	function add_acf_metaboxes() {
-		
+
 		// Updated: 20201219
-    
+
     // ACF defs - START
 
 		if( function_exists('acf_add_local_field_group') ):
@@ -91,7 +92,7 @@ class Newcastle_Team_CPT {
 				'active' => true,
 				'description' => '',
 			));
-			
+
 			endif;
 
     // ACF defs - END
@@ -118,7 +119,7 @@ class Newcastle_Team_CPT {
     // output
     return $_html;
 	}
-	
+
 }
 
 ?>
