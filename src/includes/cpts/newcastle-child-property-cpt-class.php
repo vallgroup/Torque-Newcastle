@@ -290,7 +290,7 @@ class Newcastle_Property_CPT {
       			'required' => 0,
       			'conditional_logic' => 0,
       			'wrapper' => array(
-      				'width' => '',
+      				'width' => '50',
       				'class' => '',
       				'id' => '',
       			),
