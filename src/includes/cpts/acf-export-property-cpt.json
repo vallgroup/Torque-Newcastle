@@ -293,7 +293,7 @@
                 "sub_fields": [
                     {
                         "key": "field_61b8deac8095c",
-                        "label": "Url",
+                        "label": "Video url",
                         "name": "url",
                         "type": "url",
                         "instructions": "",

@@ -507,7 +507,7 @@ class Newcastle_Property_CPT {
       			'sub_fields' => array(
       				array(
       					'key' => 'field_61b8deac8095c',
-      					'label' => 'Url',
+      					'label' => 'Video url',
       					'name' => 'url',
       					'type' => 'url',
       					'instructions' => '',
