@@ -248,6 +248,12 @@
       padding: $bodyPadding6 $bodyPadding7;
     }
 
+    //Hide Vimeo links in Investment page info windows
+    a[href*="vimeo"],
+    a[href*="youtube"] {
+     display:none;
+    }
+
     // general col styles
     .info-box-col1,
     .info-box-col2 {
@@ -290,6 +296,11 @@
 
       .info-box-excerpt {
         margin-top: $bodyPadding4;
+        color: $white;
+
+        b, strong {
+          color: $white;
+        }
 
         & > * {
           @include respond-to(desktop) {

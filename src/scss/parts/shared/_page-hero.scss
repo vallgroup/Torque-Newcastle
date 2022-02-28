@@ -11,8 +11,30 @@
       padding-bottom: 45vh;
     }
 
+    @include respond-to(desktop) {
+      padding-bottom: 23%;
+    }
+
     .hero-image {
       @extend %imageInner;
     }
+  }
+}
+//home
+.page-id-50 .page-hero .type-image {
+  @include respond-to(desktop) {
+    padding-bottom: 40%;
+  }
+}
+//team page
+.page-id-43 .page-hero .type-image .hero-image {
+  @include respond-to(desktop) {
+    background-size: contain;
+    background-position: top;
+  }
+}
+.page-id-43 .page-hero .type-image {
+  @include respond-to-max(tablet) {
+    //padding-bottom: 22vh;
   }
 }

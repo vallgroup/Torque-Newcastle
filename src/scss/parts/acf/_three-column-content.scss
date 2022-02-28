@@ -3,7 +3,7 @@
   border-top: $border4 solid $softBlue;
 
   @extend %sectionMargin;
-  
+
   .three-column-wrapper {
     position: relative;
 
@@ -28,7 +28,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      
+
       @include respond-to(tablet) {
         align-items: center;
         justify-content: center;
@@ -61,7 +61,7 @@
       }
       @include respond-to(desktop) {
         flex: 0 1 30%;
-        padding-right: $bodyPadding15;
+        padding-right: $bodyPadding7;
       }
 
       .content-wrapper {
@@ -69,7 +69,7 @@
           color: $softBlue;
           margin-bottom: 0;
         }
-        
+
         .content {
           margin-bottom: $bodyPadding4;
           letter-spacing: 0;
@@ -83,7 +83,7 @@
       }
       @include respond-to(desktop) {
         flex: 0 1 30%;
-        padding-right: $bodyPadding15;
+        padding-right: $bodyPadding7;
       }
 
       .content-wrapper {
@@ -91,7 +91,7 @@
           color: $softBlue;
           margin-bottom: 0;
         }
-        
+
         .content {
           margin-bottom: $bodyPadding4;
           letter-spacing: 0;
