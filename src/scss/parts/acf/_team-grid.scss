@@ -1,38 +1,24 @@
 .tq-team-grid {
   @extend %limitWidth;
- 
+
   .content-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 
-    @extend %sectionPadding_Top;  
+    @extend %sectionPadding_Top;
 
-    &:after {
-      content: '';
-      flex: 1 1 100%;
-      
-      @include respond-to(tablet) {
-        flex: 0 0 49%;
-      }
-      @include respond-to(desktop) {
-        flex: 0 0 24%;
-      }
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond-to(desktop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+
     .team-card {
-      flex: 1 1 100%;
       padding-bottom: $bodyPadding5;
       
-      @include respond-to(tablet) {
-        flex: 0 0 49%;
-      }
-      
-      @include respond-to(desktop) {
-        flex: 0 0 24%;
-      }
-
       .team-content-container {
         .team-image-wrapper {
           border-top: $border3 solid $twilightBlue;
@@ -53,7 +39,7 @@
             font-size: 2.6875em;
           }
         }
-        
+
         .team-title {
           color: $softBlue;
           font-size: 0.75em;
