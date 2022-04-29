@@ -149,7 +149,7 @@ class Newcastle_Property_CPT {
 			return;
 
 		$base_url = 'https://maps.googleapis.com/maps/api/geocode/json';
-		$api_key = 'AIzaSyBtV0qDI-J9OoIm_p1nDHBtorLb7oD1z7k';
+    $api_key = get_field( 'google_maps_api_key', 'options' );
 
 		$street_address = get_field( 'street_address', $post_id );
 		$city = get_field( 'city', $post_id );
