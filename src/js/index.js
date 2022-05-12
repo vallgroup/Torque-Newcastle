@@ -6,3 +6,4 @@ import "./contact-form";
 import "./owl-carousel";
 import "./property";
 import "./scrolltop";
+import "./re-captcha";
