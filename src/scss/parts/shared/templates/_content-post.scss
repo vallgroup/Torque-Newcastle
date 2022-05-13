@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: $bodyPadding10;
-    
+
     @include respond-to(desktop) {
       flex-direction: row;
     }
@@ -22,7 +22,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      
+
       @include respond-to(desktop) {
         flex: 0 0 25%;
         display: block;
@@ -35,9 +35,11 @@
           margin-bottom: $bodyPadding4;
         }
 
+        //hiding tags on news
         &.author {
+          display: none;
           flex: 0 0 50%;
-          
+
           @include respond-to(tablet) {
             flex: 0 0 25%;
           }
@@ -49,19 +51,21 @@
 
         &.date {
           flex: 0 0 50%;
-          
+
           @include respond-to(tablet) {
             flex: 0 0 25%;
           }
         }
 
+        //hiding tags on news
         &.tags {
           flex: 1 1 100%;
-          
+          display: none;
+
           @include respond-to(tablet) {
             flex: 0 0 50%;
           }
-          
+
           .info {
             text-decoration: underline;
           }
@@ -88,23 +92,23 @@
       @include respond-to-max(desktop) {
         margin-top: $bodyPadding3;
       }
-      
+
       @include respond-to(tablet) {
         font-size: 0.875em;
       }
 
       @include respond-to(desktop) {
         flex: 0 0 75%;
-        font-size: 1.125em; 
+        font-size: 1.125em;
       }
 
       p {
-        line-height: 1.23;
+        line-height: 1.14;
         margin-top: 0;
-        margin-bottom: $bodyPadding7;
+        margin-bottom: $bodyPadding3;
 
         @include respond-to(tablet) {
-          line-height: 1.14;
+          line-height: 1.4;
         }
       }
 
@@ -136,7 +140,7 @@
     .related-posts-title {
       color: $twilightBlue;
     }
-  
+
     .related-posts-loop {
       display: flex;
       justify-content: space-between;
@@ -146,7 +150,7 @@
       &:after {
         content: '';
         flex: 1 1 100%;
-        
+
         @include respond-to(tablet) {
           flex: 0 0 32%;
         }
@@ -155,7 +159,7 @@
       .post-card {
         flex: 1 1 100%;
         border-top: $border3 solid $softBlue;
-        
+
         @include respond-to(tablet) {
           flex: 0 0 32%;
         }

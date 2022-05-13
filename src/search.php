@@ -1,7 +1,7 @@
 
 <?php TQ::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
-<main>
+<main class="tq-search-results">
 <?php
 if ( have_posts() ) {
 	?>
@@ -20,14 +20,12 @@ if ( have_posts() ) {
 	<div class="search-result-count default-max-width">
 		<?php
 		printf(
-			esc_html(
-				/* translators: %d: The number of search results. */
-				_n(
-					'We found %d result for your search.',
-					'We found %d results for your search.',
-					(int) $wp_query->found_posts,
-					'newcastlechild'
-				)
+			/* translators: %d: The number of search results. */
+			_n(
+				'We found <b>%d result</b> for your search.',
+				'We found <b>%d results</b> for your search.',
+				(int) $wp_query->found_posts,
+				'newcastlechild'
 			),
 			(int) $wp_query->found_posts
 		);
@@ -37,12 +35,23 @@ if ( have_posts() ) {
 	// Start the Loop.
 	while ( have_posts() ) {
 		the_post();
-
-		get_template_part( 'parts/templates/titles/title', 'post' );
-		//get_template_part( 'parts/templates/content', 'post' );
-		echo wpautop( $post->post_content );
+		?>
+		<article>
+			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<div class="excerpt">
+				<?php
+				$post_excerpt = apply_filters('the_excerpt', $post->post_excerpt);
+				echo $post_excerpt;
+				//the_excerpt();
+				?>
+			</div>
+			<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
+		</article>
+		<?php
 	} // End the loop.
 
+	paginateSearch();
+	
 	// If no content, include the "No posts found" template.
 } else {
 	?>

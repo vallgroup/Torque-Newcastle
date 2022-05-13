@@ -1,0 +1,173 @@
+//the search form
+.desktop-search-form {
+  .search-form {
+    width: 100%;
+
+    @include respond-to-max(desktop) {
+      display: none;
+    }
+  }
+}
+
+.search-form {
+  width: calc(100% - 4em);
+  margin-left: auto;
+  margin-right: auto;
+
+  .search-field {
+    border: none;
+    background: none;
+    border-bottom: #78b6d8 1px solid;
+    min-width: 240px;
+    color: #78b6d8;
+    font-size: 12px;
+    letter-spacing: 0.68px;
+    font-family: $fontFamilyFour;
+    text-transform: uppercase;
+
+    &:focus {
+      outline: 2px solid;
+      outline-color: #ADDAED;
+    }
+
+    @include respond-to(desktop) {
+      position: relative;
+      left: 35px;
+      top: -2px;
+      padding: 4px 10px 4px 4px;
+    }
+
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #78b6d8;
+      opacity: 1; /* Firefox */
+    }
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: #78b6d8;
+    }
+  }
+  .search-submit {
+    background: none;
+    border: none;
+    min-width: 50px;
+    color: #78b6d8;
+  }
+}
+
+//the search results
+.tq-search-results {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding_Top;
+
+  //page title
+  header .page-title {
+    font-size: 43px;
+    line-height: 34px;
+    letter-spacing: 0.85px;
+    margin-bottom: 10px;
+
+    @include respond-to(desktop) {
+      font-size: 5rem;
+      line-height: 4.375rem;
+      margin-bottom: 34px;
+    }
+  }
+
+  .search-result-count {
+    color: $softBlue;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    font-size: 13px;
+    line-height: 30px;
+    letter-spacing: 0.96px;
+    font-family: $fontFamilyFour;
+
+    @include respond-to(desktop) {
+      font-size: 25px;
+      margin-bottom: 89px;
+    }
+
+    b {
+      color: $softBlue;
+    }
+  }
+
+  //single result styles
+  article {
+    margin-bottom: 29px;
+
+    @include respond-to(desktop) {
+      margin-bottom: 71px;
+    }
+
+    h2 {
+      color: $twilightBlue;
+      font-size: 33px;
+      line-height: 26px;
+      letter-spacing: 0.46px;
+      margin-bottom: 0px;
+
+      @include respond-to(desktop) {
+        font-size: 43px;
+        line-height: 50px;
+      }
+    }
+
+    .author {
+      font-size: 16px;
+      line-height: 30px;
+      letter-spacing: 0.62px;
+      color: $softBlue;
+      margin-bottom: 0px;
+      font-family: $fontFamilyFour;
+      text-transform: uppercase;
+    }
+    .excerpt {
+      color: $steel;
+      font-size: 13px;
+      line-height: 16px;
+      margin-bottom: 15px;
+
+      @include respond-to(desktop) {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 20px;
+      }
+    }
+    .read-more {
+      @extend %ctaButton_Blue;
+    }
+  }
+
+  .navigation.pagination {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: $fontFamilyOne;
+
+    @include respond-to(desktop) {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    .page-numbers {
+      color: #707070;
+      font-size: 20px;
+      width: 21px;
+      display: inline-block;
+      padding: 4px;
+      margin-left: 2px;
+      margin-right: 2px;
+
+      &.current {
+        border: solid 1px $softBlue;
+      }
+    }
+
+    .prev.page-numbers,
+    .next.page-numbers {
+
+    }
+  }
+}

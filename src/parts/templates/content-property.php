@@ -146,7 +146,7 @@ $media_gallery = get_field( 'media_gallery' );
     <div class="content-container video-content">
       <div class="type-video_link">
 
-        <?php echo build_video( $embedded_video ); ?>
+        <?php echo build_video( $embedded_video,  ); ?>
 
       </div>
     </div>
@@ -282,6 +282,11 @@ function build_video( $url, $only_src = false ) {
   $_video_html_end = '" frameborder="0" allow="autoplay"></iframe>';
   $_video_src = '';
 
+  if ( isImage( $url ) ) {
+    //skip the video generation because we are using an image isntead of a valid video url
+    return '';
+  }
+
   if ( strpos( $url, 'vimeo' ) !== false ) {
     // remove trailing slash if found
     $url= rtrim( $url, '/' );
@@ -311,4 +316,16 @@ function build_video( $url, $only_src = false ) {
 
   return $only_src ? $_video_src : $_video_html;
 }
+
+function isImage( $url ) {
+  if ( empty( $url ) ) return false;
+
+  $headers = get_headers($url, 1);
+  if ( strpos( $headers['Content-Type'], 'image/' ) !== false ) {
+      return true;
+  } else {
+      return false;
+  }
+}
+
 ?>

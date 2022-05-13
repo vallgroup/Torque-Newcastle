@@ -1,7 +1,7 @@
 .single-post-title {
   @extend %limitWidth;
   @extend %sectionPadding_Both;
-  text-align: center;
+  text-align: left;
 
   @include respond-to-max(tablet) {
     padding-top: $bodyPadding5;

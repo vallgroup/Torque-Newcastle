@@ -145,6 +145,18 @@ ul {
     line-height: $lineHeight3;
     margin-bottom: 16px;
 
+    a {
+        color: $softBlue;
+        border-bottom: 2px solid $softBlue;
+        -webkit-transition: color 250ms;
+        transition: color 250ms;
+
+        &:hover {
+            color: $twilightBlue;
+            border-bottom: 2px solid $twilightBlue;
+        }
+    }
+
     // &:before {
     //   content: " ";
     //   position: absolute;

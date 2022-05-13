@@ -188,6 +188,13 @@ function torque_enqueue_child_styles() {
 // enqueue child scripts after parent script
 add_action( 'wp_enqueue_scripts', 'torque_enqueue_child_scripts');
 function torque_enqueue_child_scripts() {
+    wp_enqueue_script( 're-captcha-v3',
+        'https://www.google.com/recaptcha/api.js?render=6Le7Pc0fAAAAAMsVDLILMsicQzl-LJRq0eQ40Zmq',
+        array(), // depends on parent script
+        null,
+        true // put it in the footer
+    );
+
     wp_enqueue_script( 'newcastle-child-script',
         get_stylesheet_directory_uri() . '/bundles/bundle.js',
         array( 'torque-theme-scripts' ), // depends on parent script
@@ -229,4 +236,74 @@ function hook_wp_head() {
 	<?php
 }
 
+function paginateSearch(){
+  the_posts_pagination(
+		array(
+			'before_page_number' => null,
+			'mid_size'           => 3,
+			'prev_text'          => '&lsaquo;',
+			'next_text'          => '&rsaquo;',
+		)
+	);
+}
+
+add_filter('jetpack_contact_form_is_spam', 'googleVerify');
+
+function googleVerify ($default) {
+    // reset error
+    $error = '';
+    $secret_key = '6Le7Pc0fAAAAAFdFYQv2qwu2-_Ua13O681NVYns2';
+
+    // filter response
+    $response = (object) array();
+    $recaptcha_reponse = isset($_POST['g31-googlerecaptcha']) ? $_POST['g31-googlerecaptcha'] : '';
+    $recaptcha_reponse = sanitize_text_field($recaptcha_reponse);
+
+    if ($recaptcha_reponse) {
+        // try to verify with Google
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $querystring = sprintf('secret=%s&response=%s', $secret_key, $recaptcha_reponse);
+        $response = getUrl($url, $querystring);
+        $response = json_decode($response);
+    }
+    /*echo '<pre>';
+    var_dump($response);
+    echo '</pre>';*/
+    //$response->success = false;
+    if (!$response->success) {
+        // either there was no g-recaptcha-response or Google responded without success
+        $error = 'Google could not verify you; please try again.';
+        return new WP_Error('spam', $error);
+    }
+
+    return $default;
+}
+
+/*
+*
+* get_url
+*
+* curl wrapper for posting/retrieving from a url
+*
+* @param string $url                the urlencoded request url
+* @param querystring $querystring   the urlencoded querystring
+* @return varies
+*/
+
+function getUrl($url, $querystring) {
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $querystring);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+
+    $data = curl_exec($ch);
+    curl_close($ch);
+
+    return $data;
+}
 ?>

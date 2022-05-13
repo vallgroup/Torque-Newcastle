@@ -149,7 +149,7 @@ class Newcastle_Property_CPT {
 			return;
 
 		$base_url = 'https://maps.googleapis.com/maps/api/geocode/json';
-		$api_key = 'AIzaSyBtV0qDI-J9OoIm_p1nDHBtorLb7oD1z7k';
+    $api_key = get_field( 'google_maps_api_key', 'options' );
 
 		$street_address = get_field( 'street_address', $post_id );
 		$city = get_field( 'city', $post_id );
@@ -238,26 +238,6 @@ class Newcastle_Property_CPT {
 						'disabled' => 0,
 					),
 					array(
-						'key' => 'field_600016c8ad034',
-						'label' => 'Map Zoom (Archive)',
-						'name' => 'map_zoom_archive',
-						'type' => 'range',
-						'instructions' => 'The initial map zoom when multiple markers are displayed.',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '25',
-							'class' => '',
-							'id' => '',
-						),
-						'default_value' => '',
-						'min' => 0,
-						'max' => 19,
-						'step' => 1,
-						'prepend' => '',
-						'append' => '',
-					),
-					array(
 						'key' => 'field_6006433db77f3',
 						'label' => 'Map Zoom (Single)',
 						'name' => 'map_zoom_single',
@@ -276,48 +256,6 @@ class Newcastle_Property_CPT {
 						'step' => 1,
 						'prepend' => '',
 						'append' => '',
-					),
-					array(
-						'key' => 'field_60001a4904e5b',
-						'label' => 'Map Center Latitude',
-						'name' => 'map_center_latitude',
-						'type' => 'text',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '50',
-							'class' => '',
-							'id' => '',
-						),
-						'default_value' => '',
-						'placeholder' => '',
-						'prepend' => '',
-						'append' => '',
-						'maxlength' => '',
-						'readonly' => 0,
-						'disabled' => 0,
-					),
-					array(
-						'key' => 'field_60001a5904e5c',
-						'label' => 'Map Center Longitude',
-						'name' => 'map_center_longitude',
-						'type' => 'text',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '50',
-							'class' => '',
-							'id' => '',
-						),
-						'default_value' => '',
-						'placeholder' => '',
-						'prepend' => '',
-						'append' => '',
-						'maxlength' => '',
-						'readonly' => 0,
-						'disabled' => 0,
 					),
 					array(
 						'key' => 'field_600016edad036',
@@ -352,7 +290,7 @@ class Newcastle_Property_CPT {
       			'required' => 0,
       			'conditional_logic' => 0,
       			'wrapper' => array(
-      				'width' => '',
+      				'width' => '50',
       				'class' => '',
       				'id' => '',
       			),
@@ -548,33 +486,6 @@ class Newcastle_Property_CPT {
 						'max_size' => '',
 						'mime_types' => '',
 					),
-					array(
-						'key' => 'field_5ff8e618be29a',
-						'label' => 'Multifamily Gallery',
-						'name' => 'multifamily_gallery',
-						'type' => 'gallery',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '50',
-							'class' => '',
-							'id' => '',
-						),
-						'return_format' => 'array',
-						'preview_size' => 'thumbnail',
-						'insert' => 'append',
-						'library' => 'all',
-						'min' => '',
-						'max' => '',
-						'min_width' => '',
-						'min_height' => '',
-						'min_size' => '',
-						'max_width' => '',
-						'max_height' => '',
-						'max_size' => '',
-						'mime_types' => '',
-					),
           array(
       			'key' => 'field_61b8de3c8095b',
       			'label' => 'Media gallery',
@@ -596,7 +507,7 @@ class Newcastle_Property_CPT {
       			'sub_fields' => array(
       				array(
       					'key' => 'field_61b8deac8095c',
-      					'label' => 'Url',
+      					'label' => 'Video url',
       					'name' => 'url',
       					'type' => 'url',
       					'instructions' => '',
