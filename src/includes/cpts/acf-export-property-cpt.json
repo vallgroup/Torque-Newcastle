@@ -45,6 +45,44 @@
                 "append": ""
             },
             {
+                "key": "field_61b7c57c0525a",
+                "label": "Re-captcha v3 key",
+                "name": "recaptcha_key",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_61b7c57c0525a",
+                "label": "Re-captcha v3 secret",
+                "name": "recaptcha_secret",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_600016edad036",
                 "label": "Marker Icon",
                 "name": "marker_icon",
