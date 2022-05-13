@@ -189,7 +189,7 @@ function torque_enqueue_child_styles() {
 add_action( 'wp_enqueue_scripts', 'torque_enqueue_child_scripts');
 function torque_enqueue_child_scripts() {
     wp_enqueue_script( 're-captcha-v3',
-        'https://www.google.com/recaptcha/api.js?render=6Le7Pc0fAAAAAMsVDLILMsicQzl-LJRq0eQ40Zmq',
+        'https://www.google.com/recaptcha/api.js?render=' . get_field('recaptcha_key', 'option'),
         array(), // depends on parent script
         null,
         true // put it in the footer
@@ -201,6 +201,8 @@ function torque_enqueue_child_scripts() {
         wp_get_theme()->get('Version'),
         true // put it in the footer
     );
+    //add re-captcha v3 site key to the bundle.js
+    wp_add_inline_script( 'newcastle-child-script', 'const siteKey = ' . wp_json_encode( get_field('recaptcha_key', 'option') ), 'before' );
 
     // enqueue owl carousel scripts
     wp_enqueue_script( 'owl-carousel',
@@ -252,7 +254,7 @@ add_filter('jetpack_contact_form_is_spam', 'googleVerify');
 function googleVerify ($default) {
     // reset error
     $error = '';
-    $secret_key = '6Le7Pc0fAAAAAFdFYQv2qwu2-_Ua13O681NVYns2';
+    $secret_key = get_field('recaptcha_secret', 'option');
 
     // filter response
     $response = (object) array();

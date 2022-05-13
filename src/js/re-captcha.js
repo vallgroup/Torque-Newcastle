@@ -1,4 +1,5 @@
 (function () {
+  //siteKey added with: wp_add_inline_script on themes/Torque-Newcastle/src/functions.php
   const formID = '31';
   const contactForm = document.querySelector(`#contact-form-${formID} form`);
   contactForm.onsubmit = handleSubmit;
@@ -8,7 +9,7 @@
 
     grecaptcha.ready(function() {
       grecaptcha
-      .execute('6Le7Pc0fAAAAAMsVDLILMsicQzl-LJRq0eQ40Zmq', {action: 'submit'})
+      .execute(siteKey, {action: 'submit'})
       .then(function(token) {
         //console.log('reCAPTCHA called', token);
         //add the token value to the googlerecaptcha hidden field
