@@ -1,11 +1,13 @@
 $phone_icon: url('../statics/icons/phone.png');
 $mail_icon: url('../statics/icons/mail.png');
 
+.grecaptcha-badge { visibility: hidden; }
+
 .tq-contact-form-details {
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding_Top;
-  
+
   .two-column-wrapper {
     display: flex;
     flex-direction: column;
@@ -27,7 +29,7 @@ $mail_icon: url('../statics/icons/mail.png');
       justify-content: center;
 
       min-height: 250px;
-      
+
       @include respond-to(tablet) {
         margin-bottom: 0;
         min-height: 370px;
@@ -50,7 +52,7 @@ $mail_icon: url('../statics/icons/mail.png');
           justify-content: space-between;
           flex-wrap: wrap;
           position: relative;
-  
+
           input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
           select,
           optgroup {
@@ -81,11 +83,11 @@ $mail_icon: url('../statics/icons/mail.png');
               outline: none;
             }
           }
-  
+
           .grunion-field-wrap {
             position: relative;
             flex: 1 1 100%;
-    
+
             @include respond-to(tablet) {
               &.form-field-width-25-wrap {
                 flex: 0 0 24%;
@@ -104,7 +106,7 @@ $mail_icon: url('../statics/icons/mail.png');
               font-size: 0.75em;
               font-family: $fontFamilyFour;
               text-transform: uppercase;
-              
+
               // hide 'required' label
               & > span {
                 display: none;
@@ -132,7 +134,7 @@ $mail_icon: url('../statics/icons/mail.png');
               margin-top: $bodyPadding5;
             }
           }
-  
+
           .contact-submit {
             flex: 1 1 100%;
 
@@ -140,11 +142,11 @@ $mail_icon: url('../statics/icons/mail.png');
               @extend %ctaButton_Blue;
             }
           }
-  
+
           .hidden-input-field-wrap {
             display: none;
           }
-  
+
           .recaptcha-loading-overlay {
             position: absolute;
             top: 0;
@@ -160,7 +162,7 @@ $mail_icon: url('../statics/icons/mail.png');
             color: $warmGrey;
           }
         }
-  
+
         &.hide-labels form.contact-form {
           label:not(.checkbox):not(.checkbox-multiple):not(.radio)
           {
@@ -216,7 +218,7 @@ $mail_icon: url('../statics/icons/mail.png');
           margin-bottom: 5px;
 
 
-  
+
           &.address {
             // padding-left: 25px;
             margin-bottom: $bodyPadding3;
