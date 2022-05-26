@@ -110,11 +110,6 @@ class Torque_Jetpack_Form_Fields {
       //add hidden field for google re-captcha v3 validation: #g31-googlerecaptcha
       $form_field_shortcode .= '[contact-field type="hidden" class="hidden-input-field" label="googlerecaptcha" /]';
 
-      //append reCAPTCHA branding text
-      $form_field_shortcode .= '<p class="recaptcha-branding-text">This site is protected by reCAPTCHA and the Google
-    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-    <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>';
-
       // set the class' built form fields
       $this->built_form_fields = $form_field_shortcode;
 

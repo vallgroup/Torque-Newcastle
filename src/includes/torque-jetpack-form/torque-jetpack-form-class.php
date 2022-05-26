@@ -79,6 +79,11 @@ class Torque_Jetpack_Form {
       // close shortcode tag
       $form_shortcode .= '[/contact-form]';
 
+      //append reCAPTCHA branding text
+      $form_shortcode .= '<p class="recaptcha-branding-text">This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>';
+
       $this->built_form_shortcode = $form_shortcode;
 
     else :
