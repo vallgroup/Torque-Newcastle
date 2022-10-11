@@ -213,10 +213,10 @@
     }
 
     .info-box-wrapper {
-      top: calc(450px + #{$bodyPadding5});
+      top: calc(450px - 300px);
 
       @include respond-to(desktop) {
-        top: calc(550px + #{$bodyPadding5});
+        top: calc(650px - 300px);
       }
     }
     &.info-box-open {
@@ -238,12 +238,15 @@
     padding: $bodyPadding3;
 
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 2%;
+    width: 96%;
+    box-sizing: border-box;
 
     z-index: 99;
 
     @include respond-to(tablet) {
+      left: 10%;
+      width: 80%;
       flex-direction: row;
       padding: $bodyPadding6 $bodyPadding7;
     }
