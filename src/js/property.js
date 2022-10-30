@@ -99,8 +99,9 @@
     const videoGallery = document.querySelectorAll('.gallery-image-wrapper [data-video-url]');
     videoGallery.forEach(thumbnail => thumbnail.addEventListener('click', openLightbox));
 
-    //close in click outside the modal
-    document.addEventListener('click', (event) => {
+    // close in click outside the modal
+    window.addEventListener('click', (event) => {
+      if (!propertyModal) return;
       const boolIsOutside = propertyModal.isSameNode(event.target);
       if (boolIsOutside) {
         closeLightbox();
