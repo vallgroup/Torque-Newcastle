@@ -238,6 +238,20 @@ function hook_wp_head() {
 	<?php
 }
 
+add_action('send_headers', 'add_security_headers');
+function add_security_headers() {
+  $csp_string = "img-src 'self' https://* https://*.googleapis.com https://*.gstatic.com *.google.com  *.googleusercontent.com www.googletagmanager.com data:;"
+  . " script-src 'self' 'unsafe-inline' 'unsafe-eval' https://* https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com https://player.vimeo.com https://www.googletagmanager.com blob:;"
+  . " style-src 'self' https://* 'unsafe-inline' https://fonts.googleapis.com;"
+  . " font-src 'self' https://* data:;"
+  . " worker-src blob:;"
+  . " frame-src https://* *.google.com https://player.vimeo.com;"
+  . " connect-src 'self' https://* https://*.googleapis.com *.google.com https://*.gstatic.com https://player.vimeo.com https://www.google-analytics.com https://stats.g.doubleclick.net data: blob:;";
+
+  header("Content-Security-Policy: default-src 'self';" . $csp_string);
+}
+
+
 function paginateSearch(){
   the_posts_pagination(
 		array(
