@@ -2,21 +2,21 @@
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding_Top;
-  
+
   .content-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 8px;
-  
+
     @include respond-to(tablet) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
       grid-column-gap: 10px;
       grid-row-gap: 10px;
     }
-  
+
     @include respond-to(desktop) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);

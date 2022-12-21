@@ -1794,6 +1794,43 @@
                         "min": "",
                         "max": ""
                     },
+                    "layout_5fd1eea948732": {
+                        "key": "layout_5fd1eea948732",
+                        "name": "masonry",
+                        "label": "Masonry",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5fd1eeb448733",
+                                "label": "Images",
+                                "name": "images",
+                                "type": "gallery",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "preview_size": "medium",
+                                "insert": "append",
+                                "library": "all",
+                                "min": 4,
+                                "max": 40,
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
                     "layout_5fc2ea6c538a4": {
                         "key": "layout_5fc2ea6c538a4",
                         "name": "cta_banner_large",

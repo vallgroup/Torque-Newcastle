@@ -1,0 +1,49 @@
+.tq-masonry {
+  position: relative;
+  @extend %limitWidth;
+  @extend %sectionPadding_Top;
+
+  //masonry styles
+  .masonry-gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond-to(tablet) {
+      gap: 1rem;
+    }
+
+    .masonry-item {
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      @include respond-to(tablet) {
+        width: 35%;
+        margin-bottom: 0px;
+
+        &.wide {
+          width: calc(65% - 1rem);
+        }
+
+        &.half {
+          width: calc(50% - 0.5rem);
+        }
+      }
+
+
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        height: 300px;
+        width: 100%;
+
+        @include respond-to-custom(1400px) {
+          height: 450px;
+        }
+      }
+    }
+  }
+
+
+}
