@@ -469,6 +469,9 @@ if ( have_rows( $modules ) ) :
         break;
 
       case 'masonry' :
+          $title = get_sub_field( 'title' )
+            ? get_sub_field( 'title' )
+            : null;
 
           $images = get_sub_field( 'images' )
             ? get_sub_field( 'images' )

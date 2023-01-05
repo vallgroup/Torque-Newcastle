@@ -5,6 +5,10 @@
 ?>
 
 <section class="tq-masonry">
+  <?php if ( $title ) { ?>
+    <h2><?php echo $title; ?></h2>
+  <?php } ?>
+
   <div class="masonry-gallery">
     <?php if ( $images ) {
       $wide_values = [1, 4, 7, 10, 13, 16];

@@ -1861,6 +1861,25 @@ class Newcastle_ACF {
       					'label' => 'Masonry',
       					'display' => 'block',
       					'sub_fields' => array(
+                  array(
+      							'key' => 'field_5fc4c68f4af77',
+      							'label' => 'Title section',
+      							'name' => 'title',
+      							'type' => 'text',
+      							'instructions' => '',
+      							'required' => 0,
+      							'conditional_logic' => 0,
+      							'wrapper' => array(
+      								'width' => '',
+      								'class' => '',
+      								'id' => '',
+      							),
+      							'default_value' => '',
+      							'placeholder' => '',
+      							'prepend' => '',
+      							'append' => '',
+      							'maxlength' => '',
+      						),
       						array(
       							'key' => 'field_5fd1eeb448733',
       							'label' => 'Images',
