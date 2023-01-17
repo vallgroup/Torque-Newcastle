@@ -33,15 +33,15 @@
       margin-bottom: 1rem;
 
       @include respond-to(tablet) {
-        width: 35%;
+        width: calc(33% - 1rem);
         margin-bottom: 0px;
 
-        &.wide {
-          width: calc(65% - 1rem);
+        &.quarter {
+          width: calc(25% - 1rem);
         }
 
         &.half {
-          width: calc(50% - 0.5rem);
+          width: calc(50% - 1rem);
         }
       }
 
