@@ -468,6 +468,19 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'masonry' :
+          $title = get_sub_field( 'title' )
+            ? get_sub_field( 'title' )
+            : null;
+
+          $images = get_sub_field( 'images' )
+            ? get_sub_field( 'images' )
+            : null;
+
+          include locate_template( $modules_path . 'masonry.php' );
+
+          break;
+
       case 'cta_banner_large' :
 
         $title = get_sub_field( 'title' )
