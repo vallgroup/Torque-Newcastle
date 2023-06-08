@@ -265,7 +265,7 @@ function build_contacts() {
       $html .= '<div class="contact">';
         $html .= '<div class="name">' . $contact['name'] . '</div>';
         $html .= '<div class="company">' . $contact['company'] . '</div>';
-        $html .= '<div class="phone">' . $contact['phone'] . '</div>';
+        $html .= '<div class="phone"><a href="tel:' . str_replace(['(', ')', ' ', '-'], '', $contact['phone']) . '">' . $contact['phone'] . '</a></div>';
         $html .= '<div class="email"><a href="mailto:' . $contact['email'] . '">' . $contact['email'] . '</a></div>';
       $html .= '</div>';
     }
