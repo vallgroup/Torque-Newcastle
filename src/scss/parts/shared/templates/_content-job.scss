@@ -1,0 +1,54 @@
+$phone_icon: url('../statics/icons/phone.png');
+$mail_icon: url('../statics/icons/mail.png');
+
+.single-job-content {
+  @extend %limitWidth;
+  .title {
+    color: $twilightBlue;
+    margin-bottom: 0.5rem;
+  }
+  .content {
+
+    & > * {
+      color: $steel;
+      font-size: 1.125em;
+    }
+  }
+
+  .subtitle {
+    color: $softBlue;
+    font-size: 1.5625em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin: 0 auto 0 1em;
+
+    li {
+      letter-spacing: 0;
+      list-style: disc;
+    }
+  }
+
+  .btn-apply {
+    display: inline-block;
+    border: 2px solid #0f206c;
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    color: #0f206c;
+    cursor: pointer;
+    letter-spacing: 1.3px;
+    line-height: 19px;
+    font-size: 1.25em;
+    padding: 10px 20px 9px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .error-job {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #ff3333;
+  }
+}

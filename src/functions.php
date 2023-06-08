@@ -322,4 +322,12 @@ function getUrl($url, $querystring) {
 
     return $data;
 }
+
+function newcastle_custom_query_vars_filter($vars) {
+    $vars[] .= 'board';
+    $vars[] .= 'jobid';
+    return $vars;
+}
+add_filter( 'query_vars', 'newcastle_custom_query_vars_filter' );
+
 ?>
