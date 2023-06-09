@@ -118,5 +118,17 @@
     //close when x button is clicked
     const closeBtn = propertyModal.querySelector('.close');
     closeBtn.addEventListener('click', closeLightbox);
+
+    function spectraLogJobApplicationEvent() {
+      spectra.logEvent('outreach_to_retail');
+    }
+
+    window.addEventListener('spectra_init', function(e) {
+      const phones = document.querySelectorAll('.contacts .phone a');
+      phones.forEach(phone => phone.addEventListener('click', spectraLogJobApplicationEvent));
+
+      const emails = document.querySelectorAll('.contacts .email a')
+      emails.forEach(email => email.addEventListener('click', spectraLogJobApplicationEvent));
+    });
   });
 })(jQuery);
