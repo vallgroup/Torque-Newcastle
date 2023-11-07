@@ -10,7 +10,7 @@ $author = get_the_author();
 $publish_date = get_the_date();
 $tags = get_the_tag_list();
 $content = wpautop( $post->post_content );
-
+$content = str_replace("Newcastle Limited", "Newcastle Limited*", $content);
 // related posts
 $args = array(
   'category__in' => wp_get_post_categories( $post->ID ),
