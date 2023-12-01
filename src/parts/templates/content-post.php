@@ -9,8 +9,10 @@
 $author = get_the_author();
 $publish_date = get_the_date();
 $tags = get_the_tag_list();
-$content = wpautop( $post->post_content );
-
+$raw_content = wpautop( $post->post_content );
+$count = 1;
+//$content = str_replace("Newcastle Limited", "Newcastle Limited*", $raw_content, $count);
+$content = preg_replace('/Newcastle Limited/', 'Newcastle Limited*', $raw_content, 1);
 // related posts
 $args = array(
   'category__in' => wp_get_post_categories( $post->ID ),

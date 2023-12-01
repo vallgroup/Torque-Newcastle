@@ -2942,6 +2942,41 @@
                 ]
             },
             {
+                "key": "field_5fa46aae2919h",
+                "label": "Press release message",
+                "name": "press_release_message",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5fa46b021988d",
+                "label": "Content",
+                "name": "press_release_message_content",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "100",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_5fa46aae2919g",
                 "label": "Re-captcha v3 keys",
                 "name": "",
