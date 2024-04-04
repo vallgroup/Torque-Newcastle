@@ -5,7 +5,8 @@
   text-align: center;
   width: 100%;
 
-  background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+  //background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+  background-color: $gold;
   
   .content-wrapper {
     display: flex;
@@ -41,7 +42,7 @@
     }
 
     .cta {
-      @extend %ctaButton_White;
+      @extend %ctaButton_RoyalBlue;
     }
   }
 }

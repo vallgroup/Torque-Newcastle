@@ -9,6 +9,9 @@
     box-sizing: border-box;
     padding: $bodyPadding4 $bodyPadding3;
     
+    .post-taxonomies {
+      color: $smoke;
+    }
     .post-title {
       color: $twilightBlue;
       text-transform: uppercase;
@@ -18,7 +21,7 @@
     
     .post-excerpt {
       font-size: 0.8125em;
-      color: $lightGreyBlue;
+      color: $smoke;
       line-height: 1.23;
 
       @include respond-to(tablet) {
@@ -33,7 +36,7 @@
     }
 
     .post-cta {
-      @extend %ctaButton_Blue;
+      @extend %ctaButton_Gold;
     }
   }
 }

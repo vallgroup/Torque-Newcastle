@@ -17,9 +17,9 @@
   .search-field {
     border: none;
     background: none;
-    border-bottom: #78b6d8 1px solid;
+    border-bottom: $royalBlue 1px solid;
     min-width: 240px;
-    color: #78b6d8;
+    color: $royalBlue;
     font-size: 12px;
     letter-spacing: 0.68px;
     font-family: $fontFamilyFour;
@@ -39,18 +39,18 @@
 
 
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #78b6d8;
+      color: $royalBlue;
       opacity: 1; /* Firefox */
     }
     &::-ms-input-placeholder { /* Microsoft Edge */
-      color: #78b6d8;
+      color: $royalBlue;
     }
   }
   .search-submit {
     background: none;
     border: none;
     min-width: 50px;
-    color: #78b6d8;
+    color: $royalBlue;
   }
 }
 

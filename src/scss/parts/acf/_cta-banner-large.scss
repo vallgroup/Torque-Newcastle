@@ -3,7 +3,8 @@
   @extend %sectionPadding_Both;
   @extend %sectionMargin;
   
-  background-image: linear-gradient(255deg, $softBlue, $frenchBlue, $twilightBlue);
+  //background-image: linear-gradient(255deg, $softBlue, $frenchBlue, $twilightBlue);
+  background-color: $twilightBlue;
 
   .content-container {
     @extend %limitWidth;

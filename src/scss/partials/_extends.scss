@@ -1,5 +1,7 @@
 $flag_icon: url('../statics/icons/flag.png');
 $flag_icon_white: url('../statics/icons/flag_white.png');
+$crown_icon: url('../statics/icons/crown.svg');
+$crown_icon_blue: url('../statics/icons/crown_blue.svg');
 
 %hideOnDesktop {
   @include respond-to(desktop) {
@@ -232,7 +234,7 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   }
 
   .cta {
-    @extend %ctaButton_Blue;
+    @extend %ctaButton_Gold;
   }
 }
 
@@ -324,7 +326,7 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
     background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: $flag_icon;
+    background-image: $crown_icon;
 
     @include respond-to(tablet) {
       width: 45px;
@@ -333,7 +335,7 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
       transform: translate(-6px, 0px);
     }
     @include respond-to(desktop) {
-      width: 71px;
+      width: 25px;
       height: 17px;
       margin-left: -75px;
       transform: translate(-8px, 2px);
@@ -355,10 +357,33 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   transition: color 250ms;
 
   &:hover {
-    color: $twilightBlue;
+    color: $white;
   }
 }
 
+%ctaButton_Gold {
+  @extend %ctaButton_Setup;
+  color: $gold;
+  transition: color 250ms;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+%ctaButton_RoyalBlue {
+  @extend %ctaButton_Setup;
+  color: $royalBlue;
+  transition: color 250ms;
+
+  &:hover {
+    color: $white;
+  }
+
+  &:before {
+    background-image: $crown_icon_blue;
+  }
+}
 // Regular Button
 
 %button_Setup {
