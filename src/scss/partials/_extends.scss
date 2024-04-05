@@ -454,3 +454,15 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   background: $transparent;
   color: $twilightBlue;
 }
+%buttonAlt_6 {
+  @extend %button_Setup;
+  border: $border1 solid $smoke;
+  background: $transparent;
+  color: $smoke;
+}
+%buttonAlt_7 {
+  @extend %button_Setup;
+  border: $border2 solid $royalBlue;
+  background-color: $royalBlue;
+  color: $white;
+}

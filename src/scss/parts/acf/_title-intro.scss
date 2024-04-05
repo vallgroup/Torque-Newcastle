@@ -14,7 +14,7 @@
       margin-right: auto;
 
       & > * {
-        color: $lightGreyBlue;
+        color: $smoke;
         font-size: 1.2em;
         line-height: 1.25;
       }
@@ -33,7 +33,7 @@
     }
 
     .cta {
-      @extend %ctaButton_Blue;
+      @extend %ctaButton_Gold;
     }
   }
 }

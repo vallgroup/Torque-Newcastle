@@ -432,7 +432,7 @@
           align-items: flex-start;
 
           .term {
-            color: $softBlue;
+            color: $gold;
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 0;
@@ -453,7 +453,7 @@
         }
 
         .post-title {
-          color: $twilightBlue;
+          color: $royalBlue;
           text-transform: uppercase;
           margin-bottom: 0.2em;
         }
@@ -508,7 +508,7 @@
           }
 
           .post-cta {
-            @extend %buttonAlt_2;
+            @extend %buttonAlt_6;
             padding-right: 40px;
 
             &:after {
@@ -521,7 +521,7 @@
             }
 
             &.opened {
-              @extend %buttonAlt_4;
+              @extend %buttonAlt_7;
               padding-right: 40px;
 
               &:after {
