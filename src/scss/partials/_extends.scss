@@ -280,6 +280,27 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   }
 }
 
+%titleContentCta_Smoke {
+  @extend %titleContentCta_Setup;
+
+  .title,
+  .title > * {
+    color: $royalBlue;
+    margin-bottom: 0.25em;
+  }
+
+  .content,
+  [class^="content"],
+  .content > *,
+  [class^="content"] > * {
+    color: $smoke;
+
+    @include respond-to-max(desktop) {
+      font-size: 1rem;
+    }
+  }
+}
+
 %contentBody {
   width: 100%;
   margin-bottom: 15px;
@@ -367,7 +388,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   transition: color 250ms;
 
   &:hover {
-    color: $white;
+    color: $gold;
   }
 }
 
@@ -377,7 +398,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   transition: color 250ms;
 
   &:hover {
-    color: $white;
+    color: $royalBlue;
   }
 
   &:before {
@@ -425,11 +446,25 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
 %buttonRegular {
   @extend %button_Setup;
 }
+
+%buttonSmoke {
+  @extend %button_Setup;
+  border-color: $smoke;
+  color: $smoke;
+}
+
 %buttonAlt {
   @extend %button_Setup;
   background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
   color: $white;
 }
+%buttonAltSmoke {
+  @extend %button_Setup;
+  background-color: $smoke;
+  color: $white;
+  border-color: $smoke;
+}
+
 %buttonAlt_2 {
   @extend %button_Setup;
   border: $border1 solid $softBlue;

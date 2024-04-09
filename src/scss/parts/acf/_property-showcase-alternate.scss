@@ -139,19 +139,19 @@
       }
 
       &.bg-light_grey {
-        border-top: $border3 solid $softBlue;
+        border-top: $border3 solid $gold;
         background-color: $veryLightGrey;
       }
 
       .content-wrapper {
-        @extend %titleContentCta_Light;
+        @extend %titleContentCta_Smoke;
 
         .title {
           margin-bottom: 0;
         }
 
         .subtitle {
-          color: $softBlue;
+          color: $gold;
           letter-spacing: $letterSpacing3;
           text-transform: uppercase;
         }

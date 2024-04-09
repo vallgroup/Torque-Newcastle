@@ -34,7 +34,7 @@
         margin-bottom: $bodyPadding2;
 
         .tabs-title {
-          color: $softBlue;
+          color: $gold;
           font-family: $fontFamilyFour;
           font-size: 0.75em;
           text-transform: uppercase;
@@ -131,7 +131,7 @@
         }
 
         .tabs-item {
-          @extend %buttonRegular;
+          @extend %buttonSmoke;
           margin-bottom: $bodyPadding2;
 
           @include respond-to-max(desktop) {
@@ -139,7 +139,7 @@
           }
 
           &.selected {
-            @extend %buttonAlt;
+            @extend %buttonAltSmoke;
           }
         }
       }
@@ -248,7 +248,8 @@
     justify-content: space-between;
     align-self: start;
 
-    background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+    //background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+    background-color: $royalBlue;
     padding: $bodyPadding3;
 
     position: absolute;
@@ -302,7 +303,7 @@
       }
 
       .info-box-address-wrapper {
-        color: $lightBlueGrey;
+        color: $lightGreyBlueAlt;
         font-family: $fontFamilyFour;
         font-size: 0.75em;
         line-height: 1.17;
@@ -345,7 +346,7 @@
         }
 
         .info-box-button {
-          @extend %buttonAlt_2;
+          @extend %ctaButton_Gold;
           flex: 1 1 100%;
           margin-bottom: $bodyPadding2;
 
@@ -548,7 +549,7 @@
           }
 
           .post-cta {
-            @extend %buttonAlt_2;
+            @extend %buttonSmoke;
             padding-right: 40px;
 
             &:after {
@@ -561,7 +562,7 @@
             }
 
             &:hover {
-              @extend %buttonAlt_3;
+              @extend %buttonAltSmoke;
               padding-right: 40px;
             }
           }

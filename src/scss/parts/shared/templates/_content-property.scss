@@ -42,14 +42,14 @@ $mail_icon: url('../statics/icons/mail.png');
             margin-bottom: $bodyPadding5;
 
             .title {
-              color: $twilightBlue;
+              color: $royalBlue;
               margin-bottom: $bodyPadding2;
             }
             .content {
               letter-spacing: 0;
 
               & > * {
-                color: $steel;
+                color: $smoke;
                 font-family: $fontFamilyOne;
                 font-size: 1.125em;
                 margin-top: 0;
@@ -76,11 +76,11 @@ $mail_icon: url('../statics/icons/mail.png');
 
                 .key {
                   flex: 0 0 50%;
-                  color: $twilightBlue;
+                  color: $gold;
                 }
                 .value {
                   flex: 0 0 50%;
-                  color: $steel;
+                  color: $smoke;
                 }
               }
             }
@@ -103,13 +103,13 @@ $mail_icon: url('../statics/icons/mail.png');
                 }
 
                 .name {
-                  color: $twilightBlue;
+                  color: $royalBlue;
                 }
                 .company {
-                  color: $steel;
+                  color: $smoke;
                 }
                 .phone {
-                  color: $steel;
+                  color: $smoke;
                   padding-left: 25px;
                   position: relative;
 
@@ -126,7 +126,7 @@ $mail_icon: url('../statics/icons/mail.png');
                   }
                 }
                 .email {
-                  color: $steel;
+                  color: $smoke;
                   padding-left: 25px;
                   position: relative;
 
@@ -147,7 +147,7 @@ $mail_icon: url('../statics/icons/mail.png');
           }
 
           .subtitle {
-            color: $softBlue;
+            color: $royalBlue;
             font-size: 1.5625em;
             text-transform: uppercase;
           }
@@ -174,7 +174,7 @@ $mail_icon: url('../statics/icons/mail.png');
 
 
           .button {
-            @extend %ctaButton_Blue;
+            @extend %ctaButton_Gold;
 
             white-space: unset;
             /*

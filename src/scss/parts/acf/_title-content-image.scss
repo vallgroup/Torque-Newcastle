@@ -74,12 +74,12 @@ body.page-id-29 .tq-title-content-image .col-left {
       }
 
       &.bg-light_grey {
-        border-top: $border3 solid $softBlue;
+        border-top: $border3 solid $gold;
         background-color: $veryLightGrey;
       }
 
       .content-wrapper {
-        @extend %titleContentCta_Light;
+        @extend %titleContentCta_Smoke;
 
         .content {
           letter-spacing: 0;
