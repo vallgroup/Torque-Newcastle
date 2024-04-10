@@ -102,7 +102,7 @@ $mail_icon: url('../statics/icons/mail.png');
 
             // input labels
             .grunion-field-label {
-              color: $softBlue;
+              color: $smoke;
               font-size: 0.75em;
               font-family: $fontFamilyFour;
               text-transform: uppercase;
@@ -139,7 +139,7 @@ $mail_icon: url('../statics/icons/mail.png');
             flex: 1 1 100%;
 
             button {
-              @extend %ctaButton_Blue;
+              @extend %ctaButton_Gold;
             }
           }
 
@@ -167,6 +167,13 @@ $mail_icon: url('../statics/icons/mail.png');
           label:not(.checkbox):not(.checkbox-multiple):not(.radio)
           {
             display: none;
+          }
+        }
+        .recaptcha-branding-text {
+          color: $smoke;
+
+          a {
+            color: $smoke;
           }
         }
       }
@@ -199,7 +206,7 @@ $mail_icon: url('../statics/icons/mail.png');
         }
 
         h4 {
-          color: $twilightBlue;
+          color: $gold;
           font-family: $fontFamilyThree;
           font-size: 2.5em;
           line-height: 0.75;
@@ -211,7 +218,7 @@ $mail_icon: url('../statics/icons/mail.png');
 
         span,
         a {
-          color: $lightGreyBlue;
+          color: $smoke;
           letter-spacing: 0.34px;
           position: relative;
           display: block;

@@ -75,7 +75,7 @@
         }
 
         .title {
-          color: $softBlue;
+          color: $gold;
         }
 
         .info {
@@ -141,7 +141,7 @@
     }
 
     .related-posts-title {
-      color: $twilightBlue;
+      color: $royalBlue;
     }
 
     .related-posts-loop {
@@ -161,7 +161,7 @@
 
       .post-card {
         flex: 1 1 100%;
-        border-top: $border3 solid $softBlue;
+        border-top: $border3 solid $gold;
 
         @include respond-to(tablet) {
           flex: 0 0 32%;

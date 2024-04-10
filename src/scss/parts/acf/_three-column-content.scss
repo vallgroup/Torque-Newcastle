@@ -40,7 +40,7 @@
       }
 
       .content-wrapper {
-        @extend %titleContentCta_Light;
+        @extend %titleContentCta_Smoke;
       }
     }
 
@@ -66,7 +66,7 @@
 
       .content-wrapper {
         h4.title {
-          color: $softBlue;
+          color: $gold;
           margin-bottom: 0;
         }
 
@@ -88,7 +88,7 @@
 
       .content-wrapper {
         h4.title {
-          color: $softBlue;
+          color: $gold;
           margin-bottom: 0;
         }
 

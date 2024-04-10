@@ -12,10 +12,10 @@
     @extend %sectionPadding_Both;
     text-align: center;
 
-    @extend %titleContentCta_Light;
+    @extend %titleContentCta_Smoke;
 
     .title {
-      color: $softBlue;
+      color: $royalBlue;
       font-size: 0.75em;
       font-family: $fontFamilyFour;
 

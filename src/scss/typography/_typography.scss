@@ -103,13 +103,13 @@ p {
   letter-spacing: 0;
 
   a {
-    color: $softBlue;
-    border-bottom: 2px solid $softBlue;
+    color: $gold;
+    border-bottom: 2px solid $gold;
     transition: color 250ms;
 
     &:hover {
-      color: $twilightBlue;
-      border-bottom: 2px solid $twilightBlue;
+      color: $royalBlue;
+      border-bottom: 2px solid $royalBlue;
     }
 
     &.website:hover {

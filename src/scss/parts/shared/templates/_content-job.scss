@@ -4,13 +4,13 @@ $mail_icon: url('../statics/icons/mail.png');
 .single-job-content {
   @extend %limitWidth;
   .title {
-    color: $twilightBlue;
+    color: $royalBlue;
     margin-bottom: 0.5rem;
   }
   .content {
 
     & > * {
-      color: $steel;
+      color: $smoke;
       font-size: 1.125em;
     }
   }
@@ -32,11 +32,11 @@ $mail_icon: url('../statics/icons/mail.png');
 
   .btn-apply {
     display: inline-block;
-    border: 2px solid #0f206c;
+    border: 2px solid $gold;
     background-color: #FFFFFF;
     text-transform: uppercase;
     text-align: center;
-    color: #0f206c;
+    color: $gold;
     cursor: pointer;
     letter-spacing: 1.3px;
     line-height: 19px;

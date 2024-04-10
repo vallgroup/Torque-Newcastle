@@ -433,7 +433,7 @@
           align-items: flex-start;
 
           .term {
-            color: $gold;
+            color: $smoke;
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 0;
@@ -468,7 +468,7 @@
       // blog post
       &.template-3 {
         background: $veryLightGrey;
-        border-top: $border3 solid $softBlue;
+        border-top: $border3 solid $gold;
 
         .content-wrapper {
           padding: $bodyPadding4 $bodyPadding3;
@@ -488,7 +488,7 @@
           }
 
           .post-cta {
-            @extend %ctaButton_Blue;
+            @extend %ctaButton_Gold;
           }
         }
       }
@@ -506,6 +506,9 @@
 
           .post-title {
             margin-top: 0em;
+          }
+          .term {
+            color: $gold;
           }
 
           .post-cta {
@@ -577,7 +580,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @extend %ctaButton_Blue;
+    @extend %ctaButton_Gold;
 
     @include respond-to(desktop) {
       left: 62.5%; // half the post container width + the sidebar width

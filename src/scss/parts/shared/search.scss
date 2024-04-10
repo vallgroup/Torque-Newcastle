@@ -75,7 +75,7 @@
   }
 
   .search-result-count {
-    color: $softBlue;
+    color: $smoke;
     text-transform: uppercase;
     margin-bottom: 45px;
     font-size: 13px;
@@ -89,7 +89,7 @@
     }
 
     b {
-      color: $softBlue;
+      color: $smoke;
     }
   }
 
@@ -102,7 +102,7 @@
     }
 
     h2 {
-      color: $twilightBlue;
+      color: $royalBlue;
       font-size: 33px;
       line-height: 26px;
       letter-spacing: 0.46px;
@@ -124,7 +124,7 @@
       text-transform: uppercase;
     }
     .excerpt {
-      color: $steel;
+      color: $smoke;
       font-size: 13px;
       line-height: 16px;
       margin-bottom: 15px;
@@ -136,7 +136,7 @@
       }
     }
     .read-more {
-      @extend %ctaButton_Blue;
+      @extend %ctaButton_Gold;
     }
   }
 
