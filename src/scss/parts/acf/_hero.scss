@@ -49,26 +49,23 @@
       margin-right: auto;
       
       & > * {
-        font-family: "Knockout HTF26-JuniorFlyweight Regular", sans-serif;
-        text-transform: uppercase;
-        line-height: .9;
-        letter-spacing: .01em;
-        font-size: 4.5em;
-        line-height: 1.067em;
+        font-family: $fontFamilyGTSectraFine;
+        font-size: 3.5rem;
+        line-height: 1.03;
         margin-bottom: 0;
       }
 
       @include respond-to(tablet) {
         & > * {
-          font-size: 4.5em;
+          font-size: 3.5rem;
         }
       }
 
       @include respond-to(desktop) {
-        max-width: 70%;
+        max-width: 80%;
 
         & > * {
-          font-size: 5.5em;
+          font-size: 3.875rem;
         }
       }
     }
@@ -98,7 +95,7 @@
         max-width: 70%;
         
         & > * {
-          font-size: 1.5625em;
+          font-size: 1.25rem;
         }
       }
     }

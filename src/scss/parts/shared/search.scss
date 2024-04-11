@@ -21,9 +21,11 @@
     min-width: 240px;
     color: $royalBlue;
     font-size: 12px;
-    letter-spacing: 0.68px;
-    font-family: $fontFamilyFour;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+    font-family: $fontFamilyGTAmericaExtended;
     text-transform: uppercase;
+    font-weight: 500;
 
     &:focus {
       outline: 2px solid;

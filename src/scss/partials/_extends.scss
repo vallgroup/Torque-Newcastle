@@ -214,7 +214,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   .title {
     margin-top: 0;
     margin-bottom: $bodyPadding3;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .content,
@@ -319,9 +319,9 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
 
 %ctaButton_Setup {
   display: inline-block;
-  font-family: $fontFamilyTwo;
+  font-family: $fontFamilyGTAmericaExtended;
   font-size: 0.8125em;
-  letter-spacing: 1.53px;
+  letter-spacing: 1.2px;
   padding-left: 35px;
   text-transform: uppercase;
   text-decoration: none;
@@ -332,7 +332,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
     padding-left: 50px;
   }
   @include respond-to(desktop) {
-    font-size: 1.25em;
+    font-size: 0.75rem;
     padding-left: 85px;
   }
 
@@ -342,7 +342,6 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
     width: 20px;
     height: 9px;
     margin-left: -25px;
-    transform: translate(-4px, 2px);
     background-image: url();
     background-position: center top;
     background-size: contain;
@@ -353,13 +352,12 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
       width: 45px;
       height: 12px;
       margin-left: -40px;
-      transform: translate(-6px, 0px);
     }
     @include respond-to(desktop) {
       width: 25px;
       height: 17px;
       margin-left: -75px;
-      transform: translate(-8px, 2px);
+    transform: translate(0px, 4px);
     }
   }
 }

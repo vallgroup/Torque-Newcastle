@@ -2,14 +2,14 @@
 @import "../partials/variables";
 
 body {
-  font-family: $fontFamilyOne;
+  font-family: $fontFamilyGTAmerica;
   font-size: $fontSizeBody;
-  line-height: $lineHeight3;
+  line-height: $lineHeight4;
 
 }
 
 h1 {
-  font-family: $fontFamilyThree;
+  font-family: $fontFamilyGTSectraFine;
   font-size: 2.6875em;
   font-weight: 400;
   line-height: 0.9;
@@ -28,9 +28,9 @@ h1 {
 }
 
 h2 {
-  font-family: $fontFamilyThree;
+  font-family: $fontFamilyGTSectraFine;
   font-size: 1.875em; // 30px
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.27px;
   line-height: 1.03;
   text-transform: uppercase;
@@ -43,16 +43,16 @@ h2 {
     line-height: 0.9;
   }
   @include respond-to(desktop) {
-    font-size: 4em;
-    line-height: 0.88;
+    font-size: 2.375rem;
+    line-height: 1.05;
   }
 }
 
 h3 {
-  font-family: $fontFamilyThree;
+  font-family: $fontFamilyGTSectraFine;
   font-size: 2.0625em; // 33px
   font-weight: 400;
-  line-height: 0.79;
+  line-height: $lineHeight4;
   letter-spacing: 0.35px;
   text-transform: uppercase;
   margin-top: 0;
@@ -62,7 +62,7 @@ h3 {
     line-height: 0.97;
   }
   @include respond-to(desktop) {
-    font-size: 2.5em; // 60px
+    font-size: 1.375rem;
   }
 }
 
@@ -72,11 +72,11 @@ h4 {
 }
 
 h5 {
-  font-family: $fontFamilyTwo;
-  font-size: 1.75em;
+  font-family: $fontFamilyGTSectraFine;
+  font-size: 1.375rem;
   font-weight: 400;
   letter-spacing: $letterSpacing7;
-  line-height: $lineHeight1;
+  line-height: $lineHeight4;
   color: $white;
   text-transform: uppercase;
   margin-top: 0;
@@ -85,7 +85,7 @@ h5 {
 }
 
 h6 {
-  font-family: $fontFamilyFour;
+  font-family: $fontFamilyGTAmericaExtended;
   font-size: 0.75em; // 12px
   font-weight: 400;
   letter-spacing: $letterSpacing3;
@@ -97,7 +97,7 @@ h6 {
 }
 
 p {
-  font-family: $fontFamilyOne;
+  font-family: $fontFamilyGTAmerica;
   font-size: 1em; // 16px
   line-height: $lineHeight4;
   letter-spacing: 0;

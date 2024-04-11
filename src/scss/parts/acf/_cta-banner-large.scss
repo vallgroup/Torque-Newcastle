@@ -24,7 +24,7 @@
         }
         
         @include respond-to(desktop) {
-          font-size: 6em;
+          font-size: 2.375rem;
         }
       }
 
@@ -49,7 +49,7 @@
           max-width: 575px;
 
           & > * {
-            font-size: 1.2222em;
+            font-size: 1.125rem;
           }
         }
       }
