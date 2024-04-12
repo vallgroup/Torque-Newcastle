@@ -35,9 +35,10 @@
 
         .tabs-title {
           color: $gold;
-          font-family: $fontFamilyFour;
+          font-family: $fontFamilyGTAmericaExtended;
           font-size: 0.75em;
           text-transform: uppercase;
+          font-weight: 500;
 
           .pre-title {
             display: none;
@@ -297,6 +298,8 @@
       }
 
       .info-box-title {
+        margin-bottom: 0.75rem;
+
         @include respond-to-max(tablet) {
           margin-top: $bodyPadding2;
         }
@@ -437,6 +440,9 @@
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 0;
+            font-size: 0.75rem;
+            font-family: $fontFamilyGTAmericaExtended;
+            line-height: 14px;
 
             &:after {
               content: ',';
@@ -455,8 +461,7 @@
 
         .post-title {
           color: $royalBlue;
-          text-transform: uppercase;
-          margin-bottom: 0.2em;
+          margin-bottom: 1rem;
         }
 
         .post-excerpt {
@@ -549,6 +554,10 @@
 
           .post-title {
             margin-top: 0em;
+          }
+
+          .term {
+            color: $gold;
           }
 
           .post-cta {

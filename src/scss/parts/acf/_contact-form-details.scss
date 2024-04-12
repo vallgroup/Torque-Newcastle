@@ -103,9 +103,9 @@ $mail_icon: url('../statics/icons/mail.png');
             // input labels
             .grunion-field-label {
               color: $smoke;
-              font-size: 0.75em;
-              font-family: $fontFamilyFour;
-              text-transform: uppercase;
+              font-size: 1rem;
+              font-family: $fontFamilyGTAmerica;
+              font-weight: 400;
 
               // hide 'required' label
               & > span {
@@ -171,6 +171,7 @@ $mail_icon: url('../statics/icons/mail.png');
         }
         .recaptcha-branding-text {
           color: $smoke;
+          font-size: 0.75rem;
 
           a {
             color: $smoke;
@@ -203,14 +204,17 @@ $mail_icon: url('../statics/icons/mail.png');
           h4 {
             display: none;
           }
+          span {
+            font-size: 1.125rem;
+          }
         }
 
         h4 {
           color: $gold;
-          font-family: $fontFamilyThree;
-          font-size: 2.5em;
-          line-height: 0.75;
-          letter-spacing: 1px;
+          font-family: $fontFamilyGTAmericaExtended;
+          font-size: 0.875rem;
+          line-height: 1.49;
+          letter-spacing: 1.4px;
           text-transform: uppercase;
           margin-top: 0.85em;
           margin-bottom: $bodyPadding2;

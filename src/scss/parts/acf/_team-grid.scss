@@ -31,25 +31,27 @@
         .team-name {
           color: $royalBlue;
           font-size: 2.0625em;
-          font-family: $fontFamilyThree;
+          font-family: $fontFamilyGTSectraFine;
           margin-top: $bodyPadding2;
           margin-bottom: 0.25em;
+          font-weight: 500;;
 
           @include respond-to(desktop) {
-            font-size: 2.6875em;
+            font-size: 1.375rem;
           }
         }
 
         .team-title {
           color: $smoke;
           font-size: 0.75em;
-          font-family: $fontFamilyFour;
-          letter-spacing: 1.41px;
-          line-height: 1.41em;
+          font-family: $fontFamilyGTAmericaExtended;
+          letter-spacing: 1.2px;
+          line-height: 1.33;
           margin-bottom: $bodyPadding4;
           margin-left: 0;
           margin-right: auto;
           max-width: 95%;
+          text-transform: uppercase;
         }
       }
     }

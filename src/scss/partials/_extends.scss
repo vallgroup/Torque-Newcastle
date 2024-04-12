@@ -229,7 +229,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
       font-size: 0.875em;
     }
     @include respond-to(desktop) {
-      font-size: 1.125em;
+      font-size: 1.125rem;
     }
   }
 
@@ -354,10 +354,10 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
       margin-left: -40px;
     }
     @include respond-to(desktop) {
-      width: 25px;
-      height: 17px;
+      width: 16px;
+      height: 12px;
       margin-left: -75px;
-    transform: translate(0px, 4px);
+      transform: translate(-8px, 2px);
     }
   }
 }
@@ -413,14 +413,14 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   border-radius: 0;
   box-sizing: border-box;
   background-color: $white;
-  font-family: $fontFamilyTwo;
+  font-family: $fontFamilyGTAmericaExtended;
   font-size: 0.8125em;
   text-transform: uppercase;
   text-align: center;
   color: $twilightBlue;
   cursor: pointer;
-  letter-spacing: 1.3px;
-  line-height: 19px;
+  letter-spacing: 1.2px;
+  line-height: 14px;
   transition: 0.2s;
 
   -webkit-appearance: none;
@@ -431,7 +431,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
     padding: 11px 15px 9px;
   }  
   @include respond-to(desktop) {
-    font-size: 1.25em;
+    font-size: 0.75rem;
     padding: 10px 20px 9px;
 
     // &:hover {
