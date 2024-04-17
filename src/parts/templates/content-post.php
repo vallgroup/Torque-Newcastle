@@ -16,7 +16,7 @@ $content = preg_replace('/Newcastle Limited/', 'Newcastle Limited*', $raw_conten
 // related posts
 $args = array(
   'category__in' => wp_get_post_categories( $post->ID ),
-  'numberposts' => 3,
+  'numberposts' => 4,
   'post__not_in' => array( $post->ID )
 );
 $related = get_posts( $args );

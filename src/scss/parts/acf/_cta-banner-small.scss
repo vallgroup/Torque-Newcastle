@@ -15,7 +15,7 @@
     flex-direction: column;
     
     box-sizing: border-box;
-    padding: $bodyPadding4 $bodyPadding1;
+    padding: $bodyPadding3 $bodyPadding1;
     width: 100%;
     
     text-align: center;
@@ -33,6 +33,7 @@
       padding-right: $bodyPadding1;
       line-height: 1;
       letter-spacing: 0;
+      text-transform: uppercase;
       
       @include respond-to(tablet) {
         font-size: 0.8em;
@@ -43,6 +44,10 @@
 
     .cta {
       @extend %ctaButton_RoyalBlue;
+
+      &:before {
+        transform: translate(-2px, 2px);
+      }
     }
   }
 }

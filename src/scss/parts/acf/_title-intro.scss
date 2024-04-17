@@ -6,7 +6,10 @@
   .content-container {
     text-align: center;
 
-    // .title {}
+    .title {
+      margin: 0 auto 1.5rem;
+      max-width: 820px;
+    }
 
     .intro {
       max-width: 700px;

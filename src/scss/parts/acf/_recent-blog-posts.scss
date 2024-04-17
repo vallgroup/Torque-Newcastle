@@ -32,6 +32,11 @@
 
       .content-wrapper {
         @extend %titleContentCta_Light;
+
+
+        @include respond-to(desktop) {
+          margin-top: 2.75rem;
+        }
       }
     }
   }

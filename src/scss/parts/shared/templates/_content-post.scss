@@ -146,27 +146,22 @@
     }
 
     .related-posts-loop {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.75rem;
 
-      &:after {
-        content: '';
-        flex: 1 1 100%;
 
-        @include respond-to(tablet) {
-          flex: 0 0 32%;
-        }
+      @include respond-to(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to(desktop) {
+        grid-template-columns: repeat(4, 1fr);
       }
 
       .post-card {
-        flex: 1 1 100%;
         border-top: $border3 solid $gold;
 
-        @include respond-to(tablet) {
-          flex: 0 0 32%;
-        }
       }
     }
   }

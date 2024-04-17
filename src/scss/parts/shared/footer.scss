@@ -32,7 +32,7 @@ footer {
       letter-spacing: 1.4px;
       text-transform: uppercase;
       margin-top: 0;
-      margin-bottom: 0.5em;
+      margin-bottom: $bodyPadding3;
       font-size: 0.875rem;
       line-height: 0.75;
       white-space: nowrap;
@@ -45,7 +45,7 @@ footer {
         display: flex;
 
         svg {
-          width: 1.5rem;
+          width: 0.875rem;
         }
       }
     }
@@ -114,7 +114,7 @@ footer {
           letter-spacing: 1.4px;
           text-transform: uppercase;
           margin-top: 0;
-          margin-bottom: $bodyPadding2;
+          margin-bottom: $bodyPadding3;
 
           @include respond-to(tablet) {
             font-size: 0.875rem;

@@ -19,7 +19,7 @@
     padding: $bodyPadding2;
     
     @include respond-to(tablet) {
-      max-width: 205px;
+      max-width: 250px;
     }
     
     @include respond-to(desktop) {

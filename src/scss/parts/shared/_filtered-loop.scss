@@ -21,17 +21,17 @@
     }
 
     & > div {
-      margin-bottom: $bodyPadding2;
+        margin-bottom: 0.625rem;
 
       @include respond-to(desktop) {
-        margin-bottom: $bodyPadding4;
+        margin-bottom: 0.625rem;
       }
     }
 
     // tabs styling
     .torque-custom-filter-tabs {
       .tabs-title-wrapper {
-        margin-bottom: $bodyPadding2;
+        margin-bottom: 0;
 
         .tabs-title {
           color: $gold;
@@ -103,15 +103,13 @@
 
           .tabs-item {
             margin-left: -2px;
-            padding-left: 35px;
-            padding-right: 20px;
 
             @include respond-to(tablet) {
-              padding-left: 45px;
+              padding-left: 25px;
               padding-right: 25px;
             }
             @include respond-to(desktop) {
-              padding-right: 30px;
+              padding-right: 10px;
             }
 
             &.grid {
@@ -254,15 +252,15 @@
     padding: $bodyPadding3;
 
     position: absolute;
-    left: 2%;
-    width: 96%;
+    left: 0px;
+    width: 100%;
     box-sizing: border-box;
 
     z-index: 99;
 
     @include respond-to(tablet) {
-      left: 10%;
-      width: 80%;
+      /*left: 10%;
+      width: 80%;*/
       flex-direction: row;
       padding: $bodyPadding6 $bodyPadding7;
     }
@@ -465,7 +463,7 @@
         }
 
         .post-excerpt {
-          color: $lightGreyBlue;
+          color: $smoke;
           margin-bottom: 1.2em;
         }
       }
@@ -518,8 +516,8 @@
 
           .post-cta {
             @extend %buttonAlt_6;
-            padding-right: 40px;
 
+            /*
             &:after {
               content: '\F347';
               font-family: 'dashicons';
@@ -528,6 +526,7 @@
               top: 50%;
               transform: translateY(-42%);
             }
+            */
 
             &.opened {
               @extend %buttonAlt_7;
@@ -535,6 +534,9 @@
 
               &:after {
                 content: '\f335';
+                font-family: 'dashicons';
+                position: absolute;
+                right: 12px;
               }
             }
           }
@@ -562,20 +564,9 @@
 
           .post-cta {
             @extend %buttonSmoke;
-            padding-right: 40px;
-
-            &:after {
-              content: '\f345';
-              font-family: 'dashicons';
-              position: absolute;
-              right: 8px;
-              top: 50%;
-              transform: translateY(-42%);
-            }
 
             &:hover {
               @extend %buttonAltSmoke;
-              padding-right: 40px;
             }
           }
         }

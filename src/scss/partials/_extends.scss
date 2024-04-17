@@ -320,7 +320,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
 %ctaButton_Setup {
   display: inline-block;
   font-family: $fontFamilyGTAmericaExtended;
-  font-size: 0.8125em;
+  font-size: 0.8125rem;
   letter-spacing: 1.2px;
   padding-left: 35px;
   text-transform: uppercase;
@@ -328,8 +328,8 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
   white-space: nowrap;
 
   @include respond-to(tablet) {
-    font-size: 1em;
-    padding-left: 50px;
+    font-size: 0.75rem;
+    padding-left: 30px;
   }
   @include respond-to(desktop) {
     font-size: 0.75rem;
@@ -349,9 +349,9 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
     background-image: $crown_icon;
 
     @include respond-to(tablet) {
-      width: 45px;
+      width: 35px;
       height: 12px;
-      margin-left: -40px;
+      margin-left: -34px;
     }
     @include respond-to(desktop) {
       width: 16px;
@@ -408,7 +408,7 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
 %button_Setup {
   position: relative;
   display: inline-block;
-  padding: 3px 10px 2px;
+  padding: 3px 10px;
   border: $border1 solid $twilightBlue;
   border-radius: 0;
   box-sizing: border-box;
@@ -428,11 +428,10 @@ $crown_icon_blue: url('../statics/icons/crown_blue.svg');
 
   @include respond-to(tablet) {
     font-size: 1em;
-    padding: 11px 15px 9px;
+    padding: 5px 10px;
   }  
   @include respond-to(desktop) {
     font-size: 0.75rem;
-    padding: 10px 20px 9px;
 
     // &:hover {
     //   background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
