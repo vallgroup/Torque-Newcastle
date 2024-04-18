@@ -116,13 +116,12 @@ $mail_icon: url('../statics/icons/mail.png');
             .grunion-field-label:not(.textarea) {
               position: absolute;
               bottom: -#{$bodyPadding2};
-              left: $bodyPadding3;
             }
             // textarea labels
             .grunion-field-label.textarea {
-              position: absolute;
-              top: #{$bodyPadding7};
-              left: $bodyPadding3;
+              margin-top: 3.625rem;
+              position: relative;
+              bottom: -1.5rem;
             }
 
             // input margins
@@ -195,7 +194,8 @@ $mail_icon: url('../statics/icons/mail.png');
       }
       @include respond-to(tablet) {
         flex: 0 1 calc(43% - 12.5px);
-        padding-top: 0;
+        padding-top: 3rem;
+        justify-content: flex-start;
       }
 
       .content-wrapper {

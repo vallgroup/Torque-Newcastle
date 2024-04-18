@@ -61,6 +61,7 @@
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding_Top;
+  margin-bottom: 4rem;
 
   //page title
   header .page-title {
@@ -96,10 +97,13 @@
 
   //single result styles
   article {
-    margin-bottom: 29px;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $smoke;
 
     @include respond-to(desktop) {
-      margin-bottom: 71px;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
     }
 
     h2 {
@@ -166,9 +170,9 @@
       }
     }
 
-    .prev.page-numbers,
+    /*.prev.page-numbers,
     .next.page-numbers {
 
-    }
+    }*/
   }
 }
