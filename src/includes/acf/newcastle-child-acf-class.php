@@ -2387,6 +2387,25 @@ class Newcastle_ACF {
       					'label' => 'Careers',
       					'display' => 'block',
       					'sub_fields' => array(
+							array(
+								'key' => 'field_5fa48cff262a1',
+								'label' => 'Flush text to the left?',
+								'name' => 'flush_text_to_left',
+								'type' => 'true_false',
+								'instructions' => '',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '50',
+									'class' => '',
+									'id' => '',
+								),
+								'message' => '',
+								'default_value' => 0,
+								'ui' => 1,
+								'ui_on_text' => '',
+								'ui_off_text' => '',
+							),
       						array(
       							'key' => 'field_607f884ece1fe',
       							'label' => 'Align Image/Careers',

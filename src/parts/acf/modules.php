@@ -570,6 +570,7 @@ if ( have_rows( $modules ) ) :
             ? get_sub_field( 'image' )['url']
             : false;
         $filters = get_sub_field( 'recruiterbox_filters' );
+        $flush_text_to_left = get_sub_field( 'flush_text_to_left' );
 
         include locate_template( $modules_path . 'careers.php' );
 

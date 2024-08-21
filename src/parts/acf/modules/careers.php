@@ -5,6 +5,9 @@
 
 $extra_classes = 'align-' . $alignment;
 $extra_classes_right_col = 'bg-' . $bg_color;
+if ($flush_text_to_left) {
+  $extra_classes_right_col .= ' flush-text-to-left';
+}
 ?>
 
 <section class="tq-careers">

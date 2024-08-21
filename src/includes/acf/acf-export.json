@@ -2327,6 +2327,25 @@
                         "display": "block",
                         "sub_fields": [
                             {
+                                "key": "field_5fa48cff262a1",
+                                "label": "Flush text to the left?",
+                                "name": "flush_text_to_left",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
                                 "key": "field_607f884ece1fe",
                                 "label": "Align Image\/Careers",
                                 "name": "align_image",
