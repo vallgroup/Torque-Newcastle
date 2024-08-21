@@ -1,6 +1,6 @@
 .tq-three-column-content {
   background-color: $veryLightGrey;
-  border-top: $border4 solid $softBlue;
+  border-top: $border4 solid $gold;
 
   @extend %sectionMargin;
 
@@ -40,7 +40,7 @@
       }
 
       .content-wrapper {
-        @extend %titleContentCta_Light;
+        @extend %titleContentCta_Smoke;
       }
     }
 
@@ -66,8 +66,9 @@
 
       .content-wrapper {
         h4.title {
-          color: $softBlue;
+          color: $gold;
           margin-bottom: 0;
+          text-transform: uppercase;
         }
 
         .content {
@@ -88,8 +89,9 @@
 
       .content-wrapper {
         h4.title {
-          color: $softBlue;
+          color: $gold;
           margin-bottom: 0;
+          text-transform: uppercase;
         }
 
         .content {

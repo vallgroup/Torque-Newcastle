@@ -49,7 +49,7 @@ header#header-style-1 {
     display: block;
     width: 100%;
     height: 14px;
-    background-color: $twilightBlue;
+    background-color: $royalBlue;
 
     @include respond-to(tablet) {
       height: 26px;
@@ -119,7 +119,9 @@ header#header-style-1 {
         .cta-menu-item > a {
           color: $white;
           font-size: 0.75em;
-          font-family: $fontFamilyFour;
+          font-weight: 500;
+          letter-spacing: 1.2px;
+          font-family: $fontFamilyGTAmericaExtended;
           text-transform: uppercase;
           min-width: 185px;
           display: block;
@@ -162,9 +164,9 @@ header#header-style-1 {
 
             .torque-menu-item  {
               color: $white;
-              font-family: $fontFamilyTwo;
-              font-size: 1.375em;
-              text-transform: uppercase;
+              font-family: $fontFamilyGTAmerica;
+              font-size: 0.975rem;
+              text-transform: capitalize;
             }
           }
 
@@ -325,7 +327,7 @@ header#header-style-1 {
       box-sizing: border-box;
       width: 100%;
 
-      background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+      background-image: linear-gradient(88deg, $lightNavy, $duskBlue);
 
       .notification-bar-content-wrapper {
         display: flex;
@@ -339,13 +341,16 @@ header#header-style-1 {
         .notification-bar-content {
           color: $white;
           font-size: 0.625em;
-          font-family: $fontFamilyFour;
+          font-family: $fontFamilyGTAmericaExtended;
           line-height: 1;
           letter-spacing: 0;
+          text-transform: uppercase;
+          font-weight: 500;
+          letter-spacing: 1.2px;
 
           @include respond-to(tablet) {
-            font-size: 0.8em;
-            line-height: 1.8;
+            font-size: 0.75rem;
+            line-height: 1.2;
             padding-right: $bodyPadding3;
           }
         }
@@ -367,20 +372,23 @@ header#header-style-1 {
 
   // update for dark header
   &.style-dark {
-    .torque-header-content-wrapper .torque-header-right-area-wrapper .cta-menu-container .cta-menu-item > a,
     .torque-header-content-wrapper .torque-header-right-area-wrapper .torque-header-menu-items-inline-wrapper .torque-menu-items-inline .torque-menu-item-wrapper .torque-menu-item,
     .torque-header-content-wrapper .torque-header-right-area-wrapper .torque-header-menu-items-inline-wrapper .torque-menu-items-inline > .torque-menu-item-wrapper.parent > a > .torque-menu-item:after,
     .torque-header-menu-items-mobile .torque-menu-items-stacked > .torque-menu-item-wrapper .torque-menu-item,
     .torque-header-menu-items-mobile .cta-menu-container .cta-menu-item > a,
     .torque-header-menu-items-mobile .torque-menu-items-stacked > .torque-menu-item-wrapper.parent > a > .torque-menu-item:after
     {
-      color: $softBlue !important;
+      color: $smoke !important;
+    }
+
+    .torque-header-content-wrapper .torque-header-right-area-wrapper .cta-menu-container .cta-menu-item > a {
+      color: $royalBlue !important;
     }
 
     // burger menu
     .torque-burger-menu.burger-menu-squeeze .torque-burger-menu-line
     {
-      background-color: $softBlue !important;
+      background-color: $smoke !important;
     }
 
     // mobile menu active

@@ -2,18 +2,18 @@
 @import "../partials/variables";
 
 body {
-  font-family: $fontFamilyOne;
+  font-family: $fontFamilyGTAmerica;
   font-size: $fontSizeBody;
-  line-height: $lineHeight3;
+  line-height: $lineHeight4;
+
 }
 
 h1 {
-  font-family: $fontFamilyThree;
+  font-family: $fontFamilyGTSectraFine;
   font-size: 2.6875em;
   font-weight: 400;
-  line-height: 0.9;
-  color: $twilightBlue;
-  text-transform: uppercase;
+  line-height: 1.05;
+  color: $royalBlue;
   margin-top: 0;
   margin-bottom: 0;
 
@@ -22,60 +22,58 @@ h1 {
   }
 
   @include respond-to(desktop) {
-    font-size: 6em;
+    font-size: 3.625rem;
   }
 }
 
 h2 {
-  font-family: $fontFamilyThree;
+  font-family: $fontFamilyGTSectraFine;
   font-size: 1.875em; // 30px
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.27px;
   line-height: 1.03;
-  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: $bodyPadding3;
   letter-spacing: 1px;
 
   @include respond-to(tablet) {
-    font-size: 3em;
-    line-height: 0.9;
+    font-size: 2.5rem;
+    line-height: 1.05;
   }
   @include respond-to(desktop) {
-    font-size: 4em;
-    line-height: 0.88;
+    font-size: 2.375rem;
+    line-height: 1.05;
   }
 }
 
 h3 {
-  font-family: $fontFamilyThree;
-  font-size: 2.0625em; // 33px
+  font-family: $fontFamilyGTSectraFine;
+  font-size: 1.5rem; // 33px
   font-weight: 400;
-  line-height: 0.79;
+  line-height: 1.75rem;
   letter-spacing: 0.35px;
-  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
 
   @include respond-to(tablet) {
-    line-height: 0.97;
+    line-height: 1.75rem;
   }
   @include respond-to(desktop) {
-    font-size: 2.5em; // 60px
+    font-size: 1.5rem;
   }
 }
 
 h4 {
-  font-family: $fontFamilyFour;
+  font-family: $fontFamilyGTAmericaExtended;
   font-weight: 400;
 }
 
 h5 {
-  font-family: $fontFamilyTwo;
-  font-size: 1.75em;
+  font-family: $fontFamilyGTSectraFine;
+  font-size: 1.375rem;
   font-weight: 400;
   letter-spacing: $letterSpacing7;
-  line-height: $lineHeight1;
+  line-height: $lineHeight4;
   color: $white;
   text-transform: uppercase;
   margin-top: 0;
@@ -84,31 +82,31 @@ h5 {
 }
 
 h6 {
-  font-family: $fontFamilyFour;
+  font-family: $fontFamilyGTAmericaExtended;
   font-size: 0.75em; // 12px
   font-weight: 400;
   letter-spacing: $letterSpacing3;
   line-height: $lineHeight9;
-  color: $softBlue;
+  color: $gold;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 p {
-  font-family: $fontFamilyOne;
+  font-family: $fontFamilyGTAmerica;
   font-size: 1em; // 16px
   line-height: $lineHeight4;
   letter-spacing: 0;
 
   a {
-    color: $softBlue;
-    border-bottom: 2px solid $softBlue;
+    color: $gold;
+    border-bottom: 2px solid $gold;
     transition: color 250ms;
 
     &:hover {
-      color: $twilightBlue;
-      border-bottom: 2px solid $twilightBlue;
+      color: $royalBlue;
+      border-bottom: 2px solid $royalBlue;
     }
 
     &.website:hover {
@@ -119,7 +117,7 @@ p {
 
 b,
 strong {
-  color: $twilightBlue;
+  color: $royalBlue;
 
   a {
     border-bottom: 2px solid $twilightBlue;

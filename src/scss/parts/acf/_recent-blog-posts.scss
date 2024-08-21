@@ -13,7 +13,7 @@
 
     .column {
       position: relative;
-      border-top: $border3 solid $softBlue;
+      border-top: $border3 solid $gold;
       margin-bottom: 25px;
 
       display: flex;
@@ -32,6 +32,11 @@
 
       .content-wrapper {
         @extend %titleContentCta_Light;
+
+
+        @include respond-to(desktop) {
+          margin-top: 2.75rem;
+        }
       }
     }
   }

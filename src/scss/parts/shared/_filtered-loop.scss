@@ -21,23 +21,24 @@
     }
 
     & > div {
-      margin-bottom: $bodyPadding2;
+        margin-bottom: 0.625rem;
 
       @include respond-to(desktop) {
-        margin-bottom: $bodyPadding4;
+        margin-bottom: 0.625rem;
       }
     }
 
     // tabs styling
     .torque-custom-filter-tabs {
       .tabs-title-wrapper {
-        margin-bottom: $bodyPadding2;
+        margin-bottom: 0;
 
         .tabs-title {
-          color: $softBlue;
-          font-family: $fontFamilyFour;
+          color: $gold;
+          font-family: $fontFamilyGTAmericaExtended;
           font-size: 0.75em;
           text-transform: uppercase;
+          font-weight: 500;
 
           .pre-title {
             display: none;
@@ -102,15 +103,13 @@
 
           .tabs-item {
             margin-left: -2px;
-            padding-left: 35px;
-            padding-right: 20px;
 
             @include respond-to(tablet) {
-              padding-left: 45px;
+              padding-left: 25px;
               padding-right: 25px;
             }
             @include respond-to(desktop) {
-              padding-right: 30px;
+              padding-right: 10px;
             }
 
             &.grid {
@@ -131,7 +130,7 @@
         }
 
         .tabs-item {
-          @extend %buttonRegular;
+          @extend %buttonSmoke;
           margin-bottom: $bodyPadding2;
 
           @include respond-to-max(desktop) {
@@ -139,7 +138,7 @@
           }
 
           &.selected {
-            @extend %buttonAlt;
+            @extend %buttonAltSmoke;
           }
         }
       }
@@ -248,19 +247,20 @@
     justify-content: space-between;
     align-self: start;
 
-    background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+    //background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+    background-color: $royalBlue;
     padding: $bodyPadding3;
 
     position: absolute;
-    left: 2%;
-    width: 96%;
+    left: 0px;
+    width: 100%;
     box-sizing: border-box;
 
     z-index: 99;
 
     @include respond-to(tablet) {
-      left: 10%;
-      width: 80%;
+      /*left: 10%;
+      width: 80%;*/
       flex-direction: row;
       padding: $bodyPadding6 $bodyPadding7;
     }
@@ -296,13 +296,15 @@
       }
 
       .info-box-title {
+        margin-bottom: 0.75rem;
+
         @include respond-to-max(tablet) {
           margin-top: $bodyPadding2;
         }
       }
 
       .info-box-address-wrapper {
-        color: $lightBlueGrey;
+        color: $lightGreyBlueAlt;
         font-family: $fontFamilyFour;
         font-size: 0.75em;
         line-height: 1.17;
@@ -345,7 +347,7 @@
         }
 
         .info-box-button {
-          @extend %buttonAlt_2;
+          @extend %ctaButton_Gold;
           flex: 1 1 100%;
           margin-bottom: $bodyPadding2;
 
@@ -432,10 +434,13 @@
           align-items: flex-start;
 
           .term {
-            color: $softBlue;
+            color: $smoke;
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 0;
+            font-size: 0.75rem;
+            font-family: $fontFamilyGTAmericaExtended;
+            line-height: 14px;
 
             &:after {
               content: ',';
@@ -453,13 +458,12 @@
         }
 
         .post-title {
-          color: $twilightBlue;
-          text-transform: uppercase;
-          margin-bottom: 0.2em;
+          color: $royalBlue;
+          margin-bottom: 1rem;
         }
 
         .post-excerpt {
-          color: $lightGreyBlue;
+          color: $smoke;
           margin-bottom: 1.2em;
         }
       }
@@ -467,7 +471,7 @@
       // blog post
       &.template-3 {
         background: $veryLightGrey;
-        border-top: $border3 solid $softBlue;
+        border-top: $border3 solid $gold;
 
         .content-wrapper {
           padding: $bodyPadding4 $bodyPadding3;
@@ -487,7 +491,7 @@
           }
 
           .post-cta {
-            @extend %ctaButton_Blue;
+            @extend %ctaButton_Gold;
           }
         }
       }
@@ -506,11 +510,14 @@
           .post-title {
             margin-top: 0em;
           }
+          .term {
+            color: $gold;
+          }
 
           .post-cta {
-            @extend %buttonAlt_2;
-            padding-right: 40px;
+            @extend %buttonAlt_6;
 
+            /*
             &:after {
               content: '\F347';
               font-family: 'dashicons';
@@ -519,13 +526,17 @@
               top: 50%;
               transform: translateY(-42%);
             }
+            */
 
             &.opened {
-              @extend %buttonAlt_4;
+              @extend %buttonAlt_7;
               padding-right: 40px;
 
               &:after {
                 content: '\f335';
+                font-family: 'dashicons';
+                position: absolute;
+                right: 12px;
               }
             }
           }
@@ -547,22 +558,15 @@
             margin-top: 0em;
           }
 
-          .post-cta {
-            @extend %buttonAlt_2;
-            padding-right: 40px;
+          .term {
+            color: $gold;
+          }
 
-            &:after {
-              content: '\f345';
-              font-family: 'dashicons';
-              position: absolute;
-              right: 8px;
-              top: 50%;
-              transform: translateY(-42%);
-            }
+          .post-cta {
+            @extend %buttonSmoke;
 
             &:hover {
-              @extend %buttonAlt_3;
-              padding-right: 40px;
+              @extend %buttonAltSmoke;
             }
           }
         }
@@ -576,7 +580,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @extend %ctaButton_Blue;
+    @extend %ctaButton_Gold;
 
     @include respond-to(desktop) {
       left: 62.5%; // half the post container width + the sidebar width

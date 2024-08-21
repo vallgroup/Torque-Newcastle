@@ -15,16 +15,16 @@
 
   // btn
   .back-btn {
-    @extend %buttonRegular;
-    padding-left: 40px;
+    @extend %buttonSmoke;
+    padding-left: 22px;
 
     &:before {
       content: '\f341';
       font-family: 'dashicons';
       position: absolute;
-      left: 12px;
+      left: 4px;
       top: 50%;
-      transform: translateY(-42%);
+      transform: translateY(-50%);
     }
   }
 }

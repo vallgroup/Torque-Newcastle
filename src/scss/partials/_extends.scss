@@ -1,5 +1,7 @@
 $flag_icon: url('../statics/icons/flag.png');
 $flag_icon_white: url('../statics/icons/flag_white.png');
+$crown_icon: url('../statics/icons/crown.svg');
+$crown_icon_blue: url('../statics/icons/crown_blue.svg');
 
 %hideOnDesktop {
   @include respond-to(desktop) {
@@ -212,7 +214,7 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   .title {
     margin-top: 0;
     margin-bottom: $bodyPadding3;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .content,
@@ -227,12 +229,12 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
       font-size: 0.875em;
     }
     @include respond-to(desktop) {
-      font-size: 1.125em;
+      font-size: 1.125rem;
     }
   }
 
   .cta {
-    @extend %ctaButton_Blue;
+    @extend %ctaButton_Gold;
   }
 }
 
@@ -278,6 +280,27 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   }
 }
 
+%titleContentCta_Smoke {
+  @extend %titleContentCta_Setup;
+
+  .title,
+  .title > * {
+    color: $royalBlue;
+    margin-bottom: 0.25em;
+  }
+
+  .content,
+  [class^="content"],
+  .content > *,
+  [class^="content"] > * {
+    color: $smoke;
+
+    @include respond-to-max(desktop) {
+      font-size: 1rem;
+    }
+  }
+}
+
 %contentBody {
   width: 100%;
   margin-bottom: 15px;
@@ -296,20 +319,20 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
 
 %ctaButton_Setup {
   display: inline-block;
-  font-family: $fontFamilyTwo;
-  font-size: 0.8125em;
-  letter-spacing: 1.53px;
+  font-family: $fontFamilyGTAmericaExtended;
+  font-size: 0.8125rem;
+  letter-spacing: 1.2px;
   padding-left: 35px;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
 
   @include respond-to(tablet) {
-    font-size: 1em;
-    padding-left: 50px;
+    font-size: 0.75rem;
+    padding-left: 30px;
   }
   @include respond-to(desktop) {
-    font-size: 1.25em;
+    font-size: 0.75rem;
     padding-left: 85px;
   }
 
@@ -319,22 +342,20 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
     width: 20px;
     height: 9px;
     margin-left: -25px;
-    transform: translate(-4px, 2px);
     background-image: url();
     background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: $flag_icon;
+    background-image: $crown_icon;
 
     @include respond-to(tablet) {
-      width: 45px;
+      width: 35px;
       height: 12px;
-      margin-left: -40px;
-      transform: translate(-6px, 0px);
+      margin-left: -34px;
     }
     @include respond-to(desktop) {
-      width: 71px;
-      height: 17px;
+      width: 16px;
+      height: 12px;
       margin-left: -75px;
       transform: translate(-8px, 2px);
     }
@@ -355,28 +376,51 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   transition: color 250ms;
 
   &:hover {
-    color: $twilightBlue;
+    color: $white;
   }
 }
 
+%ctaButton_Gold {
+  @extend %ctaButton_Setup;
+  color: $gold;
+  transition: color 250ms;
+
+  &:hover {
+    color: $gold;
+  }
+}
+
+%ctaButton_RoyalBlue {
+  @extend %ctaButton_Setup;
+  color: $royalBlue;
+  transition: color 250ms;
+
+  &:hover {
+    color: $royalBlue;
+  }
+
+  &:before {
+    background-image: $crown_icon_blue;
+  }
+}
 // Regular Button
 
 %button_Setup {
   position: relative;
   display: inline-block;
-  padding: 3px 10px 2px;
+  padding: 3px 10px;
   border: $border1 solid $twilightBlue;
   border-radius: 0;
   box-sizing: border-box;
   background-color: $white;
-  font-family: $fontFamilyTwo;
+  font-family: $fontFamilyGTAmericaExtended;
   font-size: 0.8125em;
   text-transform: uppercase;
   text-align: center;
   color: $twilightBlue;
   cursor: pointer;
-  letter-spacing: 1.3px;
-  line-height: 19px;
+  letter-spacing: 1.2px;
+  line-height: 14px;
   transition: 0.2s;
 
   -webkit-appearance: none;
@@ -384,11 +428,10 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
 
   @include respond-to(tablet) {
     font-size: 1em;
-    padding: 11px 15px 9px;
+    padding: 5px 10px;
   }  
   @include respond-to(desktop) {
-    font-size: 1.25em;
-    padding: 10px 20px 9px;
+    font-size: 0.75rem;
 
     // &:hover {
     //   background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
@@ -400,11 +443,25 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
 %buttonRegular {
   @extend %button_Setup;
 }
+
+%buttonSmoke {
+  @extend %button_Setup;
+  border-color: $smoke;
+  color: $smoke;
+}
+
 %buttonAlt {
   @extend %button_Setup;
   background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
   color: $white;
 }
+%buttonAltSmoke {
+  @extend %button_Setup;
+  background-color: $smoke;
+  color: $white;
+  border-color: $smoke;
+}
+
 %buttonAlt_2 {
   @extend %button_Setup;
   border: $border1 solid $softBlue;
@@ -428,4 +485,16 @@ $flag_icon_white: url('../statics/icons/flag_white.png');
   border: $border1 solid $twilightBlue;
   background: $transparent;
   color: $twilightBlue;
+}
+%buttonAlt_6 {
+  @extend %button_Setup;
+  border: $border1 solid $smoke;
+  background: $transparent;
+  color: $smoke;
+}
+%buttonAlt_7 {
+  @extend %button_Setup;
+  border: $border2 solid $royalBlue;
+  background-color: $royalBlue;
+  color: $white;
 }

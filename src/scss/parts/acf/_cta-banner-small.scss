@@ -5,7 +5,8 @@
   text-align: center;
   width: 100%;
 
-  background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+  //background-image: linear-gradient(to bottom, $lightTeal, $softBlue);
+  background-color: $gold;
   
   .content-wrapper {
     display: flex;
@@ -14,7 +15,7 @@
     flex-direction: column;
     
     box-sizing: border-box;
-    padding: $bodyPadding4 $bodyPadding1;
+    padding: $bodyPadding3 $bodyPadding1;
     width: 100%;
     
     text-align: center;
@@ -25,13 +26,14 @@
 
     .title {
       color: $white;
-      font-family: $fontFamilyFour;
+      font-family: $fontFamilyGTAmericaExtended;
       font-size: 0.65em;
       font-weight: 400;
       margin: 0 0 $bodyPadding2;
       padding-right: $bodyPadding1;
       line-height: 1;
       letter-spacing: 0;
+      text-transform: uppercase;
       
       @include respond-to(tablet) {
         font-size: 0.8em;
@@ -41,7 +43,11 @@
     }
 
     .cta {
-      @extend %ctaButton_White;
+      @extend %ctaButton_RoyalBlue;
+
+      &:before {
+        transform: translate(-2px, 2px);
+      }
     }
   }
 }

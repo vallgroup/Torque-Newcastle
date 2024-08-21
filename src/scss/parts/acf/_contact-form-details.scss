@@ -102,10 +102,10 @@ $mail_icon: url('../statics/icons/mail.png');
 
             // input labels
             .grunion-field-label {
-              color: $softBlue;
-              font-size: 0.75em;
-              font-family: $fontFamilyFour;
-              text-transform: uppercase;
+              color: $smoke;
+              font-size: 1rem;
+              font-family: $fontFamilyGTAmerica;
+              font-weight: 400;
 
               // hide 'required' label
               & > span {
@@ -116,13 +116,12 @@ $mail_icon: url('../statics/icons/mail.png');
             .grunion-field-label:not(.textarea) {
               position: absolute;
               bottom: -#{$bodyPadding2};
-              left: $bodyPadding3;
             }
             // textarea labels
             .grunion-field-label.textarea {
-              position: absolute;
-              top: #{$bodyPadding7};
-              left: $bodyPadding3;
+              margin-top: 3.625rem;
+              position: relative;
+              bottom: -1.5rem;
             }
 
             // input margins
@@ -139,7 +138,7 @@ $mail_icon: url('../statics/icons/mail.png');
             flex: 1 1 100%;
 
             button {
-              @extend %ctaButton_Blue;
+              @extend %ctaButton_Gold;
             }
           }
 
@@ -169,6 +168,14 @@ $mail_icon: url('../statics/icons/mail.png');
             display: none;
           }
         }
+        .recaptcha-branding-text {
+          color: $smoke;
+          font-size: 0.75rem;
+
+          a {
+            color: $smoke;
+          }
+        }
       }
 
       @include respond-to(tablet) {
@@ -187,7 +194,8 @@ $mail_icon: url('../statics/icons/mail.png');
       }
       @include respond-to(tablet) {
         flex: 0 1 calc(43% - 12.5px);
-        padding-top: 0;
+        padding-top: 3rem;
+        justify-content: flex-start;
       }
 
       .content-wrapper {
@@ -196,14 +204,17 @@ $mail_icon: url('../statics/icons/mail.png');
           h4 {
             display: none;
           }
+          span {
+            font-size: 1.125rem;
+          }
         }
 
         h4 {
-          color: $twilightBlue;
-          font-family: $fontFamilyThree;
-          font-size: 2.5em;
-          line-height: 0.75;
-          letter-spacing: 1px;
+          color: $gold;
+          font-family: $fontFamilyGTAmericaExtended;
+          font-size: 0.875rem;
+          line-height: 1.49;
+          letter-spacing: 1.4px;
           text-transform: uppercase;
           margin-top: 0.85em;
           margin-bottom: $bodyPadding2;
@@ -211,7 +222,7 @@ $mail_icon: url('../statics/icons/mail.png');
 
         span,
         a {
-          color: $lightGreyBlue;
+          color: $smoke;
           letter-spacing: 0.34px;
           position: relative;
           display: block;

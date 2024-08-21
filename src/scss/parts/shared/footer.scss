@@ -27,14 +27,15 @@ footer {
     }
 
     .social-headline {
-      color: #b2b7bb;
-      font-family: "Knockout HTF26-JuniorFlyweight Regular", sans-serif;
-      letter-spacing: 1px;
+      color: $gold;
+      font-family: $fontFamilyGTAmericaExtended; 
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       margin-top: 0;
-      margin-bottom: 0.5em;
-      font-size: 2.5em;
+      margin-bottom: $bodyPadding3;
+      font-size: 0.875rem;
       line-height: 0.75;
+      white-space: nowrap;
     }
     .footer-social-icons {
       display: flex;
@@ -44,7 +45,7 @@ footer {
         display: flex;
 
         svg {
-          width: 1.5rem;
+          width: 0.875rem;
         }
       }
     }
@@ -106,18 +107,18 @@ footer {
         }
 
         h4 {
-          color: $lightGreyBlue;
-          font-family: $fontFamilyThree;
-          font-size: 2.5em;
+          color: $gold;
+          font-family: $fontFamilyGTAmericaExtended;
+          font-size: 1rem;
           line-height: 0.75;
-          letter-spacing: 1px;
+          letter-spacing: 1.4px;
           text-transform: uppercase;
           margin-top: 0;
-          margin-bottom: $bodyPadding2;
+          margin-bottom: $bodyPadding3;
 
           @include respond-to(tablet) {
-            font-size: 2.5em;
-            line-height: 0.75;
+            font-size: 0.875rem;
+            line-height: 20.8px;
           }
         }
 
@@ -129,11 +130,13 @@ footer {
 
         span,
         a {
-          color: $lightGreyBlue;
-          letter-spacing: 0.34px;
+          color: $white;
           position: relative;
           display: block;
           margin-bottom: 5px;
+          font-family: $fontFamilyGTAmerica;
+          font-size: 0.875rem;
+          line-height: 1.125rem;
 
           &.address {
             // padding-left: 25px;
@@ -196,7 +199,6 @@ footer {
           color: $white;
           margin-top: 0;
           margin-bottom: $bodyPadding2;
-          text-transform: uppercase;
         }
       }
     }

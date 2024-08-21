@@ -88,11 +88,16 @@
             .opening-wrapper {
               .opening-title {
                 display: block;
-                color: $twilightBlue;
+                color: $royalBlue;
+                font-size: 1.125rem;
+                font-family: $fontFamilyGTAmerica;
+                font-weight: bold;
               }
               .opening-address {
                 display: block;
-                color: $steel;
+                color: $smoke;
+                font-size: 1rem;
+                font-family: $fontFamilyGTAmerica;
               }
             }
           }

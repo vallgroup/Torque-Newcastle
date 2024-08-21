@@ -42,14 +42,14 @@ $mail_icon: url('../statics/icons/mail.png');
             margin-bottom: $bodyPadding5;
 
             .title {
-              color: $twilightBlue;
+              color: $royalBlue;
               margin-bottom: $bodyPadding2;
             }
             .content {
               letter-spacing: 0;
 
               & > * {
-                color: $steel;
+                color: $smoke;
                 font-family: $fontFamilyOne;
                 font-size: 1.125em;
                 margin-top: 0;
@@ -76,11 +76,15 @@ $mail_icon: url('../statics/icons/mail.png');
 
                 .key {
                   flex: 0 0 50%;
-                  color: $twilightBlue;
+                  color: $gold;
+                  font-weight: 500;
+                  font-family: $fontFamilyGTAmericaExtended;
+                  text-transform: uppercase;
                 }
                 .value {
                   flex: 0 0 50%;
-                  color: $steel;
+                  color: $smoke;
+                  font-size: 1.125rem;
                 }
               }
             }
@@ -97,19 +101,22 @@ $mail_icon: url('../statics/icons/mail.png');
               .contact {
                 flex: 0 0 48%;
                 margin-bottom: $bodyPadding4;
+                font-size: 1.125rem;
 
                 & > * {
                   margin-bottom: $bodyPadding2;
                 }
 
                 .name {
-                  color: $twilightBlue;
+                  color: $royalBlue;
+                  font-weight: bold;
+                  font-size: 1.125rem;
                 }
                 .company {
-                  color: $steel;
+                  color: $smoke;
                 }
                 .phone {
-                  color: $steel;
+                  color: $smoke;
                   padding-left: 25px;
                   position: relative;
 
@@ -126,7 +133,7 @@ $mail_icon: url('../statics/icons/mail.png');
                   }
                 }
                 .email {
-                  color: $steel;
+                  color: $smoke;
                   padding-left: 25px;
                   position: relative;
 
@@ -147,9 +154,9 @@ $mail_icon: url('../statics/icons/mail.png');
           }
 
           .subtitle {
-            color: $softBlue;
-            font-size: 1.5625em;
-            text-transform: uppercase;
+            color: $royalBlue;
+            font-size: 1.375rem;
+            font-family: $fontFamilyGTSectraFine;
           }
         }
       }
@@ -174,7 +181,7 @@ $mail_icon: url('../statics/icons/mail.png');
 
 
           .button {
-            @extend %ctaButton_Blue;
+            @extend %ctaButton_Gold;
 
             white-space: unset;
             /*

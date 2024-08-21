@@ -17,13 +17,15 @@
   .search-field {
     border: none;
     background: none;
-    border-bottom: #78b6d8 1px solid;
+    border-bottom: $royalBlue 1px solid;
     min-width: 240px;
-    color: #78b6d8;
+    color: $royalBlue;
     font-size: 12px;
-    letter-spacing: 0.68px;
-    font-family: $fontFamilyFour;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+    font-family: $fontFamilyGTAmericaExtended;
     text-transform: uppercase;
+    font-weight: 500;
 
     &:focus {
       outline: 2px solid;
@@ -39,18 +41,18 @@
 
 
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #78b6d8;
+      color: $royalBlue;
       opacity: 1; /* Firefox */
     }
     &::-ms-input-placeholder { /* Microsoft Edge */
-      color: #78b6d8;
+      color: $royalBlue;
     }
   }
   .search-submit {
     background: none;
     border: none;
     min-width: 50px;
-    color: #78b6d8;
+    color: $royalBlue;
   }
 }
 
@@ -59,6 +61,7 @@
   position: relative;
   @extend %limitWidth;
   @extend %sectionPadding_Top;
+  margin-bottom: 4rem;
 
   //page title
   header .page-title {
@@ -68,15 +71,14 @@
     margin-bottom: 10px;
 
     @include respond-to(desktop) {
-      font-size: 5rem;
-      line-height: 4.375rem;
+      font-size: 3.625rem;
+      line-height: 1.03;
       margin-bottom: 34px;
     }
   }
 
   .search-result-count {
-    color: $softBlue;
-    text-transform: uppercase;
+    color: $smoke;
     margin-bottom: 45px;
     font-size: 13px;
     line-height: 30px;
@@ -84,33 +86,36 @@
     font-family: $fontFamilyFour;
 
     @include respond-to(desktop) {
-      font-size: 25px;
+      font-size: 18px;
       margin-bottom: 89px;
     }
 
     b {
-      color: $softBlue;
+      color: $smoke;
     }
   }
 
   //single result styles
   article {
-    margin-bottom: 29px;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $smoke;
 
     @include respond-to(desktop) {
-      margin-bottom: 71px;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
     }
 
     h2 {
-      color: $twilightBlue;
-      font-size: 33px;
-      line-height: 26px;
+      color: $royalBlue;
+      font-size: 1.125rem;
+      line-height: 1;
       letter-spacing: 0.46px;
       margin-bottom: 0px;
 
       @include respond-to(desktop) {
-        font-size: 43px;
-        line-height: 50px;
+        font-size: 1.375rem;
+        line-height: 1.09;
       }
     }
 
@@ -124,7 +129,7 @@
       text-transform: uppercase;
     }
     .excerpt {
-      color: $steel;
+      color: $smoke;
       font-size: 13px;
       line-height: 16px;
       margin-bottom: 15px;
@@ -136,7 +141,7 @@
       }
     }
     .read-more {
-      @extend %ctaButton_Blue;
+      @extend %ctaButton_Gold;
     }
   }
 
@@ -165,9 +170,9 @@
       }
     }
 
-    .prev.page-numbers,
+    /*.prev.page-numbers,
     .next.page-numbers {
 
-    }
+    }*/
   }
 }

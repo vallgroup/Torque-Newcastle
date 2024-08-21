@@ -1,8 +1,4 @@
 .tq-image-title-two-column-content {
-  background-color: $veryLightGrey;
-  border-top: $border4 solid $softBlue;
-
-  @extend %sectionMargin;
   
   .two-column-wrapper {
     display: flex;
@@ -52,29 +48,35 @@
 
       @include respond-to(tablet) {
         display: block;
-        flex: 0 1 calc(40% - 3em);
+        flex: 0 1 calc(40% - 1em);
       }
     }
 
     // right col styles
     .col-right {
+      background-color: $veryLightGrey;
+      border-top: $border4 solid $gold;
       @extend %tiledContentPadding_NarrowContent;
 
-      @include respond-to-max(tablet) {
+      /*@include respond-to-max(tablet) {
         padding: $bodyPadding4 0 !important;
-      }
+      }*/
 
       @include respond-to(tablet) {
         flex: 0 1 calc(60%);
+        padding: $bodyPadding8 $bodyPadding8;
       }
 
       .content-wrapper {
-        @extend %titleContentCta_Light;
+        @extend %titleContentCta_Smoke;
 
         @include respond-to(tablet) {
           .title,
           .content-top {
             display: none;
+          }
+          .title {
+            margin-bottom: 1.5rem;
           }
         }
 

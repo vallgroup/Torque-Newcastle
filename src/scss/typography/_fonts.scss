@@ -29,3 +29,41 @@
   font-weight: normal;
   font-style: normal;
 }
+
+// new fonts
+@font-face {
+    font-family: 'GT America';
+    src: url('../statics/fonts/updated-fonts/GTAmerica-Regular.woff2') format('woff2'),
+        url('../statics/fonts/updated-fonts/GTAmerica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America Extended';
+    src: url('../statics/fonts/updated-fonts/GTAmerica-ExtendedMedium.woff2') format('woff2'),
+        url('../statics/fonts/updated-fonts/GTAmerica-ExtendedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Sectra Fine';
+    src: url('../statics/fonts/updated-fonts/GTSectraFine-Medium.woff2') format('woff2'),
+        url('../statics/fonts/updated-fonts/GTSectraFine-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('../statics/fonts/updated-fonts/GTAmerica-Bold.woff2') format('woff2'),
+        url('../statics/fonts/updated-fonts/GTAmerica-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
