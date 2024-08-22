@@ -63,7 +63,7 @@ $media_gallery = get_field( 'media_gallery' );
           <?php if ( $available_retail_space ) { ?>
             <div class="detail">
               <div class="key">Space Available</div>
-              <div class="value"><?php echo $available_retail_space; ?></div>
+              <div class="value" id="space-available" data-space-available="<?php echo $available_retail_space; ?>"><?php echo $available_retail_space; ?></div>
             </div>
           <?php } ?>
 
