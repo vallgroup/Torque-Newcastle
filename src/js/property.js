@@ -1,15 +1,5 @@
 ($ => {
   $(document).ready(() => {
-    window.addEventListener('spectra_init', function (e) {
-      // log property visited event to spectra
-      const spaceAvailable = document.getElementById('space-available');
-      if (spaceAvailable) {
-        spectra.logEvent('property_visited', {
-          'space_available': spaceAvailable.dataset.spaceAvailable
-        });
-      }
-    });
-
     const currUrl = window.location.href;
     const currHost = window.location.origin;
     const apiEndpoint = '/wp-json/filtered-loop/v1/map-options';
