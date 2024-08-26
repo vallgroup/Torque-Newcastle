@@ -14,7 +14,7 @@ if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
     $menu_items = wp_get_nav_menu_items($menu->term_id);
 
     $menu_list = '<div class="content-wrapper">';
-    $menu_list .= '<h4>Navigation</h4>';
+    $menu_list .= '<h2>Navigation</h2>';
 
     foreach ((array) $menu_items as $key => $menu_item) {
       $title = $menu_item->title;
@@ -49,14 +49,16 @@ if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
       <?php echo $menu_list; ?>
     </div>
     <div>
-      <h4 class="social-headline">Follow us</h4>
+      <h2 class="social-headline">Follow us</h2>
       <?php if (have_rows('social_icons', 'option')) : ?>
         <div class="footer-social-icons">
 
           <?php while (have_rows('social_icons', 'option')) : the_row(); ?>
-
-            <a href="<?php the_sub_field('link'); ?>" target="_blank">
-              <img src="<?php the_sub_field('icon'); ?>" />
+            <?php
+            $icon = get_sub_field('icon');
+            ?>
+            <a href="<?php the_sub_field('link'); ?>" target="_blank" aria-label="<?php echo $icon['title']; ?>">
+              <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>" />
             </a>
 
           <?php endwhile; ?>

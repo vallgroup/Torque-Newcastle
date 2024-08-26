@@ -3553,7 +3553,7 @@ class Newcastle_ACF {
 							'class' => '',
 							'id' => '',
 						),
-						'return_format' => 'url',
+						'return_format' => 'object',
 						'library' => 'all',
 						'min_width' => '',
 						'min_height' => '',
