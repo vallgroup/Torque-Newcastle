@@ -4,11 +4,11 @@
     const currHost = window.location.origin;
     const apiEndpoint = '/wp-json/filtered-loop/v1/map-options';
 
-    if ( currUrl && currUrl.includes('/property/') ) {
+    if (currUrl && currUrl.includes('/property/')) {
       // make a call to the filtered loop API endpoint, to retrieve map options
       $.get({
         url: currHost + apiEndpoint,
-        success: function(data) {
+        success: function (data) {
           if (true === data.success) {
             // initialise the map
             initMap(data.map_options);
@@ -123,7 +123,7 @@
       spectra.logEvent('outreach_to_retail');
     }
 
-    window.addEventListener('spectra_init', function(e) {
+    window.addEventListener('spectra_init', function (e) {
       const phones = document.querySelectorAll('.contacts .phone a');
       phones.forEach(phone => phone.addEventListener('click', spectraLogJobApplicationEvent));
 

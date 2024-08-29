@@ -125,6 +125,9 @@
         border-top: $border3 solid $softBlue;
         background-color: $veryLightGrey;
       }
+      &.flush-text-to-left {
+        padding-left: 0px;
+      }
 
       .content-wrapper {
         @extend %titleContentCta_Light;
