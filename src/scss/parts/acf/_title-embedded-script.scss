@@ -22,3 +22,9 @@
     }
   }
 }
+
+body.careers .tq-title-embedded-script .content-container .embedded-script {
+    @include respond-to(desktop) {
+      margin: 0;
+    }
+}

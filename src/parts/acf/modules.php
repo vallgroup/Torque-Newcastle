@@ -234,6 +234,7 @@ if ( have_rows( $modules ) ) :
         $col_one = get_sub_field( 'column_one' );
         $col_two = get_sub_field( 'column_two' );
         $col_three = get_sub_field( 'column_three' );
+        $enable_alternative_layout = get_sub_field( 'enable_alternative_layout' );
 
         if ( $col_one ) {
           $col_one_title = isset( $col_one['title'] )
@@ -243,10 +244,7 @@ if ( have_rows( $modules ) ) :
             )
             : null;
           $col_one_content = isset( $col_one['content'] )
-            ? strip_tags(
-              $col_one['content'],
-              $allowable_content_tags
-            )
+              ? $col_one['content']
             : null;
         }
 
