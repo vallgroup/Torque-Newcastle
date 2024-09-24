@@ -53,6 +53,9 @@
     border: none;
     min-width: 50px;
     color: $royalBlue;
+    height: 24px;
+    position: relative;
+    z-index: 50;
   }
 }
 

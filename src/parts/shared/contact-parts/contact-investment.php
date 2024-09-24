@@ -32,7 +32,7 @@ if ( $has_content ) { ?>
 
   <div class="content-wrapper <?php echo $contact_type; ?>-contact">
 
-    <h4>Investment</h4>
+    <h2>Investment</h2>
 
     <?php if ( $address ) { ?>
       <span class="address"><?php echo $address; ?></span>

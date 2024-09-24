@@ -27,7 +27,7 @@ $extra_classes_right_col = 'bg-' . $bg_color;
         <?php } ?>
         
         <?php if ( $subtitle ) { ?>
-          <h4 class="subtitle"><?php echo $subtitle; ?></h4>
+          <h3 class="subtitle"><?php echo $subtitle; ?></h3>
         <?php } ?>
         
         <?php if ( $content ) { ?>

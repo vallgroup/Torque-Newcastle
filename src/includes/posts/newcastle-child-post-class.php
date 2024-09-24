@@ -25,7 +25,7 @@ class Newcastle_Post {
         : '';
       $_html .= '<div class="post-content-container">';
         $_html .= $_taxomonies
-          ? '<h6 class="post-taxonomies">' . $_taxomonies . '</h6>'
+          ? '<h3 class="post-taxonomies">' . $_taxomonies . '</h3>'
           : '';
         $_html .= $_title
           ? '<h3 class="post-title">' . $_title . '</h3>'

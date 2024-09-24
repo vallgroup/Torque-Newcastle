@@ -975,8 +975,8 @@ class Newcastle_Property_CPT {
 	$_html = '<a href="' . get_the_permalink( $property_id ) . '">';
     $_html .= '<div class="property-card style-1" style="background-image: url(' . $_featured_img . ')">';
       $_html .= '<div class="property-content-container">';
-        $_html .= '<h6 class="property-taxonomies">' . $_taxomonies . '</h6>';
-        $_html .= '<h5 class="property-title">' . $_title . '</h5>';
+        $_html .= '<h3 class="property-taxonomies">' . $_taxomonies . '</h3>';
+        $_html .= '<h3 class="property-title">' . $_title . '</h3>';
       $_html .= '</div>';
     $_html .= '</div>';
 	$_html .= '</a>';

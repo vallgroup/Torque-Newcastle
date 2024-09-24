@@ -885,6 +885,7 @@ class Newcastle_ACF {
       					'label' => 'Three Column Content',
       					'display' => 'block',
       					'sub_fields' => array(
+
       						array(
       							'key' => 'field_5fd05c9511db9',
       							'label' => 'Column One',
@@ -1125,6 +1126,26 @@ class Newcastle_ACF {
       									'new_lines' => '',
       								),
       							),
+      						),
+
+      						array(
+      							'key' => 'field_5ffd71a7e5b89',
+      							'label' => 'Use alternative layout?',
+      							'name' => 'enable_alternative_layout',
+      							'type' => 'true_false',
+      							'instructions' => '',
+      							'required' => 0,
+      							'conditional_logic' => 0,
+      							'wrapper' => array(
+      								'width' => '100',
+      								'class' => '',
+      								'id' => '',
+      							),
+      							'message' => '',
+      							'default_value' => 0,
+      							'ui' => 1,
+      							'ui_on_text' => '',
+      							'ui_off_text' => '',
       						),
       					),
       					'min' => '',
@@ -3553,7 +3574,7 @@ class Newcastle_ACF {
 							'class' => '',
 							'id' => '',
 						),
-						'return_format' => 'url',
+						'return_format' => 'object',
 						'library' => 'all',
 						'min_width' => '',
 						'min_height' => '',

@@ -4,17 +4,25 @@
  */
 ?>
 
-<section class="tq-three-column-content">
+<section class="tq-three-column-content <?php echo $enable_alternative_layout ? 'alternative-layout' : '' ?>">
+  <?php if ($col_one_title && $enable_alternative_layout == 1) { ?>
+    <div class="title-wrapper">
+      <div class="alt-title">
+        <h2 class="title"><?php echo $col_one_title; ?></h2>
+      </div>
+    </div>
+  <?php } ?>
+
   <div class="three-column-wrapper">
     <div class="col-one">
-      <?php if ( $col_one ) { ?>
+      <?php if ($col_one) { ?>
         <div class="content-wrapper">
-          
-          <?php if ( $col_one_title ) { ?>
+
+          <?php if ($col_one_title && $enable_alternative_layout != 1) { ?>
             <h2 class="title"><?php echo $col_one_title; ?></h2>
           <?php } ?>
-          
-          <?php if ( $col_one_content ) { ?>
+
+          <?php if ($col_one_content) { ?>
             <div class="content"><?php echo $col_one_content; ?></div>
           <?php } ?>
 
@@ -23,22 +31,22 @@
     </div>
 
     <div class="col-two">
-      <?php if ( $col_two ) { ?>
+      <?php if ($col_two) { ?>
         <div class="content-wrapper">
-          
-          <?php if ( $col_two_title_top ) { ?>
+
+          <?php if ($col_two_title_top) { ?>
             <h4 class="title"><?php echo $col_two_title_top; ?></h4>
           <?php } ?>
-          
-          <?php if ( $col_two_content_top ) { ?>
+
+          <?php if ($col_two_content_top) { ?>
             <div class="content"><?php echo $col_two_content_top; ?></div>
           <?php } ?>
-          
-          <?php if ( $col_two_title_bottom ) { ?>
+
+          <?php if ($col_two_title_bottom) { ?>
             <h4 class="title"><?php echo $col_two_title_bottom; ?></h4>
           <?php } ?>
-          
-          <?php if ( $col_two_content_bottom ) { ?>
+
+          <?php if ($col_two_content_bottom) { ?>
             <div class="content"><?php echo $col_two_content_bottom; ?></div>
           <?php } ?>
 
@@ -47,22 +55,22 @@
     </div>
 
     <div class="col-three">
-      <?php if ( $col_three ) { ?>
+      <?php if ($col_three) { ?>
         <div class="content-wrapper">
-          
-          <?php if ( $col_three_title_top ) { ?>
+
+          <?php if ($col_three_title_top) { ?>
             <h4 class="title"><?php echo $col_three_title_top; ?></h4>
           <?php } ?>
-          
-          <?php if ( $col_three_content_top ) { ?>
+
+          <?php if ($col_three_content_top) { ?>
             <div class="content"><?php echo $col_three_content_top; ?></div>
           <?php } ?>
-          
-          <?php if ( $col_three_title_bottom ) { ?>
+
+          <?php if ($col_three_title_bottom) { ?>
             <h4 class="title"><?php echo $col_three_title_bottom; ?></h4>
           <?php } ?>
-          
-          <?php if ( $col_three_content_bottom ) { ?>
+
+          <?php if ($col_three_content_bottom) { ?>
             <div class="content"><?php echo $col_three_content_bottom; ?></div>
           <?php } ?>
 
