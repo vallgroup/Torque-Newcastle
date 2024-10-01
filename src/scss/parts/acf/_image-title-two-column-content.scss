@@ -56,11 +56,10 @@
     .col-right {
       background-color: $veryLightGrey;
       border-top: $border4 solid $gold;
-      @extend %tiledContentPadding_NarrowContent;
+      padding-left: 1rem;
+      padding-right: 1rem;
 
-      /*@include respond-to-max(tablet) {
-        padding: $bodyPadding4 0 !important;
-      }*/
+      @extend %tiledContentPadding_NarrowContent;
 
       @include respond-to(tablet) {
         flex: 0 1 calc(60%);

@@ -19,7 +19,7 @@
         justify-content: flex-end;
 
         .alt-title {
-          width: 50%;
+          width: 45%;
         }
       }
 
@@ -46,7 +46,7 @@
         width: 100%;
 
         @include respond-to(desktop) {
-          flex: 0 1 50%;
+          flex: 0 1 68%;
         }
       }
     }
