@@ -32,8 +32,6 @@ if ( $has_content ) { ?>
 
   <div class="content-wrapper <?php echo $contact_type; ?>-contact">
 
-    <h2>Contact</h2>
-
     <?php if ( $address ) { ?>
       <span class="address"><?php echo $address; ?></span>
     <?php } ?>
