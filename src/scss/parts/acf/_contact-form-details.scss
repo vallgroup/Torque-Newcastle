@@ -201,11 +201,44 @@ $mail_icon: url('../statics/icons/mail.png');
       .content-wrapper {
 
         &.primary-contact {
+          margin-bottom: 3rem;
+
           h4 {
             display: none;
           }
           span {
             font-size: 1.125rem;
+          }
+        }
+
+        &.investment-contact {
+          margin-bottom: 3rem;
+
+          h2 {
+            color: $gold;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            font-family: $fontFamilyGTAmericaExtended;
+          }
+        }
+        &.retail_leasing-contact {
+          margin-bottom: 3rem;
+
+          h2 {
+            color: $gold;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            font-family: $fontFamilyGTAmericaExtended;
+          }
+        }
+        &.reside_living-contact {
+          margin-bottom: 3rem;
+
+          h2 {
+            color: $gold;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            font-family: $fontFamilyGTAmericaExtended;
           }
         }
 
