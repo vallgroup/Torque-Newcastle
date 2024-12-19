@@ -44,7 +44,8 @@
         // Create a new StyledMapType object, passing it an array of styles,
         // and the name to be displayed on the map type control.
         const styledMapType = new google.maps.StyledMapType(
-          // mapStyles,
+          //mapStyles,
+          [],
           {
             name: 'Newcastle Styles'
           }
@@ -52,6 +53,7 @@
         // Create a map object, and include the MapTypeId to add
         // to the map type control.
         const map = new google.maps.Map(mapContainer, {
+          mapId: 'DEMO_MAP_ID',
           center: {
             lat: mapCenterLat,
             lng: mapCenterLng
@@ -67,7 +69,7 @@
         map.setMapTypeId("styled_map");
 
         // Create a new map marker
-        var marker = new google.maps.Marker({
+        var marker = new google.maps.marker.AdvancedMarkerElement({
           map: map,
           position: {
             lat: mapCenterLat,
@@ -82,6 +84,8 @@
     }
 
     const propertyModal = document.getElementById('propertyModal');
+    if (!propertyModal) return;
+
     // Open the Modal
     function openLightbox(e) {
       //console.log(e.target.getAttribute('data-video-url'));
@@ -101,7 +105,7 @@
 
     // close in click outside the modal
     window.addEventListener('click', (event) => {
-      if (!propertyModal) return;
+
       const boolIsOutside = propertyModal.isSameNode(event.target);
       if (boolIsOutside) {
         closeLightbox();
