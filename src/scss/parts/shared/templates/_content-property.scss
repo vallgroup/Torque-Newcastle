@@ -98,6 +98,10 @@ $mail_icon: url('../statics/icons/mail.png');
               justify-content: space-between;
               align-items: flex-start;
 
+              @include respond-to(desktop) {
+                width: 60vw;
+              }
+
               .contact {
                 flex: 0 0 48%;
                 margin-bottom: $bodyPadding4;
