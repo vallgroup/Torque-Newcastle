@@ -3,6 +3,14 @@ $mail_icon: url('../statics/icons/mail.png');
 
 .single-job-content {
   @extend %limitWidth;
+
+  .no-job-available {
+    min-height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .title {
     color: $royalBlue;
     margin-bottom: 0.5rem;

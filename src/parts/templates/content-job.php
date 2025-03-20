@@ -1,27 +1,25 @@
 <?php
 
-$error_message = '<p class="error-job">Error: Job Not Found</p>';
-
-$board = sanitize_text_field( get_query_var( 'board' ) );
-$job_id = sanitize_text_field( get_query_var( 'jobid' ) );
+$board = sanitize_text_field(get_query_var('board'));
+$job_id = sanitize_text_field(get_query_var('jobid'));
 $is_error = false;
+$url = site_url() . '/path/to/resource';
 
-if ( empty($board) || empty($job_id) ) {
+if (empty($board) || empty($job_id)) {
   $is_error = true;
 }
 
 
-if ( $is_error === false ) {
+if ($is_error === false) {
   $response = wp_remote_get('https://boards-api.greenhouse.io/v1/boards/' . $board . '/jobs/' . $job_id);
 
-  if ( is_array( $response ) && ! is_wp_error( $response ) ) {
-    if( $response['response']['code'] !== 404 ) {
+  if (is_array($response) && ! is_wp_error($response)) {
+    if ($response['response']['code'] !== 404) {
       $headers = $response['headers']; // array of http header lines
       $body    = $response['body']; // use the content
     } else {
       $is_error = true;
     }
-
   } else {
     $is_error = true;
   }
@@ -32,8 +30,12 @@ if ( $is_error === false ) {
 ?>
 <div class="single-job-content">
   <?php
-  if ( $is_error ) {
-      echo $error_message;
+  if ($is_error) {
+  ?>
+    <div class="no-job-available">
+      <p>Position filled - check out our <a href="<?php bloginfo('url'); ?>/careers/#careers">Careers page</a></p>
+    </div>
+  <?php
   } else {
     $data = json_decode($body);
   ?>
