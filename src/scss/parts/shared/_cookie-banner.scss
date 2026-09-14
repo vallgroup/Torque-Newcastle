@@ -1,0 +1,121 @@
+.newcastle-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999999;
+  background-color: $smoke;
+  border-top: 2px solid $royalBlue;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+
+  .cookie-banner-content-wrapper {
+    @extend %limitWidth;
+    box-sizing: border-box;
+    padding: $bodyPadding3 $bodyPadding3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+
+    @include respond-to(desktop) {
+      flex-direction: row;
+      align-items: center;
+      padding: $bodyPadding4 $bodyPadding3;
+      gap: 2.5rem;
+    }
+
+    .cookie-banner-text-wrapper {
+      flex: 1 1 auto;
+      max-width: 920px;
+
+      .cookie-banner-title {
+        color: $gold;
+        font-family: $fontFamilyGTAmericaExtended;
+        font-size: 0.9375rem;
+        line-height: 1.2;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: $bodyPadding2;
+      }
+
+      .cookie-banner-description {
+        color: $white;
+        font-family: $fontFamilyGTAmerica;
+        font-size: 0.8125rem;
+        line-height: 1.4;
+        margin: 0;
+
+        .cookie-banner-privacy-link {
+          color: $gold;
+          text-decoration: underline;
+          transition: opacity 0.2s ease;
+
+          &:hover,
+          &:focus {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    .cookie-banner-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      width: 100%;
+
+      @include respond-to(tablet) {
+        width: auto;
+      }
+
+      .cookie-banner-btn {
+        @extend %button_Setup;
+        flex: 1 1 auto;
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        letter-spacing: 1.2px;
+        text-align: center;
+        white-space: nowrap;
+
+        @include respond-to(tablet) {
+          flex: 0 0 auto;
+          font-size: 0.8125rem;
+          padding: 10px 20px;
+        }
+
+        &.cookie-banner-btn-decline {
+          background-color: transparent;
+          border-color: rgba(255, 255, 255, 0.6);
+          color: $white;
+
+          &:hover,
+          &:focus {
+            border-color: $white;
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        &.cookie-banner-btn-accept {
+          background-image: linear-gradient(249deg, $frenchBlue, $twilightBlue);
+          border-color: $gold;
+          color: $white;
+
+          &:hover,
+          &:focus {
+            background-image: none;
+            background-color: $gold;
+            border-color: $gold;
+            color: $twilightBlue;
+          }
+        }
+      }
+    }
+  }
+}

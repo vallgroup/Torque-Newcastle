@@ -217,25 +217,87 @@ function torque_enqueue_child_scripts() {
 add_action( 'wp_head', 'hook_wp_head' );
 function hook_wp_head() {
 	?>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20619206-1"></script>
+	<!-- Google Consent Mode (Default: Denied) -->
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-20619206-1');
+	  gtag('consent', 'default', {
+	    'analytics_storage': 'denied',
+	    'ad_storage': 'denied',
+	    'ad_user_data': 'denied',
+	    'ad_personalization': 'denied',
+	    'wait_for_update': 500
+	  });
 	</script>
-
-  <!-- Spectra -->
-  <script>
-  (function(r, o, y, g, b, i, v){
-    r.__spectraBaseUrl = y;r.__spectraConfig = b;
-    i = o.createElement('script');i.src = y+g;i.async = 1;
-    v = o.getElementsByTagName('head')[0];v.appendChild(i);
-  })(window, document, 'https://spectrajs.com', '/stats/', null);
-  </script>
-  <!-- /End Of Spectra -->
 	<?php
+}
+
+// Buffer wp_head to strip unconsented third-party trackers (Spectra, AudioEye, etc.)
+add_action( 'wp_head', 'newcastle_start_head_buffer', -999999 );
+function newcastle_start_head_buffer() {
+    ob_start();
+}
+
+add_action( 'wp_head', 'newcastle_end_head_buffer', 999999 );
+function newcastle_end_head_buffer() {
+    $head_html = ob_get_clean();
+
+    $has_consent = isset( $_COOKIE['newcastle_cookie_consent'] ) && $_COOKIE['newcastle_cookie_consent'] === 'granted';
+
+    if ( ! $has_consent ) {
+        // Strip AudioEye inline script
+        $head_html = preg_replace( '/<script[^>]*>[^<]*__AudioEyeSiteHash[^<]*<\/script>/is', '', $head_html );
+
+        // Strip Spectra inline script and HTML comments
+        $head_html = preg_replace( '/<!--\s*Spectra\s*-->.*?<!--\s*End of Spectra\s*-->/is', '', $head_html );
+        $head_html = preg_replace( '/<script[^>]*>[^<]*__spectraBaseUrl[^<]*<\/script>/is', '', $head_html );
+
+        // Strip any external scripts matching audioeye or wp-spectra
+        $head_html = preg_replace( '/<script[^>]*src=[\'"][^\'"]*(audioeye|wp-spectra)[^\'"]*[\'"][^>]*><\/script>/is', '', $head_html );
+    }
+
+    echo $head_html;
+}
+
+// Dequeue scripts registered by plugins if unconsented
+add_action( 'wp_enqueue_scripts', 'newcastle_dequeue_unconsented_scripts', 99999 );
+function newcastle_dequeue_unconsented_scripts() {
+    $has_consent = isset( $_COOKIE['newcastle_cookie_consent'] ) && $_COOKIE['newcastle_cookie_consent'] === 'granted';
+
+    if ( ! $has_consent ) {
+        wp_dequeue_script( 'wp-spectra-js' );
+        wp_deregister_script( 'wp-spectra-js' );
+        wp_dequeue_script( 'jp-tracks-js' );
+        wp_deregister_script( 'jp-tracks-js' );
+        wp_dequeue_script( 'jp-tracks-functions-js' );
+        wp_deregister_script( 'jp-tracks-functions-js' );
+    }
+}
+
+// Buffer wp_footer to strip unconsented tracking scripts (Jetpack, etc.)
+add_action( 'wp_footer', 'newcastle_start_footer_buffer', -999999 );
+function newcastle_start_footer_buffer() {
+    ob_start();
+}
+
+add_action( 'wp_footer', 'newcastle_end_footer_buffer', 999999 );
+function newcastle_end_footer_buffer() {
+    $footer_html = ob_get_clean();
+
+    $has_consent = isset( $_COOKIE['newcastle_cookie_consent'] ) && $_COOKIE['newcastle_cookie_consent'] === 'granted';
+
+    if ( ! $has_consent ) {
+        $footer_html = preg_replace( '/<script[^>]*src=[\'"][^\'"]*stats\.wp\.com[^\'"]*[\'"][^>]*><\/script>/is', '', $footer_html );
+        $footer_html = preg_replace( '/<script[^>]*src=[\'"][^\'"]*tracks-callables[^\'"]*[\'"][^>]*><\/script>/is', '', $footer_html );
+    }
+
+    echo $footer_html;
+}
+
+// Render cookie consent banner in footer
+add_action( 'wp_footer', 'newcastle_render_cookie_banner' );
+function newcastle_render_cookie_banner() {
+	get_template_part( 'parts/shared/cookie-banner' );
 }
 
 add_action('send_headers', 'add_security_headers');
