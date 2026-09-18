@@ -181,12 +181,44 @@
     loadSpectra();
     loadAudioEye();
   }
+  
+
+  /**
+   * Remove stored first-party tracking cookies when consent is denied or withdrawn
+   */
+  function deleteTrackingCookies() {
+    try {
+      const trackingPrefixes = ['_ga', '_gid', '_gat', '_gcl', '__utm', 'spectra'];
+      const cookies = document.cookie.split(';');
+      const hostname = window.location.hostname;
+      const domainParts = hostname.split('.');
+      const rootDomain = domainParts.length > 1 ? '.' + domainParts.slice(-2).join('.') : '.' + hostname;
+
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+
+        const isTrackingCookie = trackingPrefixes.some(prefix => name.startsWith(prefix));
+
+        if (isTrackingCookie) {
+          // Expire cookie on current path and variations of domain
+          document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;`;
+          document.cookie = `${name}=; path=/; domain=${hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT;`;
+          document.cookie = `${name}=; path=/; domain=${rootDomain}; expires=Thu, 01 Jan 1970 00:00:00 GMT;`;
+        }
+      }
+    } catch (e) {
+      console.warn('Error clearing tracking cookies:', e);
+    }
+  }
 
   /**
    * Deactivate non-essential trackers
    */
   function deactivateTrackers() {
     updateGoogleConsentMode('denied');
+    deleteTrackingCookies();
   }
 
   /**
