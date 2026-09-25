@@ -47,6 +47,9 @@ if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
 
     <div class="footer-block footer-block-four">
       <?php echo $menu_list; ?>
+      <div class="footer-cookie-preferences">
+        <a href="#cookie-preferences" id="open-cookie-preferences" class="cookie-preferences-link" role="button" aria-haspopup="dialog"><?php esc_html_e( 'Cookie Preferences', 'newcastle-child' ); ?></a>
+      </div>
     </div>
     <div>
       <h2 class="social-headline">Follow us</h2>
