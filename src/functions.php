@@ -392,4 +392,45 @@ function newcastle_custom_query_vars_filter($vars) {
 }
 add_filter( 'query_vars', 'newcastle_custom_query_vars_filter' );
 
+/**
+ * Prevent User Enumeration (Fix for Qualys QID 11772)
+ */
+
+// Block unauthenticated access to REST API user endpoints (/wp/v2/users, /wp/v2/users/<id>)
+add_filter( 'rest_pre_dispatch', 'newcastle_restrict_rest_user_enumeration', 10, 3 );
+function newcastle_restrict_rest_user_enumeration( $result, $server, $request ) {
+    $route = $request->get_route();
+
+    if ( ( $route === '/wp/v2/users' || strpos( $route, '/wp/v2/users/' ) === 0 ) && ! is_user_logged_in() ) {
+        return new WP_Error(
+            'rest_cannot_access',
+            __( 'Only authenticated users can access the user endpoint.', 'newcastle-child' ),
+            array( 'status' => rest_authorization_required_code() )
+        );
+    }
+
+    return $result;
+}
+
+// Block author archive enumeration (?author=N and /author/username) for non-logged-in visitors
+add_action( 'template_redirect', 'newcastle_disable_author_enumeration', 1 );
+function newcastle_disable_author_enumeration() {
+    if ( ! is_user_logged_in() && ( isset( $_GET['author'] ) || is_author() ) ) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header( 404 );
+        nocache_headers();
+    }
+}
+
+// Disable user/author XML sitemaps to prevent enumeration via sitemaps
+add_filter( 'wpseo_sitemap_exclude_author', '__return_true' );
+add_filter( 'wp_sitemaps_add_provider', 'newcastle_remove_user_sitemap_provider', 10, 2 );
+function newcastle_remove_user_sitemap_provider( $provider, $name ) {
+    if ( 'users' === $name ) {
+        return false;
+    }
+    return $provider;
+}
+
 ?>
