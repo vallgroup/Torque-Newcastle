@@ -8,3 +8,4 @@ import "./property";
 import "./job-details";
 import "./scrolltop";
 import "./re-captcha";
+import "./cookie-banner";

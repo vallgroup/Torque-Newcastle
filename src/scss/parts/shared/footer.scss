@@ -1,5 +1,5 @@
-$phone_icon: url('../statics/icons/phone.png');
-$mail_icon: url('../statics/icons/mail.png');
+$phone_icon: url("../statics/icons/phone.png");
+$mail_icon: url("../statics/icons/mail.png");
 
 footer {
   width: 100%;
@@ -28,7 +28,7 @@ footer {
 
     .social-headline {
       color: $gold;
-      font-family: $fontFamilyGTAmericaExtended; 
+      font-family: $fontFamilyGTAmericaExtended;
       letter-spacing: 1.4px;
       text-transform: uppercase;
       margin-top: 0;
@@ -155,7 +155,7 @@ footer {
             padding-left: 25px;
 
             &:before {
-              content: '';
+              content: "";
               position: absolute;
               left: 0;
               height: 20px;
@@ -170,7 +170,7 @@ footer {
             padding-left: 25px;
 
             &:before {
-              content: '';
+              content: "";
               position: absolute;
               left: 0;
               height: 20px;
@@ -199,6 +199,25 @@ footer {
           color: $white;
           margin-top: 0;
           margin-bottom: $bodyPadding2;
+        }
+      }
+
+      .footer-cookie-preferences {
+        margin-top: $bodyPadding2;
+
+        .cookie-preferences-link {
+          color: $white;
+          font-family: $fontFamilyGTAmerica;
+          font-size: 0.875rem;
+          line-height: 1.125rem;
+          text-decoration: none;
+          cursor: pointer;
+          transition: color 0.2s ease;
+
+          &:hover,
+          &:focus {
+            color: $gold;
+          }
         }
       }
     }
